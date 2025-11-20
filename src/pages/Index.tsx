@@ -10,35 +10,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* SECTION 1: Hero */}
-      <section className="relative py-20 md:py-32 px-5 md:px-10 overflow-hidden">
-        {/* Animated background gradients */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.03, 0.06, 0.03],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-light-cyan/30 to-dark-teal/30 rounded-full blur-3xl pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.02, 0.05, 0.02],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-deep-navy/20 to-dark-teal/20 rounded-full blur-3xl pointer-events-none"
-        />
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="py-20 md:py-32 px-5 md:px-10">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,12 +54,8 @@ const Index = () => {
       </section>
 
       {/* SECTION 2: Teacher Credibility */}
-      <section className="relative py-20 md:py-24 px-5 md:px-10 bg-light-gray overflow-hidden">
-        {/* Subtle decorative elements */}
-        <div className="absolute top-10 left-0 w-96 h-96 bg-gradient-to-br from-light-cyan/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 right-0 w-96 h-96 bg-gradient-to-tl from-dark-teal/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
+      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -218,12 +187,8 @@ const Index = () => {
       </section>
 
       {/* SECTION 4: Social Proof */}
-      <section className="relative py-20 md:py-24 px-5 md:px-10 bg-light-gray overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 right-1/4 w-72 h-72 bg-gradient-to-br from-light-cyan/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-gradient-to-tl from-dark-teal/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
+        <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -296,7 +261,7 @@ const Index = () => {
                 "Live weekly sessions",
                 "Brothers-only & sisters-only sessions",
                 "Private community",
-                "Weekly habit building",
+                "Weekly habits",
               ]}
               isRecommended={true}
               delay={0.1}
@@ -316,37 +281,8 @@ const Index = () => {
       </section>
 
       {/* SECTION 6: Final CTA */}
-      <section className="relative py-24 md:py-32 px-5 md:px-10 bg-light-gray overflow-hidden">
-        {/* Animated gradient orbs */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.04, 0.08, 0.04],
-            x: [0, 50, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 left-10 w-80 h-80 bg-gradient-to-br from-light-cyan/40 to-dark-teal/40 rounded-full blur-3xl pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.03, 0.06, 0.03],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute bottom-1/4 right-10 w-96 h-96 bg-gradient-to-tl from-deep-navy/30 to-dark-teal/30 rounded-full blur-3xl pointer-events-none"
-        />
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      <section className="py-24 md:py-32 px-5 md:px-10 bg-light-gray">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -378,12 +314,8 @@ const Index = () => {
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="relative bg-gradient-to-br from-dark-teal via-deep-navy to-dark-teal py-12 px-5 overflow-hidden">
-        {/* Decorative gradients */}
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-light-cyan/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-dark-teal/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <footer className="bg-gradient-to-br from-dark-teal via-deep-navy to-dark-teal py-12 px-5">
+        <div className="max-w-7xl mx-auto">
           {/* Logo/Brand section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

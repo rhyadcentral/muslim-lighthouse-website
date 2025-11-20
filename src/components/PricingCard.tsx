@@ -56,31 +56,6 @@ const PricingCard = ({
         </motion.div>
       )}
 
-      {/* Gradient background overlay */}
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-          isRecommended
-            ? "from-light-cyan/5 via-dark-teal/5 to-deep-navy/5"
-            : "from-light-gray/50 to-white"
-        )}
-      />
-
-      {/* Animated gradient border effect */}
-      {isRecommended && (
-        <motion.div
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute inset-0 bg-gradient-to-r from-light-cyan via-dark-teal to-light-cyan opacity-20 blur-xl"
-        />
-      )}
-
       {/* Content */}
       <div className="relative z-10 space-y-6">
         {/* Plan name */}
@@ -163,20 +138,7 @@ const PricingCard = ({
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="relative"
           >
-            {/* Glow effect for recommended plan */}
-            {isRecommended && (
-              <motion.div
-                animate={{
-                  opacity: isHovered ? 0.6 : 0.3,
-                  scale: isHovered ? 1.1 : 1,
-                }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-gradient-to-r from-light-cyan to-dark-teal rounded-xl blur-xl"
-              />
-            )}
-
             <Button
               className={cn(
                 "relative w-full font-montserrat font-bold text-base md:text-lg px-8 py-6 rounded-xl shadow-lg transition-all duration-300",
@@ -203,26 +165,6 @@ const PricingCard = ({
           </motion.p>
         )}
       </div>
-
-      {/* Decorative gradient blob */}
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, 180, 0],
-          opacity: [0.05, 0.1, 0.05],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className={cn(
-          "absolute -bottom-20 -right-20 w-48 h-48 rounded-full blur-3xl pointer-events-none",
-          isRecommended
-            ? "bg-gradient-to-br from-light-cyan to-dark-teal"
-            : "bg-gradient-to-br from-dark-teal/30 to-light-gray"
-        )}
-      />
     </motion.div>
   );
 };
