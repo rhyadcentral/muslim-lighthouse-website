@@ -13,7 +13,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'Arial', 'Helvetica', 'sans-serif'],
+        'open-sans': ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'],
+      },
       colors: {
+        'light-cyan': 'hsl(var(--light-cyan))',
+        'dark-teal': 'hsl(var(--dark-teal))',
+        'deep-navy': 'hsl(var(--deep-navy))',
+        'charcoal': 'hsl(var(--charcoal))',
+        'light-gray': 'hsl(var(--light-gray))',
+        'border-gray': 'hsl(var(--border-gray))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -46,16 +56,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
         },
       },
       borderRadius: {
