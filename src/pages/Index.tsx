@@ -1,5 +1,6 @@
 import CTAButton from "@/components/CTAButton";
 import CurriculumAccordion from "@/components/CurriculumAccordion";
+import PricingCard from "@/components/PricingCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
@@ -9,8 +10,35 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* SECTION 1: Hero */}
-      <section className="py-20 md:py-32 px-5 md:px-10">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 md:py-32 px-5 md:px-10 overflow-hidden">
+        {/* Animated background gradients */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.03, 0.06, 0.03],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-light-cyan/30 to-dark-teal/30 rounded-full blur-3xl pointer-events-none"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.02, 0.05, 0.02],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-deep-navy/20 to-dark-teal/20 rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,8 +81,12 @@ const Index = () => {
       </section>
 
       {/* SECTION 2: Teacher Credibility */}
-      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-20 md:py-24 px-5 md:px-10 bg-light-gray overflow-hidden">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-10 left-0 w-96 h-96 bg-gradient-to-br from-light-cyan/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 right-0 w-96 h-96 bg-gradient-to-tl from-dark-teal/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,8 +218,12 @@ const Index = () => {
       </section>
 
       {/* SECTION 4: Social Proof */}
-      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 md:py-24 px-5 md:px-10 bg-light-gray overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-gradient-to-br from-light-cyan/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-gradient-to-tl from-dark-teal/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,71 +262,91 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-12 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-6 font-montserrat"
           >
-            Get Complete Access for Less Than a Daily Coffee
+            Choose Your Path to Knowledge
           </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto bg-white rounded-2xl shadow-premium-lg border-2 border-light-cyan/20 p-8 md:p-12"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-charcoal text-center mb-16 max-w-3xl mx-auto"
           >
-            <div className="text-center mb-8">
-              <p className="text-5xl md:text-6xl font-bold text-gradient mb-4 font-montserrat">
-                £29<span className="text-2xl md:text-3xl">/month</span>
-              </p>
-              <p className="text-charcoal text-lg">
-                That's less than a daily coffee. Way less than hiring a private tutor.
-              </p>
-            </div>
+            Start your journey with our Standard plan or get complete access with Premium
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-gradient-to-r from-light-cyan/10 to-dark-teal/10 border-2 border-light-cyan/50 rounded-xl p-6 mb-8"
-            >
-              <p className="text-2xl font-semibold text-dark-teal text-center mb-2 font-montserrat">
-                Try FREE for 3 Days
-              </p>
-              <p className="text-center text-charcoal">
-                No credit card required • Cancel anytime
-              </p>
-            </motion.div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <PricingCard
+              name="Standard"
+              price={9}
+              features={[
+                "Full access to all courses",
+                "New content added every week",
+                "Invitation to in-person events",
+              ]}
+              delay={0}
+            />
+            <PricingCard
+              name="Premium"
+              price={29}
+              features={[
+                "Everything in Standard",
+                "Direct access to your teacher",
+                "Live weekly sessions",
+                "Brothers-only & sisters-only sessions",
+                "Private community",
+                "Weekly habit building",
+              ]}
+              isRecommended={true}
+              delay={0.1}
+            />
+          </div>
 
-            <div className="space-y-3 mb-8">
-              {[
-                "Complete Islamic curriculum — all sciences",
-                "Live classes with Ustadh Rhyad (Ijazah holder)",
-                "Recordings of every class",
-                "Supportive community of 500+ students",
-                "Clear roadmap — always know what's next",
-                "Direct access to ask questions",
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
-                  className="flex items-start gap-3"
-                >
-                  <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                  <span className="text-charcoal">{feature}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center text-charcoal/70 mt-12 text-lg"
+          >
+            Both plans are less than a daily coffee. Way less than hiring a private tutor.
+          </motion.p>
         </div>
       </section>
 
       {/* SECTION 6: Final CTA */}
-      <section className="py-24 md:py-32 px-5 md:px-10 bg-light-gray">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 md:py-32 px-5 md:px-10 bg-light-gray overflow-hidden">
+        {/* Animated gradient orbs */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.04, 0.08, 0.04],
+            x: [0, 50, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 left-10 w-80 h-80 bg-gradient-to-br from-light-cyan/40 to-dark-teal/40 rounded-full blur-3xl pointer-events-none"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.03, 0.06, 0.03],
+            x: [0, -30, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute bottom-1/4 right-10 w-96 h-96 bg-gradient-to-tl from-deep-navy/30 to-dark-teal/30 rounded-full blur-3xl pointer-events-none"
+        />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -322,26 +378,65 @@ const Index = () => {
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="bg-gradient-to-br from-dark-teal to-deep-navy py-8 px-5">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white text-sm">
-            © 2024 Muslim Lighthouse. All rights reserved.
-          </p>
-          <div className="mt-3 flex justify-center gap-6 text-sm">
-            <motion.a
-              whileHover={{ y: -2 }}
-              href="#"
-              className="text-white/80 hover:text-white transition-smooth"
-            >
-              Privacy Policy
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -2 }}
-              href="#"
-              className="text-white/80 hover:text-white transition-smooth"
-            >
-              Terms
-            </motion.a>
+      <footer className="relative bg-gradient-to-br from-dark-teal via-deep-navy to-dark-teal py-12 px-5 overflow-hidden">
+        {/* Decorative gradients */}
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-light-cyan/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-dark-teal/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Logo/Brand section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h3 className="text-2xl font-bold text-white font-montserrat mb-2">
+              Muslim Lighthouse
+            </h3>
+            <p className="text-white/70 text-sm max-w-md mx-auto">
+              Your guide to structured Islamic knowledge
+            </p>
+          </motion.div>
+
+          {/* Divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"
+          />
+
+          {/* Copyright and links */}
+          <div className="text-center space-y-4">
+            <p className="text-white/80 text-sm">
+              © 2024 Muslim Lighthouse. All rights reserved.
+            </p>
+            <div className="flex justify-center gap-8 text-sm">
+              <motion.a
+                whileHover={{ y: -2, color: "#ffffff" }}
+                href="#"
+                className="text-white/70 hover:text-white transition-all duration-300"
+              >
+                Privacy Policy
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2, color: "#ffffff" }}
+                href="#"
+                className="text-white/70 hover:text-white transition-all duration-300"
+              >
+                Terms of Service
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2, color: "#ffffff" }}
+                href="#"
+                className="text-white/70 hover:text-white transition-all duration-300"
+              >
+                Contact
+              </motion.a>
+            </div>
           </div>
         </div>
       </footer>
