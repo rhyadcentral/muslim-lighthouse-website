@@ -74,7 +74,7 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-xl shadow-lg border-2 border-gray-200 flex items-center justify-center">
+              <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-3xl shadow-lg border-2 border-gray-200 flex items-center justify-center">
                 <p className="text-charcoal font-semibold text-lg">Ustadh Rhyad Photo</p>
               </div>
             </motion.div>
@@ -240,25 +240,29 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <PricingCard
               name="Standard Subscription"
+              tagline="Learn on your own, at your own pace."
               price={9}
               features={[
-                "Full access to all courses",
-                "New content added every week",
-                "Invitation to in-person events",
+                "📚 Full access to all courses",
+                "♻️ New content added every week",
+                "🕌 Invitation to in-person events to strengthen bonds & recharge your imān",
               ]}
+              bottomNote="👉 Good if you just want the knowledge without the community or guidance."
               delay={0}
             />
             <PricingCard
               name="Premium Subscription"
+              tagline="Build lasting habits, not just knowledge."
               price={29}
               features={[
                 "Everything in Standard – PLUS:",
-                "Direct access to your teacher",
-                "Live weekly sessions",
-                "Brothers-only & sisters-only sessions",
-                "Private community",
-                "Weekly habits",
+                "👨‍🏫 Direct access to your teacher for questions, mentorship & guidance",
+                "📅 Live weekly sessions to interact, ask, and grow in real-time",
+                "🤝 Brothers-only & sisters-only weekly sessions – safe, supportive spaces to share doubts, ask personal questions, and connect deeply with others on the same path",
+                "🚻 Private, segregated community for brothers & sisters – study, grow & connect together",
+                "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
               ]}
+              bottomNote="👉 Knowledge fades. Habits shape who you become. This keeps you on track every single week."
               isRecommended={true}
               delay={0.1}
             />

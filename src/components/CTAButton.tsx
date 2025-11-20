@@ -13,7 +13,7 @@ const CTAButton = ({ className, fullWidth = false, showSubtext = true }: CTAButt
     <div className={cn("flex flex-col items-center gap-3", className)}>
       <Button
         className={cn(
-          "bg-light-cyan text-white font-montserrat font-bold text-base md:text-lg px-8 md:px-12 py-6 rounded-lg shadow-lg hover:bg-dark-teal transition-colors duration-200 group",
+          "bg-light-cyan text-white font-montserrat font-bold text-base md:text-lg px-8 md:px-12 py-6 rounded-2xl shadow-lg hover:bg-dark-teal transition-colors duration-200 group",
           fullWidth && "w-full"
         )}
       >

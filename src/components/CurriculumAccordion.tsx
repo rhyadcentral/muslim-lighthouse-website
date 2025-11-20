@@ -79,11 +79,11 @@ const CurriculumAccordion = () => {
           >
             <AccordionItem
               value={science.id}
-              className="bg-white rounded-xl shadow-md border-2 border-gray-100 hover:border-light-cyan/40 hover:shadow-lg transition-all duration-200"
+              className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-light-cyan/40 hover:shadow-lg transition-all duration-200"
             >
               <AccordionTrigger className="px-6 py-5 font-montserrat font-semibold text-dark-teal hover:no-underline text-left">
                 <div className="flex items-center gap-4 w-full">
-                  <div className="w-10 h-10 bg-light-cyan/10 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-light-cyan/10 rounded-2xl flex items-center justify-center">
                     <Icon className="w-5 h-5 text-light-cyan" />
                   </div>
                   <div className="flex-1">

@@ -7,7 +7,7 @@ const VideoPlaceholder = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative w-full max-w-5xl mx-auto aspect-video bg-gray-50 rounded-xl shadow-lg flex items-center justify-center group cursor-pointer border-2 border-gray-200 hover:border-light-cyan hover:shadow-xl transition-all duration-200"
+      className="relative w-full max-w-5xl mx-auto aspect-video bg-gray-50 rounded-3xl shadow-lg flex items-center justify-center group cursor-pointer border-2 border-gray-200 hover:border-light-cyan hover:shadow-xl transition-all duration-200"
     >
       {/* Main content */}
       <div className="flex flex-col items-center gap-6">

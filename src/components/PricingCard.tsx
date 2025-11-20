@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface PricingCardProps {
   name: string;
+  tagline: string;
   price: number;
   period?: string;
   features: string[];
+  bottomNote: string;
   isRecommended?: boolean;
   delay?: number;
 }
 
 const PricingCard = ({
   name,
+  tagline,
   price,
   period = "/month",
   features,
+  bottomNote,
   isRecommended = false,
   delay = 0,
 }: PricingCardProps) => {
@@ -27,7 +30,7 @@ const PricingCard = ({
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
       className={cn(
-        "bg-white rounded-xl p-8 md:p-10 shadow-lg border-2 transition-shadow duration-200 hover:shadow-xl",
+        "bg-white rounded-3xl p-8 md:p-10 shadow-lg border-2 transition-shadow duration-200 hover:shadow-xl",
         isRecommended ? "border-light-cyan" : "border-gray-200"
       )}
     >
@@ -41,9 +44,12 @@ const PricingCard = ({
       )}
 
       {/* Plan name */}
-      <h3 className="text-xl md:text-2xl font-bold font-montserrat text-charcoal mb-4">
+      <h3 className="text-xl md:text-2xl font-bold font-montserrat text-charcoal mb-2">
         {name}
       </h3>
+
+      {/* Tagline */}
+      <p className="text-charcoal/70 text-base mb-6">{tagline}</p>
 
       {/* Price */}
       <div className="mb-6">
@@ -57,19 +63,23 @@ const PricingCard = ({
       </div>
 
       {/* Features */}
-      <div className="space-y-3 mb-8">
+      <div className="space-y-4 mb-6">
         {features.map((feature, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <Check className="w-5 h-5 shrink-0 mt-0.5 text-light-cyan" />
-            <span className="text-charcoal text-sm leading-relaxed">{feature}</span>
+          <div key={index} className="text-charcoal text-sm leading-relaxed">
+            {feature}
           </div>
         ))}
+      </div>
+
+      {/* Bottom note */}
+      <div className="bg-gray-50 p-4 rounded-2xl mb-6">
+        <p className="text-charcoal/80 text-sm leading-relaxed">{bottomNote}</p>
       </div>
 
       {/* CTA Button */}
       <Button
         className={cn(
-          "w-full font-montserrat font-semibold text-base px-6 py-6 rounded-lg transition-colors duration-200",
+          "w-full font-montserrat font-semibold text-base px-6 py-6 rounded-full transition-colors duration-200",
           isRecommended
             ? "bg-light-cyan text-white hover:bg-dark-teal"
             : "bg-white text-dark-teal border-2 border-dark-teal hover:bg-dark-teal hover:text-white"

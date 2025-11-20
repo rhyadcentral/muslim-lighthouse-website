@@ -14,11 +14,11 @@ const TestimonialCard = ({ quote, name, delay = 0 }: TestimonialCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
-      className="bg-white p-6 md:p-8 rounded-xl shadow-lg border-2 border-gray-100 hover:shadow-xl hover:border-light-cyan/30 transition-all duration-200"
+      className="bg-white p-6 md:p-8 rounded-3xl shadow-lg border-2 border-gray-100 hover:shadow-xl hover:border-light-cyan/30 transition-all duration-200"
     >
       {/* Quote icon */}
       <div className="mb-4">
-        <div className="w-10 h-10 bg-light-cyan/10 rounded-lg flex items-center justify-center">
+        <div className="w-10 h-10 bg-light-cyan/10 rounded-2xl flex items-center justify-center">
           <Quote className="w-5 h-5 text-light-cyan" />
         </div>
       </div>
