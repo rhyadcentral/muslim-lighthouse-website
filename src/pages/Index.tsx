@@ -18,7 +18,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gradient text-center mb-6 font-montserrat leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-dark-teal text-center mb-6 font-montserrat leading-tight">
               Never Feel Spiritually Lost Again
             </h1>
             <motion.p
@@ -61,7 +61,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-12 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-12 font-montserrat"
           >
             Learn From a Qualified Scholar
           </motion.h2>
@@ -74,13 +74,9 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-light-cyan/20 to-dark-teal/20 rounded-2xl shadow-premium border-4 border-light-cyan/30 hover:border-light-cyan/60 transition-all duration-300 flex items-center justify-center"
-              >
+              <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-xl shadow-lg border-2 border-gray-200 flex items-center justify-center">
                 <p className="text-charcoal font-semibold text-lg">Ustadh Rhyad Photo</p>
-              </motion.div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -168,7 +164,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-4 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-4 font-montserrat"
           >
             Master All the Islamic Sciences
           </motion.h2>
@@ -194,7 +190,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-12 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-12 font-montserrat"
           >
             Join 500+ Students Already Transforming Their Deen
           </motion.h2>
@@ -227,7 +223,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient text-center mb-6 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-6 font-montserrat"
           >
             Choose Your Path to Knowledge
           </motion.h2>
@@ -243,7 +239,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <PricingCard
-              name="Standard"
+              name="Standard Subscription"
               price={9}
               features={[
                 "Full access to all courses",
@@ -253,10 +249,10 @@ const Index = () => {
               delay={0}
             />
             <PricingCard
-              name="Premium"
+              name="Premium Subscription"
               price={29}
               features={[
-                "Everything in Standard",
+                "Everything in Standard – PLUS:",
                 "Direct access to your teacher",
                 "Live weekly sessions",
                 "Brothers-only & sisters-only sessions",
@@ -288,7 +284,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-6 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal mb-6 font-montserrat"
           >
             Start Your 3-Day Free Trial Now
           </motion.h2>
@@ -314,7 +310,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="bg-gradient-to-br from-dark-teal via-deep-navy to-dark-teal py-12 px-5">
+      <footer className="bg-dark-teal py-12 px-5">
         <div className="max-w-7xl mx-auto">
           {/* Logo/Brand section */}
           <motion.div
@@ -333,13 +329,7 @@ const Index = () => {
           </motion.div>
 
           {/* Divider */}
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"
-          />
+          <div className="h-px bg-white/20 mb-8" />
 
           {/* Copyright and links */}
           <div className="text-center space-y-4">
