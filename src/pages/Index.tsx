@@ -1,8 +1,10 @@
 import CTAButton from "@/components/CTAButton";
 import CurriculumAccordion from "@/components/CurriculumAccordion";
+import PricingCard from "@/components/PricingCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -10,66 +12,146 @@ const Index = () => {
       {/* SECTION 1: Hero */}
       <section className="py-20 md:py-32 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-deep-navy text-center mb-4 font-montserrat">
-            Never Feel Spiritually Lost Again
-          </h1>
-          <p className="text-lg md:text-xl text-charcoal text-center mb-12 max-w-3xl mx-auto">
-            Watch this 20-minute message if you're tired of learning alone and scattered
-          </p>
-          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal text-center mb-6 font-montserrat leading-tight">
+              Never Feel <span className="text-bubble">Spiritually Lost</span> Again
+            </h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl md:text-2xl text-charcoal text-center mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Watch this 20-minute message if you're tired of learning alone and scattered
+            </motion.p>
+          </motion.div>
+
           <VideoPlaceholder />
-          
-          <div className="mt-12 flex justify-center">
-            <CTAButton fullWidth />
-          </div>
-          
-          <p className="text-center text-muted-foreground mt-6">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 flex justify-center"
+          >
+            <CTAButton />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-center text-muted-foreground mt-6"
+          >
             Join 500+ students • No credit card required
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* SECTION 2: Teacher Credibility */}
       <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-teal text-center mb-12 font-montserrat">
-            Learn From a Qualified Scholar
-          </h2>
-          
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
+          >
+            Learn From a <span className="text-bubble">Qualified Scholar</span>
+          </motion.h2>
+
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="flex justify-center">
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-light-cyan/20 to-dark-teal/20 rounded-lg shadow-lg border-4 border-light-cyan flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-3xl shadow-lg border-2 border-gray-200 flex items-center justify-center">
                 <p className="text-charcoal font-semibold text-lg">Ustadh Rhyad Photo</p>
               </div>
-            </div>
-            
-            <div className="space-y-4">
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
               <h3 className="text-2xl font-semibold text-dark-teal font-montserrat mb-6">
                 Ustadh Rhyad
               </h3>
               <ul className="space-y-3 text-charcoal">
-                <li className="flex items-start gap-3">
+                <motion.li
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="flex items-start gap-3"
+                >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
-                  <span><strong>Credentials:</strong> Holds Ijazah (traditional certification) in all Islamic sciences</span>
-                </li>
-                <li className="flex items-start gap-3">
+                  <span>
+                    <strong>Credentials:</strong> Holds Ijazah (traditional certification) in all Islamic sciences
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex items-start gap-3"
+                >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
-                  <span><strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scholarship</span>
-                </li>
-                <li className="flex items-start gap-3">
+                  <span>
+                    <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scholarship
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex items-start gap-3"
+                >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
-                  <span><strong>Current:</strong> Based in Madinah — the city of the Prophet ﷺ</span>
-                </li>
-                <li className="flex items-start gap-3">
+                  <span>
+                    <strong>Current:</strong> Based in Madinah — the city of the Prophet ﷺ
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  className="flex items-start gap-3"
+                >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
-                  <span><strong>Experience:</strong> Taught 500+ students from confusion to confidence</span>
-                </li>
-                <li className="flex items-start gap-3">
+                  <span>
+                    <strong>Experience:</strong> Taught 500+ students from confusion to confidence
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                  className="flex items-start gap-3"
+                >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
-                  <span><strong>Approach:</strong> Bridges traditional knowledge with modern, relatable teaching</span>
-                </li>
+                  <span>
+                    <strong>Approach:</strong> Bridges traditional knowledge with modern, relatable teaching
+                  </span>
+                </motion.li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -77,13 +159,25 @@ const Index = () => {
       {/* SECTION 3: Complete Curriculum */}
       <section className="py-20 md:py-24 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-teal text-center mb-4 font-montserrat">
-            Master All the Islamic Sciences
-          </h2>
-          <p className="text-lg md:text-xl text-charcoal text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-4 font-montserrat"
+          >
+            Master All the <span className="text-bubble">Islamic Sciences</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-charcoal text-center mb-12"
+          >
             A complete, structured curriculum covering every essential science
-          </p>
-          
+          </motion.p>
+
           <CurriculumAccordion />
         </div>
       </section>
@@ -91,22 +185,31 @@ const Index = () => {
       {/* SECTION 4: Social Proof */}
       <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-teal text-center mb-12 font-montserrat">
-            Join 500+ Students Already Transforming Their Deen
-          </h2>
-          
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
+          >
+            Join <span className="text-bubble">500+ Students</span> Already Transforming Their Deen
+          </motion.h2>
+
           <div className="grid md:grid-cols-3 gap-6">
             <TestimonialCard
               quote="I finally have structure. For the first time, I know exactly what to study next."
               name="Muslim Lighthouse Student"
+              delay={0}
             />
             <TestimonialCard
               quote="I've learned more in 3 months with Muslim Lighthouse than in years on my own."
               name="Muslim Lighthouse Student"
+              delay={0.1}
             />
             <TestimonialCard
               quote="The community keeps me accountable. I'm not alone anymore."
               name="Muslim Lighthouse Student"
+              delay={0.2}
             />
           </div>
         </div>
@@ -115,86 +218,123 @@ const Index = () => {
       {/* SECTION 5: Pricing & Offer */}
       <section className="py-20 md:py-24 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-teal text-center mb-12 font-montserrat">
-            Get Complete Access for Less Than a Daily Coffee
-          </h2>
-          
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-[0_4px_16px_rgba(0,151,178,0.15)] border border-light-cyan p-8 md:p-12">
-            <div className="text-center mb-8">
-              <p className="text-5xl md:text-6xl font-bold text-dark-teal mb-4 font-montserrat">
-                £29<span className="text-2xl md:text-3xl">/month</span>
-              </p>
-              <p className="text-charcoal text-lg">
-                That's less than a daily coffee. Way less than hiring a private tutor.
-              </p>
-            </div>
-            
-            <div className="bg-light-cyan/10 border-2 border-light-cyan rounded-lg p-6 mb-8">
-              <p className="text-2xl font-semibold text-dark-teal text-center mb-2 font-montserrat">
-                Try FREE for 3 Days
-              </p>
-              <p className="text-center text-charcoal">
-                No credit card required • Cancel anytime
-              </p>
-            </div>
-            
-            <div className="space-y-3 mb-8">
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Complete Islamic curriculum — all sciences</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Live classes with Ustadh Rhyad (Ijazah holder)</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Recordings of every class</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Supportive community of 500+ students</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Clear roadmap — always know what's next</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-light-cyan shrink-0 mt-0.5" />
-                <span className="text-charcoal">Direct access to ask questions</span>
-              </div>
-            </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-6 font-montserrat"
+          >
+            Choose Your <span className="text-bubble">Path to Knowledge</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-charcoal text-center mb-16 max-w-3xl mx-auto"
+          >
+            Start your journey with our Standard plan or get complete access with Premium
+          </motion.p>
+
+          <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-start justify-center">
+            <PricingCard
+              name="Standard Subscription"
+              tagline="Learn on your own, at your own pace."
+              price={9}
+              features={[
+                "📚 Full access to all courses",
+                "♻️ New content added every week",
+                "🕌 Invitation to in-person events to strengthen bonds & recharge your imān",
+              ]}
+              bottomNote="👉 Good if you just want the knowledge without the community or guidance."
+              delay={0}
+            />
+            <PricingCard
+              name="Premium Subscription"
+              tagline="Build lasting habits, not just knowledge."
+              price={29}
+              features={[
+                "Everything in Standard – PLUS:",
+                "👨‍🏫 Direct access to your teacher for questions, mentorship & guidance",
+                "📅 Live weekly sessions to interact, ask, and grow in real-time",
+                "🤝 Brothers-only & sisters-only weekly sessions – safe, supportive spaces to share doubts, ask personal questions, and connect deeply with others on the same path",
+                "🚻 Private, segregated community for brothers & sisters – study, grow & connect together",
+                "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
+              ]}
+              bottomNote="👉 Knowledge fades. Habits shape who you become. This keeps you on track every single week."
+              isRecommended={true}
+              delay={0.1}
+            />
           </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center text-charcoal/70 mt-12 text-lg"
+          >
+            Both plans are less than a daily coffee. Way less than hiring a private tutor.
+          </motion.p>
         </div>
       </section>
 
       {/* SECTION 6: Final CTA */}
       <section className="py-24 md:py-32 px-5 md:px-10 bg-light-gray">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-teal mb-6 font-montserrat">
-            Start Your 3-Day Free Trial Now
-          </h2>
-          <p className="text-lg md:text-xl text-charcoal mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 font-montserrat"
+          >
+            Start Your <span className="text-bubble">3-Day Free Trial</span> Now
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-charcoal mb-12"
+          >
             Join 500+ students on the path from confusion to clarity
-          </p>
-          
-          <CTAButton fullWidth />
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex justify-center"
+          >
+            <CTAButton />
+          </motion.div>
         </div>
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="bg-dark-teal py-8 px-5">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white text-sm">
-            © 2024 Muslim Lighthouse. All rights reserved.
-          </p>
-          <div className="mt-3 flex justify-center gap-6 text-sm">
-            <a href="#" className="text-white/80 hover:text-white transition-smooth">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-white/80 hover:text-white transition-smooth">
-              Terms
-            </a>
+      <footer className="border-t border-gray-200 py-8 px-5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Brand */}
+            <div className="text-sm text-muted-foreground">
+              © 2024 Muslim Lighthouse. All rights reserved.
+            </div>
+
+            {/* Links */}
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
+                Terms
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </footer>

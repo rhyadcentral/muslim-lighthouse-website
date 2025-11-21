@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Refactoring UI-compliant design system
+All colors MUST be HSL and follow proper contrast ratios.
 */
 
 @layer base {
@@ -12,19 +12,19 @@ All colors MUST be HSL.
     --light-cyan: 188 100% 35%;
     --dark-teal: 187 100% 28%;
     --deep-navy: 186 100% 7%;
-    --charcoal: 0 0% 20%;
+    --charcoal: 0 0% 10%; /* Dark black for better readability */
     --light-gray: 210 17% 98%;
-    --border-gray: 0 0% 90%;
-    
+    --border-gray: 220 13% 91%;
+
     /* Semantic tokens mapped to brand */
     --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    --foreground: 0 0% 10%; /* Match charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 188 100% 35%;
     --primary-foreground: 0 0% 100%;
@@ -33,7 +33,7 @@ All colors MUST be HSL.
     --secondary-foreground: 187 100% 28%;
 
     --muted: 210 17% 98%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 0 0% 40%; /* Dark gray for secondary text */
 
     --accent: 188 100% 35%;
     --accent-foreground: 0 0% 100%;
@@ -41,33 +41,26 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
     --ring: 188 100% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Increased base radius for more rounded feel */
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent: 210 17% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 188 100% 35%;
   }
 
   .dark {
     /* Keep same colors for dark mode - no dark mode toggle needed */
     --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    --foreground: 0 0% 10%;
   }
 }
 
@@ -79,10 +72,14 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    font-weight: 700;
   }
 
   html {
@@ -91,11 +88,52 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .transition-smooth {
-    transition: all 0.3s ease;
+  /* Consistent spacing scale - Following 4px base unit */
+  .space-section {
+    @apply py-16 md:py-24;
   }
 
-  .hover-lift:hover {
-    transform: scale(1.05);
+  .space-section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  /* Simplified, neutral shadows - No color tints */
+  .shadow-card {
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .shadow-card-hover {
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .shadow-card-lg {
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Typography utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Bubble highlight effect for key words */
+  .text-bubble {
+    background: hsl(var(--light-cyan));
+    color: white;
+    padding: 0.25rem 0.875rem;
+    border-radius: 0.75rem;
+    display: inline-block;
+    font-weight: 700;
+    white-space: nowrap;
   }
 }

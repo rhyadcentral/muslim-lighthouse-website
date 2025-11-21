@@ -1,25 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 interface CTAButtonProps {
   className?: string;
   fullWidth?: boolean;
+  showSubtext?: boolean;
 }
 
-const CTAButton = ({ className, fullWidth = false }: CTAButtonProps) => {
+const CTAButton = ({ className, fullWidth = false, showSubtext = true }: CTAButtonProps) => {
   return (
     <div className={cn("flex flex-col items-center gap-3", className)}>
       <Button
         className={cn(
-          "bg-light-cyan text-white font-montserrat font-semibold text-lg px-10 py-6 rounded-lg shadow-[0_4px_12px_rgba(0,151,178,0.3)] transition-smooth hover:bg-dark-teal hover-lift",
-          fullWidth && "w-full md:w-auto"
+          "bg-light-cyan text-white font-montserrat font-bold text-lg px-10 py-7 rounded-full shadow-card-lg hover:shadow-card-hover hover:-translate-y-1 hover:bg-dark-teal active:translate-y-0 transition-all duration-200 group",
+          fullWidth && "w-full"
         )}
       >
-        Start Your 3-Day Free Trial
+        <span className="flex items-center gap-3 justify-center">
+          Start Your 3-Day Free Trial
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+        </span>
       </Button>
-      <p className="text-sm text-muted-foreground">
-        No credit card required • Cancel anytime
-      </p>
+
+      {showSubtext && (
+        <p className="text-sm text-muted-foreground">
+          No credit card required • Cancel anytime
+        </p>
+      )}
     </div>
   );
 };
