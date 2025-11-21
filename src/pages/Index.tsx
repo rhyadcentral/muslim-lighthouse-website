@@ -321,27 +321,11 @@ const Index = () => {
       {/* SECTION 7: Footer */}
       <footer className="border-t border-gray-200 py-8 px-5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Brand */}
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Muslim Lighthouse Logo" className="h-8 w-auto" />
-              <span className="text-sm text-muted-foreground">
-                © 2024 Muslim Lighthouse. All rights reserved.
-              </span>
-            </div>
-
-            {/* Links */}
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
-                Terms
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
-                Contact
-              </a>
-            </div>
+          <div className="flex justify-center items-center gap-3">
+            <img src={logo} alt="Muslim Lighthouse Logo" className="h-8 w-auto" />
+            <span className="text-sm text-muted-foreground">
+              © 2024 Muslim Lighthouse. All rights reserved.
+            </span>
           </div>
         </div>
       </footer>
