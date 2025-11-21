@@ -5,6 +5,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import ustadhPhoto from "@/assets/ustadh-rhyad.jpg";
+import logo from "@/assets/muslim-lighthouse-logo.png";
 
 const Index = () => {
   return (
@@ -74,9 +76,11 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-3xl shadow-lg border-2 border-gray-200 flex items-center justify-center">
-                <p className="text-charcoal font-semibold text-lg">Ustadh Rhyad Photo</p>
-              </div>
+              <img
+                src={ustadhPhoto}
+                alt="Ustadh Rhyad"
+                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-lg"
+              />
             </motion.div>
 
             <motion.div
@@ -319,8 +323,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Brand */}
-            <div className="text-sm text-muted-foreground">
-              © 2024 Muslim Lighthouse. All rights reserved.
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Muslim Lighthouse Logo" className="h-8 w-auto" />
+              <span className="text-sm text-muted-foreground">
+                © 2024 Muslim Lighthouse. All rights reserved.
+              </span>
             </div>
 
             {/* Links */}
