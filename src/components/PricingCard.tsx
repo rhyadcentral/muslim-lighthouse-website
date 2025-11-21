@@ -29,76 +29,66 @@ const PricingCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -4 }}
       className={cn(
-        "bg-white rounded-3xl p-8 md:p-10 shadow-lg border-2 transition-all duration-300 hover:shadow-2xl group",
-        isRecommended ? "border-light-cyan" : "border-gray-200 hover:border-light-cyan/50"
+        "bg-white rounded-3xl p-8 md:p-10 shadow-card-lg hover:shadow-card-hover transition-all duration-200",
+        isRecommended && "ring-2 ring-light-cyan ring-offset-4"
       )}
     >
       {/* Recommended badge */}
       {isRecommended && (
-        <div className="mb-4">
-          <div className="bg-light-cyan text-white px-4 py-1.5 rounded-full text-xs font-bold font-montserrat inline-block shadow-md">
+        <div className="mb-6">
+          <div className="bg-light-cyan text-white px-3 py-1 rounded-full text-xs font-bold font-montserrat inline-block">
             MOST POPULAR
           </div>
         </div>
       )}
 
-      {/* Plan name */}
-      <h3 className="text-xl md:text-2xl font-bold font-montserrat text-charcoal mb-2">
+      {/* Plan name - Using size + weight for hierarchy */}
+      <h3 className="text-2xl font-bold font-montserrat text-charcoal mb-2">
         {name}
       </h3>
 
-      {/* Tagline */}
-      <p className="text-charcoal/70 text-base mb-6">{tagline}</p>
+      {/* Tagline - Using color for hierarchy, not just size */}
+      <p className="text-base text-muted-foreground mb-8">{tagline}</p>
 
-      {/* Price */}
-      <div className="mb-6">
-        <div className="flex items-end gap-1">
-          <span className="text-2xl font-bold text-charcoal">$</span>
-          <span className="text-5xl md:text-6xl font-bold font-montserrat text-charcoal">
-            {price}
+      {/* Price - Emphasized with size AND weight */}
+      <div className="mb-8">
+        <div className="flex items-baseline gap-1">
+          <span className="text-5xl font-extrabold font-montserrat text-charcoal">
+            ${price}
           </span>
-          <span className="text-xl text-charcoal/60 mb-1">{period}</span>
+          <span className="text-lg text-muted-foreground font-medium">{period}</span>
         </div>
       </div>
 
-      {/* Features */}
-      <div className="space-y-4 mb-6">
+      {/* Features - Better spacing, no animations on scroll (too much) */}
+      <div className="space-y-3 mb-8">
         {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: delay + 0.1 + index * 0.05 }}
-            className="text-charcoal text-sm leading-relaxed"
-          >
+          <div key={index} className="text-sm leading-relaxed text-charcoal">
             {feature}
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      {/* Bottom note */}
-      <div className="bg-gray-50 p-4 rounded-2xl mb-6 group-hover:bg-light-cyan/5 transition-colors duration-300">
-        <p className="text-charcoal/80 text-sm leading-relaxed">{bottomNote}</p>
+      {/* Bottom note - Subtle background without border */}
+      <div className="bg-muted p-4 rounded-2xl mb-8">
+        <p className="text-sm leading-relaxed text-muted-foreground">{bottomNote}</p>
       </div>
 
-      {/* CTA Button */}
+      {/* CTA Button - Simplified, clear hierarchy */}
       <Button
         className={cn(
-          "relative w-full font-montserrat font-semibold text-base px-6 py-6 rounded-full transition-all duration-300 overflow-hidden group/btn",
+          "w-full font-montserrat font-bold text-base px-6 py-6 rounded-full transition-all duration-200 shadow-card hover:shadow-card-hover hover:-translate-y-1 active:translate-y-0",
           isRecommended
-            ? "bg-light-cyan text-white hover:bg-dark-teal hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
-            : "bg-white text-dark-teal border-2 border-dark-teal hover:bg-dark-teal hover:text-white hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+            ? "bg-light-cyan text-white hover:bg-dark-teal"
+            : "bg-white text-dark-teal ring-2 ring-dark-teal hover:bg-dark-teal hover:text-white"
         )}
       >
-        <span className="relative z-10">{isRecommended ? "Start Free Trial" : "Get Started"}</span>
-        {/* Shine effect */}
-        <span className="absolute inset-0 bg-white/0 group-hover/btn:bg-white/10 transition-colors duration-300" />
+        {isRecommended ? "Start Free Trial" : "Get Started"}
       </Button>
 
-      {/* Free trial note for recommended plan */}
+      {/* Free trial note - Using muted color for hierarchy */}
       {isRecommended && (
         <p className="text-center text-xs text-muted-foreground mt-4">
           3-day free trial • No credit card required
