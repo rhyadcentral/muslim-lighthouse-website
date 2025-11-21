@@ -18,14 +18,14 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-dark-teal text-center mb-6 font-montserrat leading-tight">
-              Never Feel Spiritually Lost Again
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal text-center mb-6 font-montserrat leading-tight">
+              Never Feel <span className="text-bubble">Spiritually Lost</span> Again
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-charcoal/80 text-center mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-charcoal text-center mb-12 max-w-3xl mx-auto leading-relaxed"
             >
               Watch this 20-minute message if you're tired of learning alone and scattered
             </motion.p>
@@ -61,9 +61,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-12 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
           >
-            Learn From a Qualified Scholar
+            Learn From a <span className="text-bubble">Qualified Scholar</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -164,9 +164,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-4 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-4 font-montserrat"
           >
-            Master All the Islamic Sciences
+            Master All the <span className="text-bubble">Islamic Sciences</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -190,9 +190,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-12 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
           >
-            Join 500+ Students Already Transforming Their Deen
+            Join <span className="text-bubble">500+ Students</span> Already Transforming Their Deen
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -223,9 +223,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal text-center mb-6 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-6 font-montserrat"
           >
-            Choose Your Path to Knowledge
+            Choose Your <span className="text-bubble">Path to Knowledge</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -288,9 +288,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-teal mb-6 font-montserrat"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 font-montserrat"
           >
-            Start Your 3-Day Free Trial Now
+            Start Your <span className="text-bubble">3-Day Free Trial</span> Now
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

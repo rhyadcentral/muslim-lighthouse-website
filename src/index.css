@@ -8,23 +8,23 @@ All colors MUST be HSL and follow proper contrast ratios.
 
 @layer base {
   :root {
-    /* Muslim Lighthouse Brand Colors - Adjusted for better contrast */
+    /* Muslim Lighthouse Brand Colors */
     --light-cyan: 188 100% 35%;
     --dark-teal: 187 100% 28%;
     --deep-navy: 186 100% 7%;
-    --charcoal: 216 12% 35%; /* Adjusted from pure 20% to softer dark blue-gray */
+    --charcoal: 0 0% 10%; /* Dark black for better readability */
     --light-gray: 210 17% 98%;
-    --border-gray: 220 13% 91%; /* Slightly warmer gray */
+    --border-gray: 220 13% 91%;
 
     /* Semantic tokens mapped to brand */
     --background: 0 0% 100%;
-    --foreground: 216 12% 35%; /* Match charcoal */
+    --foreground: 0 0% 10%; /* Match charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 216 12% 35%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 12% 35%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 188 100% 35%;
     --primary-foreground: 0 0% 100%;
@@ -33,7 +33,7 @@ All colors MUST be HSL and follow proper contrast ratios.
     --secondary-foreground: 187 100% 28%;
 
     --muted: 210 17% 98%;
-    --muted-foreground: 216 12% 55%; /* Adjusted from 60% for better contrast */
+    --muted-foreground: 0 0% 40%; /* Dark gray for secondary text */
 
     --accent: 188 100% 35%;
     --accent-foreground: 0 0% 100%;
@@ -48,11 +48,11 @@ All colors MUST be HSL and follow proper contrast ratios.
     --radius: 0.75rem; /* Increased base radius for more rounded feel */
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 216 12% 35%;
-    --sidebar-primary: 216 12% 15%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 210 17% 95%;
-    --sidebar-accent-foreground: 216 12% 15%;
+    --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 188 100% 35%;
   }
@@ -60,7 +60,7 @@ All colors MUST be HSL and follow proper contrast ratios.
   .dark {
     /* Keep same colors for dark mode - no dark mode toggle needed */
     --background: 0 0% 100%;
-    --foreground: 216 12% 35%;
+    --foreground: 0 0% 10%;
   }
 }
 
@@ -124,5 +124,16 @@ All colors MUST be HSL and follow proper contrast ratios.
   /* Typography utilities */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Bubble highlight effect for key words */
+  .text-bubble {
+    background: hsl(var(--light-cyan));
+    color: white;
+    padding: 0.25rem 0.875rem;
+    border-radius: 9999px;
+    display: inline-block;
+    font-weight: 700;
+    white-space: nowrap;
   }
 }
