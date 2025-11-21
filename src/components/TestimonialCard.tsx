@@ -14,11 +14,12 @@ const TestimonialCard = ({ quote, name, delay = 0 }: TestimonialCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
-      className="bg-white p-6 md:p-8 rounded-3xl shadow-lg border-2 border-gray-100 hover:shadow-xl hover:border-light-cyan/30 transition-all duration-200"
+      whileHover={{ y: -6, scale: 1.02 }}
+      className="bg-white p-6 md:p-8 rounded-3xl shadow-lg border-2 border-gray-100 hover:shadow-2xl hover:border-light-cyan/40 transition-all duration-300 group"
     >
       {/* Quote icon */}
       <div className="mb-4">
-        <div className="w-10 h-10 bg-light-cyan/10 rounded-2xl flex items-center justify-center">
+        <div className="w-10 h-10 bg-light-cyan/10 rounded-2xl flex items-center justify-center group-hover:bg-light-cyan/20 group-hover:scale-110 transition-all duration-300">
           <Quote className="w-5 h-5 text-light-cyan" />
         </div>
       </div>
@@ -30,7 +31,7 @@ const TestimonialCard = ({ quote, name, delay = 0 }: TestimonialCardProps) => {
 
       {/* Author */}
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-light-cyan rounded-full flex items-center justify-center">
+        <div className="w-10 h-10 bg-light-cyan rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
           <span className="text-white font-bold text-sm">
             {name.split(' ').map(n => n[0]).slice(0, 2).join('')}
           </span>
