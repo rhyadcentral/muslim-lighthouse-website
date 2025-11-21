@@ -135,6 +135,6 @@ All colors MUST be HSL and follow proper contrast ratios.
     display: inline-block;
     font-weight: 700;
     white-space: nowrap;
-    transform: rotate(-1.5deg);
+    transform: rotate(0.5deg);
   }
 }
