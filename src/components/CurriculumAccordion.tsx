@@ -72,14 +72,19 @@ const CurriculumAccordion = () => {
         return (
           <motion.div
             key={science.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.08,
+              type: "spring",
+              stiffness: 100
+            }}
           >
             <AccordionItem
               value={science.id}
-              className="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-200"
+              className="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-[1.01]"
             >
               <AccordionTrigger className="px-6 py-5 font-montserrat font-semibold text-dark-teal hover:no-underline text-left">
                 <div className="flex items-center gap-4 w-full">

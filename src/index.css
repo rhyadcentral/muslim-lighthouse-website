@@ -136,5 +136,60 @@ All colors MUST be HSL and follow proper contrast ratios.
     font-weight: 700;
     white-space: nowrap;
     transform: rotate(0.5deg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced link hover effects */
+  a {
+    position: relative;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  a:not(.no-underline)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  a:not(.no-underline):hover::after {
+    width: 100%;
+  }
+
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--light-cyan));
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+    transition: outline-offset 0.2s ease;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--light-gray));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--light-cyan) / 0.3);
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--light-cyan) / 0.5);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(var(--light-cyan) / 0.2);
+    color: hsl(var(--charcoal));
   }
 }

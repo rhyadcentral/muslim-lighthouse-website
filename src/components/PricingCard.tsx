@@ -28,13 +28,22 @@ const PricingCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay }}
-      whileHover={{ y: -4 }}
+      transition={{ duration: 0.5, delay, type: "spring", stiffness: 100 }}
+      whileHover={{ y: -8, scale: 1.02 }}
       className={cn(
-        "bg-white rounded-3xl p-8 md:p-10 shadow-card-lg hover:shadow-card-hover transition-all duration-200",
+        "relative bg-white rounded-3xl p-8 md:p-10 shadow-card-lg hover:shadow-card-hover transition-all duration-300 overflow-hidden",
         isRecommended && "ring-2 ring-light-cyan ring-offset-4"
       )}
     >
+      {/* Animated gradient overlay for recommended card */}
+      {isRecommended && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-light-cyan/5 via-transparent to-dark-teal/5 opacity-0 group-hover:opacity-100"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        />
+      )}
       {/* Recommended badge */}
       {isRecommended && (
         <div className="mb-6">
@@ -77,16 +86,23 @@ const PricingCard = ({
       </div>
 
       {/* CTA Button - Simplified, clear hierarchy */}
-      <Button
-        className={cn(
-          "w-full font-montserrat font-bold text-base px-6 py-6 rounded-full transition-all duration-200 shadow-card hover:shadow-card-hover hover:-translate-y-1 active:translate-y-0",
-          isRecommended
-            ? "bg-light-cyan text-white hover:bg-dark-teal"
-            : "bg-white text-dark-teal ring-2 ring-dark-teal hover:bg-dark-teal hover:text-white"
-        )}
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
-        {isRecommended ? "Start Free Trial" : "Get Started"}
-      </Button>
+        <Button
+          className={cn(
+            "w-full font-montserrat font-bold text-base px-6 py-6 rounded-full transition-all duration-300 shadow-card hover:shadow-card-hover group/btn relative overflow-hidden",
+            isRecommended
+              ? "bg-light-cyan text-white hover:bg-dark-teal before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
+              : "bg-white text-dark-teal ring-2 ring-dark-teal hover:bg-dark-teal hover:text-white"
+          )}
+        >
+          <span className="relative z-10">
+            {isRecommended ? "Start Free Trial" : "Get Started"}
+          </span>
+        </Button>
+      </motion.div>
 
       {/* Free trial note - Using muted color for hierarchy */}
       {isRecommended && (

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface CTAButtonProps {
   className?: string;
@@ -11,22 +12,39 @@ interface CTAButtonProps {
 const CTAButton = ({ className, fullWidth = false, showSubtext = true }: CTAButtonProps) => {
   return (
     <div className={cn("flex flex-col items-center gap-3", className)}>
-      <Button
-        className={cn(
-          "bg-light-cyan text-white font-montserrat font-bold text-lg px-10 py-7 rounded-full shadow-card-lg hover:shadow-card-hover hover:-translate-y-1 hover:bg-dark-teal active:translate-y-0 transition-all duration-200 group",
-          fullWidth && "w-full"
-        )}
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className={cn(fullWidth && "w-full")}
       >
-        <span className="flex items-center gap-3 justify-center">
-          Start Your 3-Day Free Trial
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-        </span>
-      </Button>
+        <Button
+          className={cn(
+            "relative overflow-hidden bg-light-cyan text-white font-montserrat font-bold text-lg px-10 py-7 rounded-full shadow-card-lg hover:shadow-card-hover hover:bg-dark-teal active:scale-95 transition-all duration-300 group",
+            fullWidth && "w-full",
+            "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
+          )}
+        >
+          <span className="flex items-center gap-3 justify-center relative z-10">
+            Start Your 3-Day Free Trial
+            <motion.div
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </motion.div>
+          </span>
+        </Button>
+      </motion.div>
 
       {showSubtext && (
-        <p className="text-sm text-muted-foreground">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-sm text-muted-foreground"
+        >
           No credit card required • Cancel anytime
-        </p>
+        </motion.p>
       )}
     </div>
   );
