@@ -131,7 +131,7 @@ All colors MUST be HSL and follow proper contrast ratios.
     background: hsl(var(--light-cyan));
     color: white;
     padding: 0.25rem 0.875rem;
-    border-radius: 9999px;
+    border-radius: 0.75rem;
     display: inline-block;
     font-weight: 700;
     white-space: nowrap;

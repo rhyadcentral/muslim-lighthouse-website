@@ -39,7 +39,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 flex justify-center"
           >
-            <CTAButton fullWidth />
+            <CTAButton />
           </motion.div>
 
           <motion.p
@@ -237,7 +237,7 @@ const Index = () => {
             Start your journey with our Standard plan or get complete access with Premium
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-start justify-center">
             <PricingCard
               name="Standard Subscription"
               tagline="Learn on your own, at your own pace."
@@ -307,61 +307,33 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex justify-center"
           >
-            <CTAButton fullWidth />
+            <CTAButton />
           </motion.div>
         </div>
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="bg-dark-teal py-12 px-5">
+      <footer className="border-t border-gray-200 py-8 px-5">
         <div className="max-w-7xl mx-auto">
-          {/* Logo/Brand section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <h3 className="text-2xl font-bold text-white font-montserrat mb-2">
-              Muslim Lighthouse
-            </h3>
-            <p className="text-white/70 text-sm max-w-md mx-auto">
-              Your guide to structured Islamic knowledge
-            </p>
-          </motion.div>
-
-          {/* Divider */}
-          <div className="h-px bg-white/20 mb-8" />
-
-          {/* Copyright and links */}
-          <div className="text-center space-y-4">
-            <p className="text-white/80 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Brand */}
+            <div className="text-sm text-muted-foreground">
               © 2024 Muslim Lighthouse. All rights reserved.
-            </p>
-            <div className="flex justify-center gap-8 text-sm">
-              <motion.a
-                whileHover={{ y: -2, color: "#ffffff" }}
-                href="#"
-                className="text-white/70 hover:text-white transition-all duration-300"
-              >
+            </div>
+
+            {/* Links */}
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
                 Privacy Policy
-              </motion.a>
-              <motion.a
-                whileHover={{ y: -2, color: "#ffffff" }}
-                href="#"
-                className="text-white/70 hover:text-white transition-all duration-300"
-              >
-                Terms of Service
-              </motion.a>
-              <motion.a
-                whileHover={{ y: -2, color: "#ffffff" }}
-                href="#"
-                className="text-white/70 hover:text-white transition-all duration-300"
-              >
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
+                Terms
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-charcoal transition-colors">
                 Contact
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
