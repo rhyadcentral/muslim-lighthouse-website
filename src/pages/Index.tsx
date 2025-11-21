@@ -319,11 +319,11 @@ const Index = () => {
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="border-t border-gray-200 py-8 px-5">
+      <footer className="bg-deep-navy py-12 px-5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center items-center gap-3">
-            <img src={logo} alt="Muslim Lighthouse Logo" className="h-8 w-auto" />
-            <span className="text-sm text-muted-foreground">
+          <div className="flex flex-col items-center gap-4">
+            <img src={logo} alt="Muslim Lighthouse Logo" className="h-12 w-auto" />
+            <span className="text-sm text-white/70">
               © 2024 Muslim Lighthouse. All rights reserved.
             </span>
           </div>
