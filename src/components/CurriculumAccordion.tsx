@@ -72,14 +72,12 @@ const CurriculumAccordion = () => {
         return (
           <motion.div
             key={science.id}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.5,
-              delay: index * 0.08,
-              type: "spring",
-              stiffness: 100
+              duration: 0.3,
+              delay: index * 0.05
             }}
           >
             <AccordionItem

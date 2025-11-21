@@ -15,26 +15,16 @@ const Index = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal text-center mb-6 font-montserrat leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              Never Feel <motion.span
-                className="text-bubble inline-block"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 200 }}
-              >Spiritually Lost</motion.span> Again
-            </motion.h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal text-center mb-6 font-montserrat leading-tight">
+              Never Feel <span className="text-bubble">Spiritually Lost</span> Again
+            </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 100 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-charcoal text-center mb-12 max-w-3xl mx-auto leading-relaxed"
             >
               Watch this 20-minute message if you're tired of learning alone and scattered
@@ -104,17 +94,10 @@ const Index = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1, type: "spring", stiffness: 100 }}
-                  className="flex items-start gap-3 group"
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="flex items-start gap-3"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2, type: "spring", stiffness: 200 }}
-                  >
-                    <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.div>
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
                     <strong>Credentials:</strong> Holds Ijazah (traditional certification) in all Islamic sciences
                   </span>
@@ -123,17 +106,10 @@ const Index = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 100 }}
-                  className="flex items-start gap-3 group"
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex items-start gap-3"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 200 }}
-                  >
-                    <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.div>
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
                     <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scholarship
                   </span>
@@ -142,17 +118,10 @@ const Index = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3, type: "spring", stiffness: 100 }}
-                  className="flex items-start gap-3 group"
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex items-start gap-3"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 200 }}
-                  >
-                    <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.div>
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
                     <strong>Current:</strong> Based in Madinah — the city of the Prophet ﷺ
                   </span>
@@ -161,17 +130,10 @@ const Index = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 100 }}
-                  className="flex items-start gap-3 group"
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  className="flex items-start gap-3"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 200 }}
-                  >
-                    <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.div>
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
                     <strong>Experience:</strong> Taught 500+ students from confusion to confidence
                   </span>
@@ -180,17 +142,10 @@ const Index = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 100 }}
-                  className="flex items-start gap-3 group"
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                  className="flex items-start gap-3"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.6, type: "spring", stiffness: 200 }}
-                  >
-                    <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.div>
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
                     <strong>Approach:</strong> Bridges traditional knowledge with modern, relatable teaching
                   </span>

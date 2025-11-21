@@ -28,10 +28,10 @@ const PricingCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay, type: "spring", stiffness: 100 }}
-      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ duration: 0.4, delay }}
+      whileHover={{ y: -4 }}
       className={cn(
-        "relative bg-white rounded-3xl p-8 md:p-10 shadow-card-lg hover:shadow-card-hover transition-all duration-300 overflow-hidden",
+        "relative bg-white rounded-3xl p-8 md:p-10 shadow-card-lg hover:shadow-card-hover transition-all duration-200 overflow-hidden",
         isRecommended && "ring-2 ring-light-cyan ring-offset-4"
       )}
     >

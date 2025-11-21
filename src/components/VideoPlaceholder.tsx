@@ -57,7 +57,7 @@ const VideoPlaceholder = () => {
           />
 
           <motion.div
-            whileHover={{ scale: 1.15, rotate: 90 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="relative w-24 h-24 bg-light-cyan rounded-full flex items-center justify-center shadow-card-lg group-hover:bg-dark-teal transition-colors duration-300"
