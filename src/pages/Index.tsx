@@ -21,7 +21,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
               Never Feel <span className="text-bubble">Spiritually Lost</span> Again
             </h1>
             <motion.p
