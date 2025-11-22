@@ -10,9 +10,9 @@ import logo from "@/assets/muslim-lighthouse-logo.png";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* SECTION 1: Hero */}
-      <section className="py-12 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10">
+      <section className="py-12 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 2: Teacher Credibility */}
-      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray w-full max-w-full overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -70,8 +70,8 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="flex justify-center"
@@ -84,8 +84,8 @@ const Index = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="space-y-4"
@@ -95,8 +95,8 @@ const Index = () => {
               </h3>
               <ul className="space-y-3 text-charcoal">
                 <motion.li
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                   className="flex items-start gap-3"
@@ -107,8 +107,8 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 }}
                   className="flex items-start gap-3"
@@ -119,8 +119,8 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="flex items-start gap-3"
@@ -131,8 +131,8 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                   className="flex items-start gap-3"
@@ -143,8 +143,8 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                   className="flex items-start gap-3"
@@ -161,7 +161,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 3: Complete Curriculum */}
-      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -187,7 +187,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 4: Social Proof */}
-      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -220,7 +220,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 5: Pricing & Offer */}
-      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -285,7 +285,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 6: Final CTA */}
-      <section className="py-16 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 bg-light-gray">
+      <section className="py-16 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 bg-light-gray w-full max-w-full overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
