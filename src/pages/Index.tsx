@@ -51,7 +51,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-center text-muted-foreground mt-4 md:mt-6 text-sm md:text-base"
           >
-            Join 500+ students • No credit card required
+            Join 200+ students • No credit card required
           </motion.p>
         </div>
       </section>
@@ -66,7 +66,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-8 md:mb-12 font-montserrat px-2"
           >
-            Learn From a <span className="text-bubble">Qualified Scholar</span>
+            Learn From a <span className="text-bubble">Qualified Teacher</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center overflow-hidden">
@@ -140,7 +140,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Experience:</strong> Taught 500+ students from confusion to confidence
+                    <strong>Experience:</strong> Taught 700+ students from confusion to confidence
                   </span>
                 </motion.li>
                 <motion.li
@@ -197,7 +197,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-8 md:mb-12 font-montserrat px-2"
           >
-            Join <span className="text-bubble">500+ Students</span> Already Transforming Their Deen
+            Join <span className="text-bubble">200+ Students</span> Already Transforming Their Deen
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -304,7 +304,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg lg:text-xl text-charcoal mb-8 md:mb-12 px-2"
           >
-            Join 500+ students on the path from confusion to clarity
+            Join 200+ students on the path from confusion to clarity
           </motion.p>
 
           <motion.div

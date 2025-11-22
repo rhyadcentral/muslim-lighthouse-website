@@ -100,7 +100,7 @@ const VideoPlaceholder = () => {
             className="flex items-center gap-1.5 sm:gap-2 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-card hover:shadow-card-hover transition-shadow duration-200"
           >
             <Users className="w-3 h-3 sm:w-4 sm:h-4 text-light-cyan" />
-            <span className="text-xs sm:text-sm font-semibold text-charcoal">500+ students</span>
+            <span className="text-xs sm:text-sm font-semibold text-charcoal">200+ students</span>
           </motion.div>
         </motion.div>
       </div>
