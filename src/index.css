@@ -130,13 +130,21 @@ All colors MUST be HSL and follow proper contrast ratios.
   .text-bubble {
     background: hsl(var(--light-cyan));
     color: white;
-    padding: 0.25rem 0.875rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 0.75rem;
     display: inline-block;
     font-weight: 700;
-    white-space: nowrap;
+    white-space: normal;
     transform: rotate(0.5deg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    word-break: keep-all;
+  }
+
+  @media (min-width: 640px) {
+    .text-bubble {
+      padding: 0.25rem 0.875rem;
+      white-space: nowrap;
+    }
   }
 
   /* Enhanced link hover effects */

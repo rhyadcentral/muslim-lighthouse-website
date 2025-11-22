@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* SECTION 1: Hero */}
-      <section className="py-20 md:py-32 px-5 md:px-10">
+      <section className="py-12 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -20,14 +20,14 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal text-center mb-6 font-montserrat leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
               Never Feel <span className="text-bubble">Spiritually Lost</span> Again
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-charcoal text-center mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
               Watch this 20-minute message if you're tired of learning alone and scattered
             </motion.p>
@@ -39,7 +39,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 flex justify-center"
+            className="mt-8 md:mt-12 flex justify-center"
           >
             <CTAButton />
           </motion.div>
@@ -48,7 +48,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center text-muted-foreground mt-6"
+            className="text-center text-muted-foreground mt-4 md:mt-6 text-sm md:text-base"
           >
             Join 500+ students • No credit card required
           </motion.p>
@@ -56,14 +56,14 @@ const Index = () => {
       </section>
 
       {/* SECTION 2: Teacher Credibility */}
-      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-8 md:mb-12 font-montserrat px-2"
           >
             Learn From a <span className="text-bubble">Qualified Scholar</span>
           </motion.h2>
@@ -79,7 +79,7 @@ const Index = () => {
               <img
                 src={ustadhPhoto}
                 alt="Ustadh Rhyad"
-                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-lg"
+                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-3xl shadow-lg"
               />
             </motion.div>
 
@@ -161,14 +161,14 @@ const Index = () => {
       </section>
 
       {/* SECTION 3: Complete Curriculum */}
-      <section className="py-20 md:py-24 px-5 md:px-10">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-4 font-montserrat"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-3 md:mb-4 font-montserrat px-2"
           >
             Master All the <span className="text-bubble">Islamic Sciences</span>
           </motion.h2>
@@ -177,7 +177,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-charcoal text-center mb-12"
+            className="text-base md:text-lg lg:text-xl text-charcoal text-center mb-8 md:mb-12 px-2"
           >
             A complete, structured curriculum covering every essential science
           </motion.p>
@@ -187,19 +187,19 @@ const Index = () => {
       </section>
 
       {/* SECTION 4: Social Proof */}
-      <section className="py-20 md:py-24 px-5 md:px-10 bg-light-gray">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 bg-light-gray">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-12 font-montserrat"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-8 md:mb-12 font-montserrat px-2"
           >
             Join <span className="text-bubble">500+ Students</span> Already Transforming Their Deen
           </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <TestimonialCard
               quote="I finally have structure. For the first time, I know exactly what to study next."
               name="Muslim Lighthouse Student"
@@ -220,14 +220,14 @@ const Index = () => {
       </section>
 
       {/* SECTION 5: Pricing & Offer */}
-      <section className="py-20 md:py-24 px-5 md:px-10">
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal text-center mb-6 font-montserrat"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat px-2"
           >
             Choose Your <span className="text-bubble">Path to Knowledge</span>
           </motion.h2>
@@ -236,12 +236,12 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-charcoal text-center mb-16 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-charcoal text-center mb-8 md:mb-12 lg:mb-16 max-w-3xl mx-auto px-2"
           >
             Start your journey with our Standard plan or get complete access with Premium
           </motion.p>
 
-          <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto items-start justify-center">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 max-w-6xl mx-auto items-stretch md:items-start justify-center">
             <PricingCard
               name="Standard Subscription"
               tagline="Learn on your own, at your own pace."
@@ -277,7 +277,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-charcoal/70 mt-12 text-lg"
+            className="text-center text-charcoal/70 mt-8 md:mt-12 text-sm md:text-base lg:text-lg px-4"
           >
             Both plans are less than a daily coffee. Way less than hiring a private tutor.
           </motion.p>
@@ -285,14 +285,14 @@ const Index = () => {
       </section>
 
       {/* SECTION 6: Final CTA */}
-      <section className="py-24 md:py-32 px-5 md:px-10 bg-light-gray">
+      <section className="py-16 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 bg-light-gray">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 font-montserrat"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-4 md:mb-6 font-montserrat px-2"
           >
             Start Your <span className="text-bubble">3-Day Free Trial</span> Now
           </motion.h2>
@@ -301,7 +301,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-charcoal mb-12"
+            className="text-base md:text-lg lg:text-xl text-charcoal mb-8 md:mb-12 px-2"
           >
             Join 500+ students on the path from confusion to clarity
           </motion.p>
@@ -319,11 +319,11 @@ const Index = () => {
       </section>
 
       {/* SECTION 7: Footer */}
-      <footer className="bg-deep-navy py-12 px-5">
+      <footer className="bg-deep-navy py-8 md:py-12 px-4 md:px-5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center gap-4">
-            <img src={logo} alt="Muslim Lighthouse Logo" className="h-12 w-auto" />
-            <span className="text-sm text-white/70">
+          <div className="flex flex-col items-center gap-3 md:gap-4">
+            <img src={logo} alt="Muslim Lighthouse Logo" className="h-10 sm:h-12 w-auto" />
+            <span className="text-xs sm:text-sm text-white/70 text-center">
               © 2024 Muslim Lighthouse. All rights reserved.
             </span>
           </div>
