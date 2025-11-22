@@ -68,11 +68,11 @@ const Index = () => {
             Learn From a <span className="text-bubble">Qualified Scholar</span>
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
@@ -84,9 +84,9 @@ const Index = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
@@ -95,9 +95,9 @@ const Index = () => {
               </h3>
               <ul className="space-y-3 text-charcoal">
                 <motion.li
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                   className="flex items-start gap-3"
                 >
@@ -107,9 +107,9 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
                   className="flex items-start gap-3"
                 >
@@ -119,9 +119,9 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="flex items-start gap-3"
                 >
@@ -131,9 +131,9 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                   className="flex items-start gap-3"
                 >
@@ -143,9 +143,9 @@ const Index = () => {
                   </span>
                 </motion.li>
                 <motion.li
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                   className="flex items-start gap-3"
                 >
