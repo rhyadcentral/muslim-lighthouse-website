@@ -43,7 +43,7 @@ const CTAButton = ({ className, fullWidth = false, showSubtext = true }: CTAButt
           transition={{ delay: 0.2 }}
           className="text-sm text-muted-foreground"
         >
-          No credit card required • Cancel anytime
+          200+ active students • Cancel anytime
         </motion.p>
       )}
     </div>
