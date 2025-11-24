@@ -143,7 +143,7 @@ const CurriculumAccordion = () => {
               </AccordionTrigger>
 
               <AccordionContent className="px-6 pb-5 pt-2">
-                <ul className="space-y-3 pl-14">
+                <ul className="space-y-3 pl-6 md:pl-14">
                   {science.courses.map((course, idx) => {
                     // Split course into name and description (if there's a dash)
                     const parts = course.name.split(' - ');
@@ -151,9 +151,9 @@ const CurriculumAccordion = () => {
                     const description = parts.length > 1 ? parts.slice(1).join(' - ') : '';
 
                     return (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="flex-shrink-0 mt-0.5">
-                          • <span className="underline">Course {idx + 1}:</span> <strong className={course.comingSoon ? "text-muted-foreground/70" : ""}>{courseName}</strong>{description && ` - ${description}`}
+                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2 flex-wrap">
+                        <span className="flex-1 min-w-0 mt-0.5">
+                          • <span className="underline">Course {idx + 1}</span>: <strong className={course.comingSoon ? "text-muted-foreground/70" : ""}>{courseName}</strong>{description && ` - ${description}`}
                         </span>
                         {course.comingSoon && (
                           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-light-cyan/10 text-light-cyan text-xs font-medium whitespace-nowrap flex-shrink-0 mt-0.5">
