@@ -97,7 +97,7 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden py-4" ref={emblaRef}>
+      <div className="overflow-hidden py-8 px-2" ref={emblaRef}>
         <div className="flex gap-4 md:gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
