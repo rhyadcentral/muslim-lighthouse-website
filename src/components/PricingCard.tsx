@@ -107,7 +107,7 @@ const PricingCard = ({
       {/* Free trial note - Using muted color for hierarchy */}
       {isRecommended && (
         <p className="text-center text-xs text-muted-foreground mt-4">
-          3-day free trial • No credit card required
+          200+ active students • Cancel anytime
         </p>
       )}
     </motion.div>

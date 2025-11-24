@@ -65,7 +65,7 @@ const curriculumData = [
   {
     id: "usul",
     title: "Usul Al-Fiqh (Principles of Jurisprudence)",
-    courses: ["Foundations of Fiqh"],
+    courses: ["Foundations of Fiqh - Studying 'Al-Waraqat' to gain deep understanding"],
     icon: BookOpen,
   },
   {
