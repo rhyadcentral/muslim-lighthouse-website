@@ -236,6 +236,7 @@ const Index = () => {
                 "🕌 Invitation to in-person events to strengthen bonds & recharge your imān",
               ]}
               bottomNote="👉 Good if you just want the knowledge without the community or guidance."
+              href="https://www.muslimlighthouse.app/checkout/standard-membership"
               delay={0}
             />
             <PricingCard
@@ -251,6 +252,7 @@ const Index = () => {
                 "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
               ]}
               bottomNote="👉 Knowledge fades. Habits shape who you become. This keeps you on track every single week."
+              href="https://www.muslimlighthouse.app/checkout/premium-membership"
               isRecommended={true}
               delay={0.1}
             />

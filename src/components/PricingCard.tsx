@@ -11,6 +11,7 @@ interface PricingCardProps {
   bottomNote: string;
   isRecommended?: boolean;
   delay?: number;
+  href?: string;
 }
 
 const PricingCard = ({
@@ -22,6 +23,7 @@ const PricingCard = ({
   bottomNote,
   isRecommended = false,
   delay = 0,
+  href = "https://www.muslimlighthouse.app/checkout/premium-membership",
 }: PricingCardProps) => {
   return (
     <motion.div
@@ -91,6 +93,7 @@ const PricingCard = ({
         whileTap={{ scale: 0.98 }}
       >
         <Button
+          asChild
           className={cn(
             "w-full font-montserrat font-bold text-base px-6 py-6 rounded-full transition-all duration-300 shadow-card hover:shadow-card-hover group/btn relative overflow-hidden",
             isRecommended
@@ -98,9 +101,11 @@ const PricingCard = ({
               : "bg-white text-dark-teal ring-2 ring-dark-teal hover:bg-dark-teal hover:text-white"
           )}
         >
-          <span className="relative z-10">
-            {isRecommended ? "Start Free Trial" : "Get Started"}
-          </span>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <span className="relative z-10">
+              {isRecommended ? "Start Free Trial" : "Get Started"}
+            </span>
+          </a>
         </Button>
       </motion.div>
 
