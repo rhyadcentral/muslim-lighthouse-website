@@ -24,7 +24,7 @@ const Index = () => {
             <motion.img
               src={logo}
               alt="Muslim Lighthouse Logo"
-              className="h-16 sm:h-20 md:h-24 w-auto mx-auto mb-6 md:mb-8"
+              className="h-10 sm:h-12 md:h-14 w-auto mx-auto mb-6 md:mb-8"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
