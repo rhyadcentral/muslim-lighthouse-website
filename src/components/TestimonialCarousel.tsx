@@ -96,8 +96,8 @@ const TestimonialCarousel = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative py-8 pb-12 -mx-4 md:-mx-0">
-      <div className="overflow-hidden px-4 md:px-0" ref={emblaRef}>
+    <div className="relative py-8 pb-16 -mx-4 md:-mx-0">
+      <div className="overflow-x-clip overflow-y-visible px-4 md:px-0 py-4" ref={emblaRef}>
         <div className="flex gap-4 md:gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -106,7 +106,7 @@ const TestimonialCarousel = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex-[0_0_calc(100%-32px)] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
+              className="flex-[0_0_calc(100%-32px)] md:flex-[0_0_calc(50%-16px)] lg:flex-[0_0_calc(33.333%-20px)] min-w-0"
             >
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-card-lg hover:shadow-card-hover transition-all duration-200 h-full flex flex-col">
                 {/* Quote icon */}
