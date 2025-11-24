@@ -19,12 +19,12 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-6"
+            className="text-center mb-8"
           >
             <motion.img
               src={logo}
               alt="Muslim Lighthouse Logo"
-              className="h-10 sm:h-12 md:h-14 w-auto mx-auto mb-4 md:mb-6"
+              className="h-10 sm:h-12 md:h-14 w-auto mx-auto mb-8 md:mb-10 lg:mb-12"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -36,7 +36,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-2"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
               Join 200+ students who stopped scattered learning and started a real transformation
             </motion.p>
@@ -48,7 +48,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 md:mt-8 flex justify-center"
+            className="mt-8 md:mt-12 flex justify-center"
           >
             <CTAButton />
           </motion.div>
