@@ -308,7 +308,7 @@ const Index = () => {
           <div className="flex flex-col items-center gap-3 md:gap-4">
             <img src={logo} alt="Muslim Lighthouse Logo" className="h-10 sm:h-12 w-auto" />
             <span className="text-xs sm:text-sm text-white/70 text-center">
-              © 2024 Muslim Lighthouse. All rights reserved.
+              © 2026 Muslim Lighthouse. All rights reserved.
             </span>
           </div>
         </div>
