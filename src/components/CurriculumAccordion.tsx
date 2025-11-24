@@ -127,11 +127,18 @@ const CurriculumAccordion = () => {
 
               <AccordionContent className="px-6 pb-5 pt-2">
                 <ul className="space-y-2 pl-14">
-                  {science.courses.map((course, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground">
-                      • {course}
-                    </li>
-                  ))}
+                  {science.courses.map((course, idx) => {
+                    // Split course into name and description (if there's a dash)
+                    const parts = course.split(' - ');
+                    const courseName = parts[0];
+                    const description = parts.length > 1 ? parts.slice(1).join(' - ') : '';
+
+                    return (
+                      <li key={idx} className="text-sm text-muted-foreground">
+                        • <span className="underline">Course {idx + 1}:</span> <strong>{courseName}</strong>{description && ` - ${description}`}
+                      </li>
+                    );
+                  })}
                 </ul>
               </AccordionContent>
             </AccordionItem>
