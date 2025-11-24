@@ -11,56 +11,83 @@ const curriculumData = [
   {
     id: "aqeedah",
     title: "Aqeedah (Islamic Creed)",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]", "Course 3: [Placeholder]"],
-    icon: Star,
-  },
-  {
-    id: "fiqh",
-    title: "Fiqh (Islamic Jurisprudence)",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]"],
-    icon: BookOpen,
-  },
-  {
-    id: "tafsir",
-    title: "Tafsir (Quranic Exegesis)",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]"],
-    icon: GraduationCap,
-  },
-  {
-    id: "hadith",
-    title: "Hadith (Prophetic Traditions)",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]"],
-    icon: BookOpen,
-  },
-  {
-    id: "arabic",
-    title: "Arabic Language",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]"],
-    icon: GraduationCap,
-  },
-  {
-    id: "seerah",
-    title: "Seerah (Prophetic Biography)",
-    courses: ["Course 1: [Placeholder]", "Course 2: [Placeholder]"],
-    icon: Star,
-  },
-  {
-    id: "usul",
-    title: "Usul al-Fiqh (Principles of Jurisprudence)",
-    courses: ["Course 1: [Placeholder]"],
-    icon: BookOpen,
-  },
-  {
-    id: "mantiq",
-    title: "Mantiq (Islamic Logic)",
-    courses: ["Course 1: [Placeholder]"],
+    courses: ["Illuminate Program - Flagship program that will lay the foundations and change your life"],
     icon: Star,
   },
   {
     id: "tazkiyah",
-    title: "Purification of the Soul (Tazkiyah)",
-    courses: ["Course 1: [Placeholder]"],
+    title: "Tazkiyah (Purification of the Heart)",
+    courses: [
+      "The Sound Heart - Curing and Beautifying your Heart",
+      "Before You Seek - Character of Student of Knowledge",
+      "Your Parents - Fix your Dunya & Akhira through your parents",
+      "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ"
+    ],
     icon: BookOpen,
+  },
+  {
+    id: "fiqh",
+    title: "Fiqh (Islamic Jurisprudence)",
+    courses: [
+      "Fiqh of Purification",
+      "Fiqh of Prayer",
+      "Fiqh of Fasting",
+      "Fiqh of Zakat",
+      "Fiqh of Hajj",
+      "Fiqh of Marriage",
+      "Fiqh of Business",
+      "More chapters to be covered"
+    ],
+    icon: BookOpen,
+  },
+  {
+    id: "tafsir",
+    title: "Tafsir (Quran Exegesis)",
+    courses: [
+      "Gems of Surah Kahf",
+      "Gems of Surah An-Naba'",
+      "More chapters coming soon"
+    ],
+    icon: GraduationCap,
+  },
+  {
+    id: "mustalah",
+    title: "Mustalah Al-Hadith (Science of Hadith)",
+    courses: ["Advanced Hadith Sciences - Understand the Mechanics behind Hadith literature"],
+    icon: Star,
+  },
+  {
+    id: "hadith",
+    title: "Hadith (Prophetic Teachings)",
+    courses: ["40 Hadith Nawawi - Practical Hadiths that cover Iman, ethics, worship and leadership"],
+    icon: BookOpen,
+  },
+  {
+    id: "usul",
+    title: "Usul Al-Fiqh (Principles of Jurisprudence)",
+    courses: ["Foundations of Fiqh"],
+    icon: BookOpen,
+  },
+  {
+    id: "seerah",
+    title: "Seerah (Prophetic Biography)",
+    courses: [
+      "Enchanting Gaze into the life of Prophet Muhammad ﷺ",
+      "The Battles of the Prophet Muhammad ﷺ"
+    ],
+    icon: Star,
+  },
+  {
+    id: "mantiq",
+    title: "Mantiq (Logic)",
+    courses: ["Stairway to the Art of Logic"],
+    icon: Star,
+  },
+  {
+    id: "arabic",
+    title: "Arabic Language",
+    courses: ["How to read Quran from scratch"],
+    icon: GraduationCap,
   },
 ];
 
