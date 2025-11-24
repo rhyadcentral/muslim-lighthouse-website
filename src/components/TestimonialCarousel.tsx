@@ -3,6 +3,7 @@ import { Quote } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Testimonial {
   quote: string;
@@ -57,15 +58,18 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: 'start',
-    slidesToScroll: 1,
-    breakpoints: {
-      '(min-width: 768px)': { slidesToScroll: 2 },
-      '(min-width: 1024px)': { slidesToScroll: 3 }
-    }
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'start',
+      slidesToScroll: 1,
+      breakpoints: {
+        '(min-width: 768px)': { slidesToScroll: 2 },
+        '(min-width: 1024px)': { slidesToScroll: 3 }
+      }
+    },
+    [Autoplay({ delay: 4000, stopOnInteraction: true })]
+  );
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -93,7 +97,7 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden py-4" ref={emblaRef}>
         <div className="flex gap-4 md:gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
