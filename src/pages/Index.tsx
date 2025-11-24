@@ -103,7 +103,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Credentials:</strong> Holds Ijazah (traditional certification) in all Islamic sciences
+                    <strong>Credentials:</strong> Holds Ijazah (formal authorization) in all Islamic sciences
                   </span>
                 </motion.li>
                 <motion.li
