@@ -96,7 +96,7 @@ const TestimonialCarousel = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative py-8 -mx-4 md:-mx-0">
+    <div className="relative py-8 pb-12 -mx-4 md:-mx-0">
       <div className="overflow-hidden px-4 md:px-0" ref={emblaRef}>
         <div className="flex gap-4 md:gap-6">
           {testimonials.map((testimonial, index) => (
@@ -121,10 +121,10 @@ const TestimonialCarousel = () => {
                   "{testimonial.quote}"
                 </p>
 
-                {/* Author with avatar image */}
+                {/* Author with abstract avatar */}
                 <div className="flex items-center gap-3">
                   <img
-                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${testimonial.name}&backgroundColor=b6e3f4`}
+                    src={`https://api.dicebear.com/7.x/shapes/svg?seed=${testimonial.name}&backgroundColor=b6e3f4`}
                     alt={testimonial.name}
                     className="w-10 h-10 rounded-full shadow-card"
                   />
