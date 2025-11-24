@@ -38,7 +38,22 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who replaced <span className="underline decoration-light-cyan decoration-2 underline-offset-4 text-dark-teal font-semibold">scattered learning</span> with <span className="underline decoration-light-cyan decoration-2 underline-offset-4 text-dark-teal font-semibold">structure</span> and are being transformed <span className="underline decoration-light-cyan decoration-2 underline-offset-4 text-dark-teal font-semibold">right now</span>
+              Join 200+ students who replaced <span className="relative inline-block font-semibold">
+                <span className="relative z-10">scattered learning</span>
+                <svg className="absolute left-0 bottom-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
+                  <path d="M0,4 Q25,1 50,4 T100,4" stroke="#5DADE2" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                </svg>
+              </span> with <span className="relative inline-block font-semibold">
+                <span className="relative z-10">structure</span>
+                <svg className="absolute left-0 bottom-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
+                  <path d="M0,4 Q25,1 50,4 T100,4" stroke="#5DADE2" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                </svg>
+              </span> and are being transformed <span className="relative inline-block font-semibold">
+                <span className="relative z-10">right now</span>
+                <svg className="absolute left-0 bottom-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
+                  <path d="M0,4 Q25,1 50,4 T100,4" stroke="#5DADE2" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                </svg>
+              </span>
             </motion.p>
           </motion.div>
 
