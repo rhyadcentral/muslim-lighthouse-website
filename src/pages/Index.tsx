@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who stopped scattered learning and started a real transformation
+              Join <span className="text-bubble">200+ students</span> who <span className="text-bubble">stopped scattered learning</span> and started a <span className="text-bubble">real transformation</span>
             </motion.p>
           </motion.div>
 
