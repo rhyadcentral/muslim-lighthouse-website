@@ -38,22 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who replaced <span className="relative inline-block font-semibold pb-2">
-                <span className="relative z-10">scattered learning</span>
-                <svg className="absolute left-0 -bottom-1 w-full" height="6" viewBox="0 0 100 6" preserveAspectRatio="none">
-                  <path d="M0,3 Q25,2 50,3 T100,3" stroke="#5DADE2" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                </svg>
-              </span> with <span className="relative inline-block font-semibold pb-2">
-                <span className="relative z-10">structure</span>
-                <svg className="absolute left-0 -bottom-1 w-full" height="6" viewBox="0 0 100 6" preserveAspectRatio="none">
-                  <path d="M0,3 Q25,2 50,3 T100,3" stroke="#5DADE2" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                </svg>
-              </span> and are being transformed <span className="relative inline-block font-semibold pb-2">
-                <span className="relative z-10">right now</span>
-                <svg className="absolute left-0 -bottom-1 w-full" height="6" viewBox="0 0 100 6" preserveAspectRatio="none">
-                  <path d="M0,3 Q25,2 50,3 T100,3" stroke="#5DADE2" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                </svg>
-              </span>
+              Join 200+ students who replaced <span className="font-semibold">scattered learning</span> with <span className="font-semibold">structure</span> and are being transformed <span className="font-semibold">right now</span>
             </motion.p>
           </motion.div>
 
