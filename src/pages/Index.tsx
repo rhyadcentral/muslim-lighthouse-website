@@ -1,7 +1,7 @@
 import CTAButton from "@/components/CTAButton";
 import CurriculumAccordion from "@/components/CurriculumAccordion";
 import PricingCard from "@/components/PricingCard";
-import TestimonialCard from "@/components/TestimonialCard";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
@@ -200,23 +200,7 @@ const Index = () => {
             Join <span className="text-bubble">200+ Students</span> Already Transforming Their Deen
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <TestimonialCard
-              quote="I finally have structure. For the first time, I know exactly what to study next."
-              name="Muslim Lighthouse Student"
-              delay={0}
-            />
-            <TestimonialCard
-              quote="I've learned more in 3 months with Muslim Lighthouse than in years on my own."
-              name="Muslim Lighthouse Student"
-              delay={0.1}
-            />
-            <TestimonialCard
-              quote="The community keeps me accountable. I'm not alone anymore."
-              name="Muslim Lighthouse Student"
-              delay={0.2}
-            />
-          </div>
+          <TestimonialCarousel />
         </div>
       </section>
 
