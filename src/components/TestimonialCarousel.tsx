@@ -180,7 +180,7 @@ const TestimonialCarousel = () => {
                 <p className="text-sm md:text-base leading-relaxed text-charcoal mb-6 flex-1">
                   "{highlightKeywords(testimonial.quote, testimonial.keywords).map((part, i) => (
                     part.isHighlight ? (
-                      <span key={i} className="bg-light-cyan/15 px-1 rounded">
+                      <span key={i} className="bg-light-cyan/15 px-1 rounded font-semibold">
                         {part.text}
                       </span>
                     ) : (
