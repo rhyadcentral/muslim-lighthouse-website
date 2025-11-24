@@ -21,6 +21,14 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
+            <motion.img
+              src={logo}
+              alt="Muslim Lighthouse Logo"
+              className="h-16 sm:h-20 md:h-24 w-auto mx-auto mb-6 md:mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            />
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
               You'll Never Feel <span className="text-bubble">Spiritually Lost</span> Again
             </h1>
@@ -30,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join <span className="text-bubble font-semibold">200+ students</span> who <span className="text-bubble font-semibold">stopped scattered learning</span> and started a <span className="text-bubble font-semibold">real transformation</span>
+              Join 200+ students who stopped scattered learning and started a real transformation
             </motion.p>
           </motion.div>
 
