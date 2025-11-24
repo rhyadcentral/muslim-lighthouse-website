@@ -52,15 +52,6 @@ const Index = () => {
           >
             <CTAButton />
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center text-muted-foreground mt-4 md:mt-6 text-sm md:text-base"
-          >
-            Join 200+ students • No credit card required
-          </motion.p>
         </div>
       </section>
 
