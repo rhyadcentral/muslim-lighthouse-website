@@ -127,7 +127,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Current:</strong> Based in Madinah — the city of the Prophet ﷺ
+                    <strong>Current:</strong> Studying in Madinah — the city of the Prophet ﷺ
                   </span>
                 </motion.li>
                 <motion.li

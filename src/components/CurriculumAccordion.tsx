@@ -110,8 +110,9 @@ const curriculumData = [
 
 const CurriculumAccordion = () => {
   return (
-    <Accordion type="single" collapsible className="w-full max-w-[900px] mx-auto space-y-3">
-      {curriculumData.map((science, index) => {
+    <div className="w-full">
+      <Accordion type="single" collapsible className="w-full max-w-[900px] mx-auto space-y-3">
+        {curriculumData.map((science, index) => {
         const Icon = science.icon;
         return (
           <motion.div
@@ -171,6 +172,10 @@ const CurriculumAccordion = () => {
         );
       })}
     </Accordion>
+    <p className="text-center text-xs text-muted-foreground mt-6 max-w-[900px] mx-auto">
+      * Courses marked as "Coming Soon" will be taught in live classes
+    </p>
+    </div>
   );
 };
 
