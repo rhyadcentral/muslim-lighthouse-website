@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* SECTION 1: Hero */}
-      <section className="py-8 md:py-12 lg:py-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
+      <section className="pt-6 pb-8 md:pt-9 md:pb-12 lg:pt-12 lg:pb-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-br from-light-cyan/5 via-transparent to-dark-teal/5" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
