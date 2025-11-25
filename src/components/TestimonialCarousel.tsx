@@ -160,12 +160,8 @@ const TestimonialCarousel = () => {
       <div className="overflow-x-clip overflow-y-visible py-4" ref={emblaRef}>
         <div className="flex gap-4 md:gap-6 px-4 md:px-0">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="flex-[0_0_calc(100%-2rem)] md:flex-[0_0_calc(50%-0.75rem)] lg:flex-[0_0_calc(33.333%-1rem)] min-w-0"
             >
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-card-lg hover:shadow-card-hover transition-all duration-200 h-full flex flex-col">
@@ -202,7 +198,7 @@ const TestimonialCarousel = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
