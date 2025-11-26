@@ -38,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who replaced <span className="font-semibold">scattered learning</span> with <span className="font-semibold">structure</span> and are being transformed <span className="font-semibold">right now</span>
+              Join 200+ students who transformed in under 3 months
             </motion.p>
           </motion.div>
 
