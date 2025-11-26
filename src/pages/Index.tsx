@@ -247,7 +247,7 @@ const Index = () => {
                 "Everything in Standard – PLUS:",
                 "👨‍🏫 Direct access to your teacher for questions, mentorship & guidance",
                 "📅 Live weekly sessions to interact, ask, and grow in real-time",
-                "🤝 Brothers-only & sisters-only weekly sessions – safe, supportive spaces to share doubts, ask personal questions, and connect deeply with others on the same path",
+                "Safe, supportive spaces to share doubts, ask questions, and connect deeply with others on the same path",
                 "🚻 Private, segregated community for brothers & sisters – study, grow & connect together",
                 "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
               ]}
