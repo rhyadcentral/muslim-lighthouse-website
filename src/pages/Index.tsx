@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             />
             <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
-              You'll Never Feel <span className="text-bubble">Spiritually Lost</span> Again
+              The <span className="text-bubble">Fastest Way</span> to Go From "<span className="font-semibold">Googling Fatawa at 2am</span>" to <span className="text-bubble">Actually Knowing</span> Your Deen
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
