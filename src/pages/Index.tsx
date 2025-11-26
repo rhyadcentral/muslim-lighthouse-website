@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* SECTION 1: Hero */}
-      <section className="pt-6 pb-8 md:pt-9 md:pb-12 lg:pt-12 lg:pb-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
+      <section className="pt-5 pb-8 md:pt-7 md:pb-12 lg:pt-10 lg:pb-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-br from-light-cyan/5 via-transparent to-dark-teal/5" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -24,13 +24,13 @@ const Index = () => {
             <motion.img
               src={logo}
               alt="Muslim Lighthouse Logo"
-              className="h-10 sm:h-12 md:h-14 w-auto mx-auto mb-8 md:mb-10 lg:mb-12"
+              className="h-9 sm:h-11 md:h-13 w-auto mx-auto mb-6 md:mb-8 lg:mb-10"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             />
-            <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
-              You'll Never Feel <span className="text-bubble">Spiritually Lost</span> Again
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
+              The <span className="text-bubble">Fastest Way</span> to go from Googling Islamic Questions to <span className="text-bubble">Actually Knowing</span> Your Deen
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who replaced <span className="font-semibold">scattered learning</span> with <span className="font-semibold">structure</span> and are being transformed <span className="font-semibold">right now</span>
+              Join <span className="font-semibold">200+ Students</span> who <span className="font-semibold">transformed</span> in <span className="font-semibold">as little as 3 months</span>
             </motion.p>
           </motion.div>
 
