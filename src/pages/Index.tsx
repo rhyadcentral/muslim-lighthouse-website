@@ -38,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join 200+ students who transformed in under 3 months
+              Join <span className="font-semibold">200+ Students</span> who <span className="font-semibold">transformed</span> in <span className="font-semibold">under 3 months</span>
             </motion.p>
           </motion.div>
 
