@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* SECTION 1: Hero */}
-      <section className="pt-6 pb-8 md:pt-9 md:pb-12 lg:pt-12 lg:pb-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
+      <section className="pt-5 pb-8 md:pt-7 md:pb-12 lg:pt-10 lg:pb-16 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-br from-light-cyan/5 via-transparent to-dark-teal/5" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -24,7 +24,7 @@ const Index = () => {
             <motion.img
               src={logo}
               alt="Muslim Lighthouse Logo"
-              className="h-9 sm:h-11 md:h-13 w-auto mx-auto mb-8 md:mb-10 lg:mb-12"
+              className="h-9 sm:h-11 md:h-13 w-auto mx-auto mb-6 md:mb-8 lg:mb-10"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
