@@ -29,7 +29,7 @@ const Index = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             />
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-snug md:leading-[2.5] px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
               The <span className="text-bubble">Fastest Way</span> to Go From "Googling Fatawa at 2am" to <span className="text-bubble">Actually Knowing</span> Your Deen
             </h1>
             <motion.p
