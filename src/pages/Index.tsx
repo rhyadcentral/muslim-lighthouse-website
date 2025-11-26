@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             />
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
-              The <span className="text-bubble">Fastest Way</span> to go from <span className="text-bubble">Googling</span> Islamic Questions to <span className="text-bubble">Actually Knowing</span> Your Deen
+              The <span className="text-bubble">Fastest Way</span> to go from Googling Islamic Questions to <span className="text-bubble">Actually Knowing</span> Your Deen
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
