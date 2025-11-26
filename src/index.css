@@ -159,6 +159,13 @@ All colors MUST be HSL and follow proper contrast ratios.
     }
   }
 
+  @media (min-width: 1024px) {
+    .text-bubble {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
   /* Enhanced link hover effects */
   a {
     position: relative;
