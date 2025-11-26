@@ -14,7 +14,7 @@ const VideoPlaceholder = () => {
             i.getElementsByTagName("head")[0].appendChild(s);
         };}
         vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-      })(window, document, 'Vidalytics', 'vidalytics_embed_GQ1SNvW_df7z8fz5', 'https://fast.vidalytics.com/embeds/VrIWs5gE/GQ1SNvW_df7z8fz5/');
+      })(window, document, 'Vidalytics', 'vidalytics_embed_EfQlZHkuGfyWz_Ol', 'https://fast.vidalytics.com/embeds/VrIWs5gE/EfQlZHkuGfyWz_Ol/');
     `;
     document.body.appendChild(script);
 
@@ -27,7 +27,7 @@ const VideoPlaceholder = () => {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div
-        id="vidalytics_embed_GQ1SNvW_df7z8fz5"
+        id="vidalytics_embed_EfQlZHkuGfyWz_Ol"
         style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
       />
     </div>
