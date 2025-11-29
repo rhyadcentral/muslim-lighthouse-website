@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             />
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
-              Learn the <span className="text-bubble">knowledge</span> that <span className="text-bubble">earns the pleasure of Allah ﷻ</span>
+              Learn what <span className="text-bubble">every Muslim</span> is <span className="text-bubble">required to know</span>
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
