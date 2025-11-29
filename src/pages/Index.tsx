@@ -30,7 +30,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             />
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat leading-tight px-2">
-              The <span className="text-bubble">Fastest Way</span> to go from Googling Islamic Questions to <span className="text-bubble">Actually Knowing</span> Your Deen
+              Learn what <span className="text-bubble">every Muslim</span><br />is <span className="text-bubble">required to know</span>
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              Join <span className="font-semibold">200+ Students</span> who <span className="font-semibold">transformed</span> in <span className="font-semibold">as little as 3 months</span>
+              An <span className="font-semibold">Islamic University</span> <span className="font-semibold">in your pocket</span>… made for those with a <span className="font-semibold">busy, distracting life</span>
             </motion.p>
           </motion.div>
 
