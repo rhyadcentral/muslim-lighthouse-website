@@ -37,27 +37,33 @@ const VideoPlaceholder = () => {
         setPlayer(wistiaPlayer);
 
         // Listen for play event to confirm autoplay worked
-        const handlePlay = () => {
+        const handleAutoplay = () => {
+          // Autoplay succeeded - show overlay
           setShowOverlay(true);
-          wistiaPlayer.removeEventListener('play', handlePlay);
+          wistiaPlayer.removeEventListener('play', handleAutoplay);
         };
 
-        wistiaPlayer.addEventListener('play', handlePlay);
+        wistiaPlayer.addEventListener('play', handleAutoplay);
 
-        // Try to play the video
+        // Try to play the video with autoplay
         const playPromise = wistiaPlayer.play();
 
         if (playPromise !== undefined) {
           playPromise.catch(() => {
-            // Autoplay was blocked, remove the event listener
-            wistiaPlayer.removeEventListener('play', handlePlay);
+            // Autoplay was blocked - unmute for manual play
+            wistiaPlayer.removeEventListener('play', handleAutoplay);
+            wistiaPlayer.muted = false;
             setShowOverlay(false);
           });
         }
 
-        // Safety timeout - if no play event after 2 seconds, assume autoplay failed
+        // Safety timeout - if no play event after 2 seconds, assume autoplay failed and unmute
         setTimeout(() => {
-          wistiaPlayer.removeEventListener('play', handlePlay);
+          wistiaPlayer.removeEventListener('play', handleAutoplay);
+          // If overlay isn't showing, autoplay failed - unmute for manual play
+          if (!showOverlay) {
+            wistiaPlayer.muted = false;
+          }
         }, 2000);
 
         clearInterval(checkPlayer);
@@ -77,7 +83,7 @@ const VideoPlaceholder = () => {
         document.head.removeChild(style);
       }
     };
-  }, []);
+  }, [showOverlay]);
 
   const handleUnmute = () => {
     if (player) {
