@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const VideoPlaceholder = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [player, setPlayer] = useState<any>(null);
+  const autoplaySucceeded = useRef(false);
 
   useEffect(() => {
     // Inject Wistia player script
@@ -38,7 +39,8 @@ const VideoPlaceholder = () => {
 
         // Listen for play event to confirm autoplay worked
         const handleAutoplay = () => {
-          // Autoplay succeeded - show overlay
+          // Autoplay succeeded - show overlay and mark as succeeded
+          autoplaySucceeded.current = true;
           setShowOverlay(true);
           wistiaPlayer.removeEventListener('play', handleAutoplay);
         };
@@ -60,8 +62,8 @@ const VideoPlaceholder = () => {
         // Safety timeout - if no play event after 2 seconds, assume autoplay failed and unmute
         setTimeout(() => {
           wistiaPlayer.removeEventListener('play', handleAutoplay);
-          // If overlay isn't showing, autoplay failed - unmute for manual play
-          if (!showOverlay) {
+          // If autoplay didn't succeed, unmute for manual play
+          if (!autoplaySucceeded.current) {
             wistiaPlayer.muted = false;
           }
         }, 2000);
@@ -83,10 +85,13 @@ const VideoPlaceholder = () => {
         document.head.removeChild(style);
       }
     };
-  }, [showOverlay]);
+  }, []);
 
   const handleUnmute = () => {
     if (player) {
+      // Restart video from beginning
+      player.currentTime = 0;
+      // Unmute and play
       player.muted = false;
       player.play();
       setShowOverlay(false);
