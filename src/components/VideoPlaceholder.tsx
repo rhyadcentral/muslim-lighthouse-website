@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 const VideoPlaceholder = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [player, setPlayer] = useState<any>(null);
-  const autoplaySucceeded = useRef(false);
+  const autoplayAttemptTime = useRef<number>(0);
 
   useEffect(() => {
     // Inject Wistia player script
@@ -38,22 +38,26 @@ const VideoPlaceholder = () => {
         setPlayer(wistiaPlayer);
 
         // Listen for play event to confirm autoplay worked
-        const handleAutoplay = () => {
-          // Autoplay succeeded - show overlay and mark as succeeded
-          autoplaySucceeded.current = true;
-          setShowOverlay(true);
-          wistiaPlayer.removeEventListener('play', handleAutoplay);
+        const handlePlay = () => {
+          const timeSinceAttempt = Date.now() - autoplayAttemptTime.current;
+          // Only show overlay if play happened within 500ms of autoplay attempt
+          // This means it was autoplay, not manual play
+          if (timeSinceAttempt < 500) {
+            setShowOverlay(true);
+          }
+          wistiaPlayer.removeEventListener('play', handlePlay);
         };
 
-        wistiaPlayer.addEventListener('play', handleAutoplay);
+        wistiaPlayer.addEventListener('play', handlePlay);
 
-        // Try to play the video with autoplay
+        // Record autoplay attempt time and try to play the video
+        autoplayAttemptTime.current = Date.now();
         const playPromise = wistiaPlayer.play();
 
         if (playPromise !== undefined) {
           playPromise.catch(() => {
             // Autoplay was blocked - unmute for manual play
-            wistiaPlayer.removeEventListener('play', handleAutoplay);
+            wistiaPlayer.removeEventListener('play', handlePlay);
             wistiaPlayer.muted = false;
             setShowOverlay(false);
           });
@@ -61,11 +65,14 @@ const VideoPlaceholder = () => {
 
         // Safety timeout - if no play event after 2 seconds, assume autoplay failed and unmute
         setTimeout(() => {
-          wistiaPlayer.removeEventListener('play', handleAutoplay);
-          // If autoplay didn't succeed, unmute for manual play
-          if (!autoplaySucceeded.current) {
-            wistiaPlayer.muted = false;
-          }
+          wistiaPlayer.removeEventListener('play', handlePlay);
+          // If overlay isn't showing, autoplay failed - unmute for manual play
+          setShowOverlay((current) => {
+            if (!current) {
+              wistiaPlayer.muted = false;
+            }
+            return current;
+          });
         }, 2000);
 
         clearInterval(checkPlayer);
@@ -105,7 +112,7 @@ const VideoPlaceholder = () => {
       {showOverlay && (
         <div
           onClick={handleUnmute}
-          className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer z-10 rounded-lg transition-opacity hover:bg-black/50"
+          className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer z-10 rounded-xl transition-opacity hover:bg-black/50"
         >
           <div className="bg-white/95 px-8 py-6 rounded-2xl shadow-2xl text-center">
             <div className="text-4xl mb-3">🔊</div>
