@@ -37,7 +37,7 @@ const VideoPlaceholder = () => {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777"></wistia-player>
+      <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777" autoplay muted></wistia-player>
     </div>
   );
 };
