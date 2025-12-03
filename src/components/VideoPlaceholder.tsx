@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const VideoPlaceholder = () => {
   const [showOverlay, setShowOverlay] = useState(true);
+  const [player, setPlayer] = useState<any>(null);
 
   useEffect(() => {
     // Inject Wistia player script
@@ -29,8 +30,18 @@ const VideoPlaceholder = () => {
     `;
     document.head.appendChild(style);
 
+    // Wait for Wistia player to be ready
+    const checkPlayer = setInterval(() => {
+      const wistiaPlayer = document.querySelector('wistia-player[media-id="jgg77ut4ro"]') as any;
+      if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
+        setPlayer(wistiaPlayer);
+        clearInterval(checkPlayer);
+      }
+    }, 100);
+
     return () => {
       // Cleanup scripts and styles on unmount
+      clearInterval(checkPlayer);
       document.head.removeChild(playerScript);
       document.head.removeChild(embedScript);
       document.head.removeChild(style);
@@ -38,9 +49,9 @@ const VideoPlaceholder = () => {
   }, []);
 
   const handleUnmute = () => {
-    const player = document.querySelector('wistia-player[media-id="jgg77ut4ro"]') as any;
-    if (player && player.unmute) {
-      player.unmute();
+    if (player) {
+      player.muted = false;
+      player.play();
       setShowOverlay(false);
     }
   };
