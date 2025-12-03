@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const VideoPlaceholder = () => {
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [showOverlay, setShowOverlay] = useState(false);
   const [player, setPlayer] = useState<any>(null);
 
   useEffect(() => {
@@ -36,8 +36,12 @@ const VideoPlaceholder = () => {
       if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
         setPlayer(wistiaPlayer);
         // Explicitly trigger play for Safari
-        wistiaPlayer.play().catch(() => {
-          // Autoplay blocked, user will need to click to start
+        wistiaPlayer.play().then(() => {
+          // Autoplay succeeded, show the unmute overlay
+          setShowOverlay(true);
+        }).catch(() => {
+          // Autoplay blocked, don't show overlay
+          setShowOverlay(false);
         });
         clearInterval(checkPlayer);
       }
