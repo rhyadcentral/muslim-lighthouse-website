@@ -36,22 +36,29 @@ const VideoPlaceholder = () => {
       if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
         setPlayer(wistiaPlayer);
 
+        // Listen for play event to confirm autoplay worked
+        const handlePlay = () => {
+          setShowOverlay(true);
+          wistiaPlayer.removeEventListener('play', handlePlay);
+        };
+
+        wistiaPlayer.addEventListener('play', handlePlay);
+
         // Try to play the video
         const playPromise = wistiaPlayer.play();
 
         if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // Check if video is actually playing after a short delay
-            setTimeout(() => {
-              if (!wistiaPlayer.paused) {
-                setShowOverlay(true);
-              }
-            }, 500);
-          }).catch(() => {
-            // Autoplay was blocked
+          playPromise.catch(() => {
+            // Autoplay was blocked, remove the event listener
+            wistiaPlayer.removeEventListener('play', handlePlay);
             setShowOverlay(false);
           });
         }
+
+        // Safety timeout - if no play event after 2 seconds, assume autoplay failed
+        setTimeout(() => {
+          wistiaPlayer.removeEventListener('play', handlePlay);
+        }, 2000);
 
         clearInterval(checkPlayer);
       }
