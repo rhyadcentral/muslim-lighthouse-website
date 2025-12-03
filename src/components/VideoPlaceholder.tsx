@@ -35,6 +35,10 @@ const VideoPlaceholder = () => {
       const wistiaPlayer = document.querySelector('wistia-player[media-id="jgg77ut4ro"]') as any;
       if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
         setPlayer(wistiaPlayer);
+        // Explicitly trigger play for Safari
+        wistiaPlayer.play().catch(() => {
+          // Autoplay blocked, user will need to click to start
+        });
         clearInterval(checkPlayer);
       }
     }, 100);
@@ -58,7 +62,7 @@ const VideoPlaceholder = () => {
 
   return (
     <div className="w-full max-w-5xl mx-auto relative">
-      <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777" autoplay muted></wistia-player>
+      <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777" autoplay muted playsinline></wistia-player>
 
       {showOverlay && (
         <div
