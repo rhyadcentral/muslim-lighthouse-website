@@ -35,14 +35,24 @@ const VideoPlaceholder = () => {
       const wistiaPlayer = document.querySelector('wistia-player[media-id="jgg77ut4ro"]') as any;
       if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
         setPlayer(wistiaPlayer);
-        // Explicitly trigger play for Safari
-        wistiaPlayer.play().then(() => {
-          // Autoplay succeeded, show the unmute overlay
-          setShowOverlay(true);
-        }).catch(() => {
-          // Autoplay blocked, don't show overlay
-          setShowOverlay(false);
-        });
+
+        // Try to play the video
+        const playPromise = wistiaPlayer.play();
+
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            // Check if video is actually playing after a short delay
+            setTimeout(() => {
+              if (!wistiaPlayer.paused) {
+                setShowOverlay(true);
+              }
+            }, 500);
+          }).catch(() => {
+            // Autoplay was blocked
+            setShowOverlay(false);
+          });
+        }
+
         clearInterval(checkPlayer);
       }
     }, 100);
@@ -50,9 +60,15 @@ const VideoPlaceholder = () => {
     return () => {
       // Cleanup scripts and styles on unmount
       clearInterval(checkPlayer);
-      document.head.removeChild(playerScript);
-      document.head.removeChild(embedScript);
-      document.head.removeChild(style);
+      if (document.head.contains(playerScript)) {
+        document.head.removeChild(playerScript);
+      }
+      if (document.head.contains(embedScript)) {
+        document.head.removeChild(embedScript);
+      }
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
     };
   }, []);
 
