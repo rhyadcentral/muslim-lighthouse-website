@@ -1,35 +1,126 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const VideoPlaceholder = () => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [player, setPlayer] = useState<any>(null);
+  const autoplayAttemptTime = useRef<number>(0);
+
   useEffect(() => {
-    // Inject Vidalytics script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.innerHTML = `
-      (function (v, i, d, a, l, y, t, c, s) {
-        y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-        if (!vsl){vsl=function(u,cb){
-            if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-            if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-            i.getElementsByTagName("head")[0].appendChild(s);
-        };}
-        vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-      })(window, document, 'Vidalytics', 'vidalytics_embed_EfQlZHkuGfyWz_Ol', 'https://fast.vidalytics.com/embeds/VrIWs5gE/EfQlZHkuGfyWz_Ol/');
+    // Inject Wistia player script
+    const playerScript = document.createElement('script');
+    playerScript.src = 'https://fast.wistia.com/player.js';
+    playerScript.async = true;
+    document.head.appendChild(playerScript);
+
+    // Inject Wistia embed script
+    const embedScript = document.createElement('script');
+    embedScript.src = 'https://fast.wistia.com/embed/jgg77ut4ro.js';
+    embedScript.async = true;
+    embedScript.type = 'module';
+    document.head.appendChild(embedScript);
+
+    // Inject styles
+    const style = document.createElement('style');
+    style.innerHTML = `
+      wistia-player[media-id='jgg77ut4ro']:not(:defined) {
+        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/jgg77ut4ro/swatch');
+        display: block;
+        filter: blur(5px);
+        padding-top:56.25%;
+      }
     `;
-    document.body.appendChild(script);
+    document.head.appendChild(style);
+
+    // Wait for Wistia player to be ready
+    const checkPlayer = setInterval(() => {
+      const wistiaPlayer = document.querySelector('wistia-player[media-id="jgg77ut4ro"]') as any;
+      if (wistiaPlayer && wistiaPlayer.muted !== undefined) {
+        setPlayer(wistiaPlayer);
+
+        // Listen for play event to confirm autoplay worked
+        const handlePlay = () => {
+          const timeSinceAttempt = Date.now() - autoplayAttemptTime.current;
+          // Only show overlay if play happened within 500ms of autoplay attempt
+          // This means it was autoplay, not manual play
+          if (timeSinceAttempt < 500) {
+            setShowOverlay(true);
+          }
+          wistiaPlayer.removeEventListener('play', handlePlay);
+        };
+
+        wistiaPlayer.addEventListener('play', handlePlay);
+
+        // Record autoplay attempt time and try to play the video
+        autoplayAttemptTime.current = Date.now();
+        const playPromise = wistiaPlayer.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay was blocked - unmute for manual play
+            wistiaPlayer.removeEventListener('play', handlePlay);
+            wistiaPlayer.muted = false;
+            setShowOverlay(false);
+          });
+        }
+
+        // Safety timeout - if no play event after 2 seconds, assume autoplay failed and unmute
+        setTimeout(() => {
+          wistiaPlayer.removeEventListener('play', handlePlay);
+          // If overlay isn't showing, autoplay failed - unmute for manual play
+          setShowOverlay((current) => {
+            if (!current) {
+              wistiaPlayer.muted = false;
+            }
+            return current;
+          });
+        }, 2000);
+
+        clearInterval(checkPlayer);
+      }
+    }, 100);
 
     return () => {
-      // Cleanup script on unmount
-      document.body.removeChild(script);
+      // Cleanup scripts and styles on unmount
+      clearInterval(checkPlayer);
+      if (document.head.contains(playerScript)) {
+        document.head.removeChild(playerScript);
+      }
+      if (document.head.contains(embedScript)) {
+        document.head.removeChild(embedScript);
+      }
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
     };
   }, []);
 
+  const handleUnmute = () => {
+    if (player) {
+      // Restart video from beginning
+      player.currentTime = 0;
+      // Unmute and play
+      player.muted = false;
+      player.play();
+      setShowOverlay(false);
+    }
+  };
+
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <div
-        id="vidalytics_embed_EfQlZHkuGfyWz_Ol"
-        style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
-      />
+    <div className="w-full max-w-5xl mx-auto relative">
+      <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777" autoplay muted playsinline></wistia-player>
+
+      {showOverlay && (
+        <div
+          onClick={handleUnmute}
+          className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer z-10 rounded-xl transition-opacity hover:bg-black/50"
+        >
+          <div className="bg-white/95 px-8 py-6 rounded-2xl shadow-2xl text-center">
+            <div className="text-4xl mb-3">🔊</div>
+            <p className="text-2xl font-bold text-charcoal mb-2">Click to Unmute</p>
+            <p className="text-sm text-charcoal/70">Tap anywhere to enable sound</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
