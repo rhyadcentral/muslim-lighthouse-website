@@ -28,7 +28,7 @@ const curriculumData = [
       { name: "The Sound Heart - Curing and Beautifying your Heart", comingSoon: false },
       { name: "Before You Seek - Character of Student of Knowledge", comingSoon: false },
       { name: "Your Parents - Fix your Dunya & Akhira through your parents", comingSoon: false },
-      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", comingSoon: true }
+      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", comingSoon: false }
     ],
     icon: BookOpen,
   },
@@ -40,7 +40,7 @@ const curriculumData = [
       { name: "Fiqh of Prayer", comingSoon: false },
       { name: "Fiqh of Fasting", comingSoon: false },
       { name: "Fiqh of Zakat", comingSoon: true },
-      { name: "Fiqh of Hajj", comingSoon: true },
+      { name: "Fiqh of Hajj", comingSoon: false },
       { name: "Fiqh of Marriage", comingSoon: true },
       { name: "Fiqh of Business", comingSoon: true },
       { name: "More chapters to be covered", comingSoon: true }
