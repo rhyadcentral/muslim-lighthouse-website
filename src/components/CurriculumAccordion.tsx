@@ -9,6 +9,7 @@ import { BookOpen, GraduationCap, Star, Clock } from "lucide-react";
 
 interface Course {
   name: string;
+  source?: string;
   comingSoon?: boolean;
 }
 
@@ -25,10 +26,10 @@ const curriculumData = [
     id: "tazkiyah",
     title: "Tazkiyah (Purification of the Heart)",
     courses: [
-      { name: "The Sound Heart - Curing and Beautifying your Heart", comingSoon: false },
-      { name: "Before You Seek - Character of Student of Knowledge", comingSoon: false },
-      { name: "Your Parents - Fix your Dunya & Akhira through your parents", comingSoon: false },
-      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", comingSoon: false }
+      { name: "The Sound Heart - Curing and Beautifying your Heart", source: "Mat-haratul Quloob", comingSoon: false },
+      { name: "Before You Seek - Character of Student of Knowledge", source: "Adab Al-Muta'alim", comingSoon: false },
+      { name: "Your Parents - Fix your Dunya & Akhira through your parents", source: "Nathm Al-Buroor", comingSoon: false },
+      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", source: "Maharim Al-Lisan", comingSoon: false }
     ],
     icon: BookOpen,
   },
@@ -36,14 +37,14 @@ const curriculumData = [
     id: "fiqh",
     title: "Fiqh (Islamic Jurisprudence)",
     courses: [
-      { name: "Fiqh of Purification", comingSoon: false },
-      { name: "Fiqh of Prayer", comingSoon: false },
-      { name: "Fiqh of Fasting", comingSoon: false },
-      { name: "Fiqh of Zakat", comingSoon: true },
-      { name: "Fiqh of Hajj", comingSoon: false },
-      { name: "Fiqh of Marriage", comingSoon: true },
-      { name: "Fiqh of Business", comingSoon: true },
-      { name: "More chapters to be covered", comingSoon: true }
+      { name: "Fiqh of Purification", source: "As-halul Masalik", comingSoon: false },
+      { name: "Fiqh of Prayer", source: "As-halul Masalik", comingSoon: false },
+      { name: "Fiqh of Fasting", source: "As-halul Masalik", comingSoon: false },
+      { name: "Fiqh of Zakat", source: "As-halul Masalik", comingSoon: true },
+      { name: "Fiqh of Hajj", source: "As-halul Masalik", comingSoon: false },
+      { name: "Fiqh of Marriage", source: "As-halul Masalik", comingSoon: true },
+      { name: "Fiqh of Business", source: "As-halul Masalik", comingSoon: true },
+      { name: "More chapters to be covered", source: "As-halul Masalik", comingSoon: true }
     ],
     icon: BookOpen,
   },
@@ -61,7 +62,7 @@ const curriculumData = [
     id: "mustalah",
     title: "Mustalah Al-Hadith (Science of Hadith)",
     courses: [
-      { name: "Advanced Hadith Sciences - Understand the Mechanics behind Hadith literature", comingSoon: false }
+      { name: "Advanced Hadith Sciences - Understand the Mechanics behind Hadith literature", source: "Tal'atul Anwar", comingSoon: false }
     ],
     icon: Star,
   },
@@ -77,7 +78,7 @@ const curriculumData = [
     id: "usul",
     title: "Usul Al-Fiqh (Principles of Jurisprudence)",
     courses: [
-      { name: "Foundations of Fiqh - Studying 'Al-Waraqat' to gain deep understanding", comingSoon: true }
+      { name: "Foundations of Fiqh - Studying 'Al-Waraqat' to gain deep understanding", source: "Nathm Al-Waraqat", comingSoon: true }
     ],
     icon: BookOpen,
   },
@@ -85,8 +86,8 @@ const curriculumData = [
     id: "seerah",
     title: "Seerah (Prophetic Biography)",
     courses: [
-      { name: "Enchanting Gaze into the life of Prophet Muhammad ﷺ", comingSoon: true },
-      { name: "The Battles of the Prophet Muhammad ﷺ", comingSoon: true }
+      { name: "Enchanting Gaze into the life of Prophet Muhammad ﷺ", source: "Qurrat Al-Absar", comingSoon: true },
+      { name: "The Battles of the Prophet Muhammad ﷺ", source: "Nathm Al-Ghazawat", comingSoon: true }
     ],
     icon: Star,
   },
@@ -94,7 +95,7 @@ const curriculumData = [
     id: "mantiq",
     title: "Mantiq (Logic)",
     courses: [
-      { name: "Stairway to the Art of Logic", comingSoon: true }
+      { name: "Stairway to the Art of Logic", source: "Sullam Al-Murawnaq", comingSoon: true }
     ],
     icon: Star,
   },
@@ -102,7 +103,8 @@ const curriculumData = [
     id: "arabic",
     title: "Arabic Language",
     courses: [
-      { name: "How to read Quran from scratch", comingSoon: false }
+      { name: "Arabic Grammar", source: "Ajurumiyyah", comingSoon: false },
+      { name: "How to read the Quran", source: "Al‑Qaida Al‑Baghdadiyya", comingSoon: false }
     ],
     icon: GraduationCap,
   },
@@ -144,7 +146,7 @@ const CurriculumAccordion = () => {
               </AccordionTrigger>
 
               <AccordionContent className="px-6 pb-5 pt-2">
-                <ul className="space-y-3 pl-6 md:pl-14">
+                <div className="pl-6 md:pl-14">
                   {science.courses.map((course, idx) => {
                     // Split course into name and description (if there's a dash)
                     const parts = course.name.split(' - ');
@@ -152,20 +154,30 @@ const CurriculumAccordion = () => {
                     const description = parts.length > 1 ? parts.slice(1).join(' - ') : '';
 
                     return (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2 flex-wrap">
-                        <span className="flex-1 min-w-0 mt-0.5">
-                          • <span className="underline">Course {idx + 1}</span>: <strong className={course.comingSoon ? "text-muted-foreground/70" : ""}>{courseName}</strong>{description && ` - ${description}`}
-                        </span>
-                        {course.comingSoon && (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-light-cyan/10 text-light-cyan text-xs font-medium whitespace-nowrap flex-shrink-0 mt-0.5">
-                            <Clock className="w-3 h-3" />
-                            Coming Soon
+                      <div key={idx}>
+                        <div className="text-sm text-muted-foreground flex items-start gap-2 flex-wrap py-3">
+                          <span className="flex-1 min-w-0 mt-0.5">
+                            • <span className="underline">Course {idx + 1}</span>: <strong className={course.comingSoon ? "text-muted-foreground/70" : ""}>{courseName}</strong>{description && ` - ${description}`}
+                            {course.source && (
+                              <div className="mt-1 ml-4 text-xs italic text-muted-foreground/80">
+                                Source: {course.source}
+                              </div>
+                            )}
                           </span>
+                          {course.comingSoon && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-light-cyan/10 text-light-cyan text-xs font-medium whitespace-nowrap flex-shrink-0 mt-0.5">
+                              <Clock className="w-3 h-3" />
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
+                        {idx < science.courses.length - 1 && (
+                          <div className="border-t border-gray-200" />
                         )}
-                      </li>
+                      </div>
                     );
                   })}
-                </ul>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </motion.div>

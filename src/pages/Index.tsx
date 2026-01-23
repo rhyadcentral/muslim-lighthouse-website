@@ -103,7 +103,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Credentials:</strong> Holds Ijazah (formal authorization) in all Islamic sciences
+                    <strong>Teacher:</strong> Shaykh Baha Al-Majlisi, a well-respected Mauritanian scholar
                   </span>
                 </motion.li>
                 <motion.li
@@ -115,7 +115,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scholarship
+                    <strong>Credentials:</strong> Holds Ijaza (formal authorisation) to teach the major Islamic sciences
                   </span>
                 </motion.li>
                 <motion.li
@@ -127,7 +127,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Current:</strong> Studying in Madinah — the city of the Prophet ﷺ
+                    <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scolarship
                   </span>
                 </motion.li>
                 <motion.li
@@ -139,7 +139,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Experience:</strong> Taught 700+ students from confusion to confidence
+                    <strong>Current:</strong> Continuing advanced Islamic studies
                   </span>
                 </motion.li>
                 <motion.li
@@ -151,7 +151,31 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
+                    <strong>Experience:</strong> 5+ years Islamic teacher to over 700+ students
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
+                  <span>
                     <strong>Approach:</strong> Bridges traditional knowledge with modern, relatable teaching
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ duration: 0.4, delay: 0.7 }}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
+                  <span>
+                    <strong>Speciality:</strong> Making complex concepts easy to understand in a fraction of the time
                   </span>
                 </motion.li>
               </ul>
@@ -170,7 +194,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-3 md:mb-4 font-montserrat px-2"
           >
-            Master All the <span className="text-bubble">Islamic Sciences</span>
+            Study the Major <span className="text-bubble">Islamic Sciences</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
