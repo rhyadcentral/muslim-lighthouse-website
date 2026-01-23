@@ -78,7 +78,7 @@ const Index = () => {
             >
               <img
                 src={ustadhPhoto}
-                alt="Shaykh Baha Al-Majlisi"
+                alt="Ustadh Rhyad"
                 className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-3xl shadow-lg"
               />
             </motion.div>
@@ -91,7 +91,7 @@ const Index = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-semibold text-dark-teal font-montserrat mb-6">
-                Shaykh Baha Al-Majlisi
+                Ustadh Rhyad
               </h3>
               <ul className="space-y-3 text-charcoal">
                 <motion.li
