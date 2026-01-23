@@ -78,7 +78,7 @@ const Index = () => {
             >
               <img
                 src={ustadhPhoto}
-                alt="Ustadh Rhyad"
+                alt="Shaykh Baha Al-Majlisi"
                 className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-3xl shadow-lg"
               />
             </motion.div>
@@ -91,7 +91,7 @@ const Index = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-semibold text-dark-teal font-montserrat mb-6">
-                Ustadh Rhyad
+                Shaykh Baha Al-Majlisi
               </h3>
               <ul className="space-y-3 text-charcoal">
                 <motion.li
@@ -103,7 +103,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Credentials:</strong> Holds Ijazah (formal authorization) in all Islamic sciences
+                    <strong>Teacher:</strong> Shaykh Baha Al-Majlisi, a well-respected Mauritanian scholar
                   </span>
                 </motion.li>
                 <motion.li
@@ -115,7 +115,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scholarship
+                    <strong>Credentials:</strong> Holds Ijaza (formal authorisation) to teach the major Islamic sciences
                   </span>
                 </motion.li>
                 <motion.li
@@ -127,7 +127,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Current:</strong> Studying in Madinah — the city of the Prophet ﷺ
+                    <strong>Background:</strong> Studied in Mauritania, known for rigorous traditional scolarship
                   </span>
                 </motion.li>
                 <motion.li
@@ -139,7 +139,7 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
-                    <strong>Experience:</strong> Taught 700+ students from confusion to confidence
+                    <strong>Current:</strong> Continuing advanced Islamic studies
                   </span>
                 </motion.li>
                 <motion.li
@@ -151,7 +151,31 @@ const Index = () => {
                 >
                   <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
                   <span>
+                    <strong>Experience:</strong> 5+ years Islamic teacher to over 700+ students
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
+                  <span>
                     <strong>Approach:</strong> Bridges traditional knowledge with modern, relatable teaching
+                  </span>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ duration: 0.4, delay: 0.7 }}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-5 h-5 text-light-cyan shrink-0 mt-1" />
+                  <span>
+                    <strong>Speciality:</strong> Making complex concepts easy to understand in a fraction of the time
                   </span>
                 </motion.li>
               </ul>
