@@ -170,7 +170,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-3 md:mb-4 font-montserrat px-2"
           >
-            Master All the <span className="text-bubble">Islamic Sciences</span>
+            Study the Major <span className="text-bubble">Islamic Sciences</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
