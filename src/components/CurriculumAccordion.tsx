@@ -18,7 +18,7 @@ const curriculumData = [
     id: "aqeedah",
     title: "Aqeedah (Islamic Creed)",
     courses: [
-      { name: "Illuminate Program - Flagship program that will lay the foundations and change your life", comingSoon: false }
+      { name: "Illuminate Program - Flagship program that will lay the foundations and change your life", source: "Custom built syllabus under scholarly supervision", comingSoon: false }
     ],
     icon: Star,
   },
@@ -70,7 +70,7 @@ const curriculumData = [
     id: "hadith",
     title: "Hadith (Prophetic Teachings)",
     courses: [
-      { name: "40 Hadith Nawawi - Practical Hadiths that cover Iman, ethics, worship and leadership", comingSoon: true }
+      { name: "40 Hadith Nawawi - Practical Hadiths that cover Iman, ethics, worship and leadership", source: "40 Hadith Nawawi", comingSoon: true }
     ],
     icon: BookOpen,
   },
