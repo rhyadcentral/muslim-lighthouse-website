@@ -38,7 +38,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
             >
-              An <span className="font-semibold">Islamic University</span> <span className="font-semibold">in your pocket</span>… made for those with a <span className="font-semibold">busy, distracting life</span>
+              An <span className="font-semibold">Islamic University</span> <span className="font-semibold">in your pocket</span>… made for those with a <span className="font-semibold">busy, distracted life</span>
             </motion.p>
           </motion.div>
 
