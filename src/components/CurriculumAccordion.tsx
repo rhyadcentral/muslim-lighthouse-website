@@ -95,7 +95,7 @@ const curriculumData = [
     id: "tajweed",
     title: "Tajweed (Quran Recitation)",
     courses: [
-      { name: "Rules of Recitation", source: "Al-Jazariyyah", comingSoon: false }
+      { name: "Rules of Recitation", source: "Al-Jazariyyah", comingSoon: true }
     ],
     icon: BookOpen,
   },
