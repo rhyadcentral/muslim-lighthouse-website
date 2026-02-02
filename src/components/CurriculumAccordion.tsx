@@ -92,6 +92,14 @@ const curriculumData = [
     icon: Star,
   },
   {
+    id: "tajweed",
+    title: "Tajweed (Quran Recitation)",
+    courses: [
+      { name: "Rules of Recitation", source: "Al-Jazariyyah", comingSoon: false }
+    ],
+    icon: BookOpen,
+  },
+  {
     id: "mantiq",
     title: "Mantiq (Logic)",
     courses: [
