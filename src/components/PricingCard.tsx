@@ -103,13 +103,13 @@ const PricingCard = ({
         >
           <a href={href} target="_blank" rel="noopener noreferrer">
             <span className="relative z-10">
-              {isRecommended ? "Start Free Trial" : "Get Started"}
+              {isRecommended ? "Get Started Now" : "Get Started"}
             </span>
           </a>
         </Button>
       </motion.div>
 
-      {/* Free trial note - Using muted color for hierarchy */}
+      {/* Social proof note - Using muted color for hierarchy */}
       {isRecommended && (
         <p className="text-center text-xs text-muted-foreground mt-4">
           200+ active students • Cancel anytime
