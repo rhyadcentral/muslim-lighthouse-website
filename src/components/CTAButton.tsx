@@ -28,7 +28,7 @@ const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "h
         >
           <a href={href} target="_blank" rel="noopener noreferrer">
             <span className="flex items-center gap-2 sm:gap-3 justify-center relative z-10">
-              Start Your 3-Day Free Trial
+              Start Learning Now
               <motion.div
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

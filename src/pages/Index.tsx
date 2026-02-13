@@ -304,7 +304,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-4 md:mb-6 font-montserrat px-2"
           >
-            Start Your <span className="text-bubble">3-Day Free Trial</span> Now
+            Start Your <span className="text-bubble">Learning Journey</span> Now
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
