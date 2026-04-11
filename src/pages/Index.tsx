@@ -1,6 +1,6 @@
 import CTAButton from "@/components/CTAButton";
 import CurriculumAccordion from "@/components/CurriculumAccordion";
-import PricingCard from "@/components/PricingCard";
+
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
@@ -227,74 +227,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION 5: Pricing & Offer */}
-      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat px-2"
-          >
-            Choose Your <span className="text-bubble">Path to Knowledge</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-base md:text-lg lg:text-xl text-charcoal text-center mb-8 md:mb-12 lg:mb-16 max-w-3xl mx-auto px-2"
-          >
-            Start your journey with our Standard plan or get complete access with Premium
-          </motion.p>
-
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 max-w-6xl mx-auto items-stretch md:items-start justify-center">
-            <PricingCard
-              name="Standard Subscription"
-              tagline="Learn on your own, at your own pace."
-              price={9}
-              features={[
-                "📚 Full access to all courses",
-                "♻️ New content added every week",
-                "🕌 Invitation to in-person events to strengthen bonds & recharge your imān",
-              ]}
-              bottomNote="👉 Good if you just want the knowledge without the community or guidance."
-              href="https://www.muslimlighthouse.app/checkout/standard-membership"
-              delay={0}
-            />
-            <PricingCard
-              name="Premium Subscription"
-              tagline="Build lasting habits, not just knowledge."
-              price={29}
-              features={[
-                "Everything in Standard – PLUS:",
-                "👨‍🏫 Direct access to your teacher for questions, mentorship & guidance",
-                "📅 Live weekly sessions to interact, ask, and grow in real-time",
-                "🤝 Safe, supportive spaces to share doubts, ask questions, and connect deeply with others on the same path",
-                "🚻 Private, segregated community for brothers & sisters – study, grow & connect together",
-                "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
-              ]}
-              bottomNote="👉 Knowledge fades. Habits shape who you become. This keeps you on track every single week."
-              href="https://www.muslimlighthouse.app/checkout/premium-membership"
-              isRecommended={true}
-              delay={0.1}
-            />
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-charcoal/70 mt-8 md:mt-12 text-sm md:text-base lg:text-lg px-4"
-          >
-            Both plans are less than a daily coffee. Way less than hiring a private tutor.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* SECTION 6: Final CTA */}
+      {/* SECTION 5: Closed Notice & Illuminate Program */}
       <section className="py-16 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 bg-light-gray w-full max-w-full overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -304,7 +237,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-4 md:mb-6 font-montserrat px-2"
           >
-            Start Your <span className="text-bubble">Learning Journey</span> Now
+            Muslim Lighthouse is <span className="text-bubble">Currently Closed</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -313,7 +246,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg lg:text-xl text-charcoal mb-8 md:mb-12 px-2"
           >
-            Join 200+ students on the path from confusion to clarity
+            Our Illuminate program is available for you to get started.
           </motion.p>
 
           <motion.div
