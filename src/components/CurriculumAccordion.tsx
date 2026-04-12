@@ -40,7 +40,7 @@ const curriculumData = [
       { name: "Fiqh of Purification", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Prayer", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Fasting", source: "As-halul Masalik", comingSoon: false },
-      { name: "Fiqh of Zakat", source: "As-halul Masalik", comingSoon: true },
+      { name: "Fiqh of Zakat", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Hajj", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Marriage", source: "As-halul Masalik", comingSoon: true },
       { name: "Fiqh of Business", source: "As-halul Masalik", comingSoon: true },

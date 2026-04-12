@@ -10,7 +10,7 @@ interface CTAButtonProps {
   href?: string;
 }
 
-const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "https://illuminate-program.com" }: CTAButtonProps) => {
+const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "https://www.muslimlighthouse.app/checkout/yearly-membership" }: CTAButtonProps) => {
   return (
     <div className={cn("flex flex-col items-center gap-3", className)}>
       <motion.div
@@ -28,7 +28,7 @@ const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "h
         >
           <a href={href} target="_blank" rel="noopener noreferrer">
             <span className="flex items-center gap-2 sm:gap-3 justify-center relative z-10">
-              Join Illuminate
+              Start Learning Now
               <motion.div
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

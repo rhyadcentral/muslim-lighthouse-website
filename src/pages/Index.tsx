@@ -1,6 +1,6 @@
 import CTAButton from "@/components/CTAButton";
 import CurriculumAccordion from "@/components/CurriculumAccordion";
-
+import PricingCard from "@/components/PricingCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { Check } from "lucide-react";
@@ -227,7 +227,68 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION 5: Closed Notice & Illuminate Program */}
+      {/* SECTION 5: Pricing & Offer */}
+      <section className="py-12 md:py-16 lg:py-24 px-4 md:px-5 lg:px-10 w-full max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal text-center mb-4 md:mb-6 font-montserrat px-2"
+          >
+            Choose Your <span className="text-bubble">Path to Knowledge</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-base md:text-lg lg:text-xl text-charcoal text-center mb-8 md:mb-12 lg:mb-16 max-w-3xl mx-auto px-2"
+          >
+            Pay quarterly for flexibility, or go yearly and get 3 months free
+          </motion.p>
+
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 max-w-6xl mx-auto items-stretch md:items-start justify-center">
+            <PricingCard
+              name="Quarterly"
+              tagline="Billed every 3 months. Cancel anytime."
+              price={348}
+              period="/quarter"
+              features={[
+                "📚 Full access to all courses",
+                "👨‍🏫 Direct access to your teacher for questions, mentorship & guidance",
+                "📅 Live weekly sessions to interact, ask, and grow in real-time",
+                "🤝 Safe, supportive spaces to share doubts, ask questions, and connect deeply with others on the same path",
+                "🚻 Private, segregated community for brothers & sisters – study, grow & connect together",
+                "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
+              ]}
+              bottomNote="👉 Great if you want flexibility and prefer to pay as you go."
+              href="https://www.muslimlighthouse.app/checkout/quarterly-membership"
+              delay={0}
+            />
+            <PricingCard
+              name="Yearly"
+              tagline="Pay once a year and save 3 months."
+              price={1044}
+              period="/year"
+              features={[
+                "✅ Everything in Quarterly – PLUS:",
+                "🎁 3 months free compared to quarterly billing",
+                "💸 Best value – only £87/month equivalent",
+                "🔒 Lock in your price for a full year",
+              ]}
+              bottomNote="👉 Best value. Commit for the year and get 3 months on us."
+              href="https://www.muslimlighthouse.app/checkout/yearly-membership"
+              isRecommended={true}
+              badge="3 MONTHS FREE"
+              delay={0.1}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: Final CTA */}
       <section className="py-16 md:py-20 lg:py-32 px-4 md:px-5 lg:px-10 bg-light-gray w-full max-w-full overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -237,7 +298,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-4 md:mb-6 font-montserrat px-2"
           >
-            Muslim Lighthouse is <span className="text-bubble">Currently Closed</span>
+            Start Your <span className="text-bubble">Learning Journey</span> Now
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -246,7 +307,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg lg:text-xl text-charcoal mb-8 md:mb-12 px-2"
           >
-            Our Illuminate program is available for you to get started.
+            Join 200+ students on the path from confusion to clarity
           </motion.p>
 
           <motion.div
