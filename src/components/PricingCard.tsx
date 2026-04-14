@@ -25,7 +25,7 @@ const PricingCard = ({
   isRecommended = false,
   badge,
   delay = 0,
-  href = "https://www.muslimlighthouse.app/checkout/yearly-membership",
+  href = "https://www.muslimlighthouse.app/checkout/quarterly-vs-annual-3-months-free",
 }: PricingCardProps) => {
   return (
     <motion.div

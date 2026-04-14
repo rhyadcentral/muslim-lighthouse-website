@@ -10,7 +10,7 @@ interface CTAButtonProps {
   href?: string;
 }
 
-const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "https://www.muslimlighthouse.app/checkout/yearly-membership" }: CTAButtonProps) => {
+const CTAButton = ({ className, fullWidth = false, showSubtext = true, href = "https://www.muslimlighthouse.app/checkout/quarterly-vs-annual-3-months-free" }: CTAButtonProps) => {
   return (
     <div className={cn("flex flex-col items-center gap-3", className)}>
       <motion.div

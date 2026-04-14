@@ -264,7 +264,7 @@ const Index = () => {
                 "🌟 Build weekly habits: Fasting Monday, Tadabbur Tuesdays, Thikr Thursdays, Qiyam Saturdays",
               ]}
               bottomNote="👉 Great if you want flexibility and prefer to pay as you go."
-              href="https://www.muslimlighthouse.app/checkout/quarterly-membership"
+              href="https://www.muslimlighthouse.app/checkout/quarterly-vs-annual-3-months-free"
               delay={0}
             />
             <PricingCard
@@ -279,7 +279,7 @@ const Index = () => {
                 "🔒 Lock in your price for a full year",
               ]}
               bottomNote="👉 Best value. Commit for the year and get 3 months on us."
-              href="https://www.muslimlighthouse.app/checkout/yearly-membership"
+              href="https://www.muslimlighthouse.app/checkout/quarterly-vs-annual-3-months-free"
               isRecommended={true}
               badge="3 MONTHS FREE"
               delay={0.1}
