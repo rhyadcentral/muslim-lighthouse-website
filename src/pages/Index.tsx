@@ -36,7 +36,6 @@ const credentials: { label: string; value: React.ReactNode }[] = [
 ];
 
 const rhythms = [
-  { day: "Mon", name: "Fasting Mondays" },
   { day: "Tue", name: "Tadabbur Tuesdays" },
   { day: "Thu", name: "Thikr Thursdays" },
   { day: "Sat", name: "Qiyam Saturdays" },
