@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/muslim-lighthouse-logo.png";
+import logo from "@/assets/ml-icon-gradient.png";
 
 const CHECKOUT = "https://www.muslimlighthouse.app/checkout/quarterly-vs-annual-3-months-free";
 
