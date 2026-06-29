@@ -54,7 +54,7 @@ const Index = () => {
       <SiteNav />
 
       {/* ───────────────── HERO ───────────────── */}
-      <section className="relative flex min-h-[92vh] items-center overflow-hidden px-5 pb-20 pt-32 md:px-8 md:pt-36">
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden px-5 pb-20 pt-24 md:px-8 md:pt-36">
         {/* Atmospheric layers */}
         <div aria-hidden className="pointer-events-none absolute inset-0">
           {/* Lighthouse beacon — radial glow behind the headline */}
