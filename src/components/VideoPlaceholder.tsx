@@ -106,18 +106,18 @@ const VideoPlaceholder = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto relative">
+    <div className="relative w-full overflow-hidden rounded-2xl">
       <wistia-player media-id="jgg77ut4ro" aspect="1.7777777777777777" autoplay muted playsinline></wistia-player>
 
       {showOverlay && (
         <div
           onClick={handleUnmute}
-          className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer z-10 rounded-xl transition-opacity hover:bg-black/50"
+          className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-[oklch(var(--navy-deep)/0.45)] backdrop-blur-[2px] transition-colors hover:bg-[oklch(var(--navy-deep)/0.55)]"
         >
-          <div className="bg-white/95 px-8 py-6 rounded-2xl shadow-2xl text-center">
-            <div className="text-4xl mb-3">🔊</div>
-            <p className="text-2xl font-bold text-charcoal mb-2">Click to Unmute</p>
-            <p className="text-sm text-charcoal/70">Tap anywhere to enable sound</p>
+          <div className="rounded-2xl bg-paper/95 px-8 py-6 text-center shadow-lift">
+            <div className="mb-3 text-3xl">🔊</div>
+            <p className="mb-1 font-display text-2xl text-ink">Tap to unmute</p>
+            <p className="font-sans text-sm text-ink-mute">Tap anywhere to enable sound</p>
           </div>
         </div>
       )}

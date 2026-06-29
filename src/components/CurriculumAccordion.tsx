@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Star, Clock } from "lucide-react";
+import { Plus } from "lucide-react";
 
 interface Course {
   name: string;
@@ -13,29 +13,37 @@ interface Course {
   comingSoon?: boolean;
 }
 
-const curriculumData = [
+interface Science {
+  id: string;
+  title: string;
+  arabic: string;
+  courses: Course[];
+}
+
+const curriculumData: Science[] = [
   {
     id: "aqeedah",
-    title: "Aqeedah (Islamic Creed)",
+    title: "Aqeedah",
+    arabic: "Islamic Creed",
     courses: [
-      { name: "Illuminate Program - Flagship program that will lay the foundations and change your life", source: "Custom built syllabus under scholarly supervision", comingSoon: false }
+      { name: "Illuminate Program - Flagship program that will lay the foundations and change your life", source: "Custom built syllabus under scholarly supervision", comingSoon: false },
     ],
-    icon: Star,
   },
   {
     id: "tazkiyah",
-    title: "Tazkiyah (Purification of the Heart)",
+    title: "Tazkiyah",
+    arabic: "Purification of the Heart",
     courses: [
       { name: "The Sound Heart - Curing and Beautifying your Heart", source: "Mat-haratul Quloob", comingSoon: false },
       { name: "Before You Seek - Character of Student of Knowledge", source: "Adab Al-Muta'alim", comingSoon: false },
       { name: "Your Parents - Fix your Dunya & Akhira through your parents", source: "Nathm Al-Buroor", comingSoon: false },
-      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", source: "Maharim Al-Lisan", comingSoon: false }
+      { name: "Prohibitions of the Tongue - Tune your tongue to the pleasure of Allah ﷻ", source: "Maharim Al-Lisan", comingSoon: false },
     ],
-    icon: BookOpen,
   },
   {
     id: "fiqh",
-    title: "Fiqh (Islamic Jurisprudence)",
+    title: "Fiqh",
+    arabic: "Islamic Jurisprudence",
     courses: [
       { name: "Fiqh of Purification", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Prayer", source: "As-halul Masalik", comingSoon: false },
@@ -44,157 +52,156 @@ const curriculumData = [
       { name: "Fiqh of Hajj", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Marriage", source: "As-halul Masalik", comingSoon: true },
       { name: "Fiqh of Business", source: "As-halul Masalik", comingSoon: true },
-      { name: "More chapters to be covered", source: "As-halul Masalik", comingSoon: true }
+      { name: "More chapters to be covered", source: "As-halul Masalik", comingSoon: true },
     ],
-    icon: BookOpen,
   },
   {
     id: "tafsir",
-    title: "Tafsir (Quran Exegesis)",
+    title: "Tafsir",
+    arabic: "Quran Exegesis",
     courses: [
       { name: "Gems of Surah Kahf", comingSoon: false },
       { name: "Gems of Surah An-Naba'", comingSoon: false },
-      { name: "More chapters coming soon", comingSoon: true }
+      { name: "More chapters coming soon", comingSoon: true },
     ],
-    icon: GraduationCap,
   },
   {
     id: "mustalah",
-    title: "Mustalah Al-Hadith (Science of Hadith)",
+    title: "Mustalah Al-Hadith",
+    arabic: "Science of Hadith",
     courses: [
-      { name: "Advanced Hadith Sciences - Understand the Mechanics behind Hadith literature", source: "Tal'atul Anwar", comingSoon: false }
+      { name: "Advanced Hadith Sciences - Understand the Mechanics behind Hadith literature", source: "Tal'atul Anwar", comingSoon: false },
     ],
-    icon: Star,
   },
   {
     id: "hadith",
-    title: "Hadith (Prophetic Teachings)",
+    title: "Hadith",
+    arabic: "Prophetic Teachings",
     courses: [
-      { name: "40 Hadith Nawawi - Practical Hadiths that cover Iman, ethics, worship and leadership", source: "40 Hadith Nawawi", comingSoon: true }
+      { name: "40 Hadith Nawawi - Practical Hadiths that cover Iman, ethics, worship and leadership", source: "40 Hadith Nawawi", comingSoon: true },
     ],
-    icon: BookOpen,
   },
   {
     id: "usul",
-    title: "Usul Al-Fiqh (Principles of Jurisprudence)",
+    title: "Usul Al-Fiqh",
+    arabic: "Principles of Jurisprudence",
     courses: [
-      { name: "Foundations of Fiqh - Studying 'Al-Waraqat' to gain deep understanding", source: "Nathm Al-Waraqat", comingSoon: true }
+      { name: "Foundations of Fiqh - Studying 'Al-Waraqat' to gain deep understanding", source: "Nathm Al-Waraqat", comingSoon: true },
     ],
-    icon: BookOpen,
   },
   {
     id: "seerah",
-    title: "Seerah (Prophetic Biography)",
+    title: "Seerah",
+    arabic: "Prophetic Biography",
     courses: [
       { name: "Enchanting Gaze into the life of Prophet Muhammad ﷺ", source: "Qurrat Al-Absar", comingSoon: true },
-      { name: "The Battles of the Prophet Muhammad ﷺ", source: "Nathm Al-Ghazawat", comingSoon: true }
+      { name: "The Battles of the Prophet Muhammad ﷺ", source: "Nathm Al-Ghazawat", comingSoon: true },
     ],
-    icon: Star,
   },
   {
     id: "tajweed",
-    title: "Tajweed (Quran Recitation)",
+    title: "Tajweed",
+    arabic: "Quran Recitation",
     courses: [
-      { name: "Rules of Recitation", source: "Al-Jazariyyah", comingSoon: true }
+      { name: "Rules of Recitation", source: "Al-Jazariyyah", comingSoon: true },
     ],
-    icon: BookOpen,
   },
   {
     id: "mantiq",
-    title: "Mantiq (Logic)",
+    title: "Mantiq",
+    arabic: "Logic",
     courses: [
-      { name: "Stairway to the Art of Logic", source: "Sullam Al-Murawnaq", comingSoon: true }
+      { name: "Stairway to the Art of Logic", source: "Sullam Al-Murawnaq", comingSoon: true },
     ],
-    icon: Star,
   },
   {
     id: "arabic",
     title: "Arabic Language",
+    arabic: "Lisan al-'Arab",
     courses: [
       { name: "Arabic Grammar", source: "Ajurumiyyah", comingSoon: false },
-      { name: "How to read the Quran", source: "Al‑Qaida Al‑Baghdadiyya", comingSoon: false }
+      { name: "How to read the Quran", source: "Al‑Qaida Al‑Baghdadiyya", comingSoon: false },
     ],
-    icon: GraduationCap,
   },
 ];
 
 const CurriculumAccordion = () => {
   return (
-    <div className="w-full">
-      <Accordion type="single" collapsible className="w-full max-w-[900px] mx-auto space-y-3">
-        {curriculumData.map((science, index) => {
-        const Icon = science.icon;
-        return (
-          <motion.div
-            key={science.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.3,
-              delay: index * 0.05
-            }}
-          >
-            <AccordionItem
-              value={science.id}
-              className="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-[1.01]"
-            >
-              <AccordionTrigger className="px-6 py-5 font-montserrat font-semibold text-dark-teal hover:no-underline text-left">
-                <div className="flex items-center gap-4 w-full">
-                  <div className="w-10 h-10 bg-light-cyan/10 rounded-2xl flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-light-cyan" />
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-base">{science.title}</span>
-                    <p className="text-xs text-muted-foreground font-normal mt-1">
-                      {science.courses.length} course{science.courses.length !== 1 ? 's' : ''}
-                    </p>
-                  </div>
-                </div>
-              </AccordionTrigger>
-
-              <AccordionContent className="px-6 pb-5 pt-2">
-                <div className="pl-6 md:pl-14">
-                  {science.courses.map((course, idx) => {
-                    // Split course into name and description (if there's a dash)
-                    const parts = course.name.split(' - ');
-                    const courseName = parts[0];
-                    const description = parts.length > 1 ? parts.slice(1).join(' - ') : '';
-
-                    return (
-                      <div key={idx}>
-                        <div className="text-sm text-muted-foreground flex items-start gap-2 flex-wrap py-3">
-                          <span className="flex-1 min-w-0 mt-0.5">
-                            • <span className="underline">Course {idx + 1}</span>: <strong className={course.comingSoon ? "text-muted-foreground/70" : ""}>{courseName}</strong>{description && ` - ${description}`}
-                            {course.source && (
-                              <div className="mt-1 ml-4 text-xs italic text-muted-foreground/80">
-                                Source: {course.source}
-                              </div>
-                            )}
-                          </span>
-                          {course.comingSoon && (
-                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-light-cyan/10 text-light-cyan text-xs font-medium whitespace-nowrap flex-shrink-0 mt-0.5">
-                              <Clock className="w-3 h-3" />
-                              Coming Soon
-                            </span>
-                          )}
-                        </div>
-                        {idx < science.courses.length - 1 && (
-                          <div className="border-t border-gray-200" />
-                        )}
+    <div className="mx-auto w-full max-w-4xl">
+      <Accordion type="single" collapsible className="w-full">
+        <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-soft">
+          {curriculumData.map((science, index) => {
+            const liveCount = science.courses.filter((c) => !c.comingSoon).length;
+            return (
+              <motion.div
+                key={science.id}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: Math.min(index * 0.03, 0.2), ease: [0.22, 1, 0.36, 1] }}
+              >
+                <AccordionItem
+                  value={science.id}
+                  className="border-b border-line last:border-b-0 data-[state=open]:bg-paper-2/50"
+                >
+                  <AccordionTrigger className="group px-5 py-5 hover:no-underline md:px-7 [&>svg]:hidden">
+                    <div className="flex w-full items-center gap-4 md:gap-6">
+                      <span className="font-display text-base text-brass-deep font-feature-numeric tabular-nums w-7 shrink-0">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex-1 text-left">
+                        <span className="font-display text-xl text-ink md:text-2xl">{science.title}</span>
+                        <span className="ml-2.5 font-sans text-sm italic text-ink-mute">{science.arabic}</span>
                       </div>
-                    );
-                  })}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </motion.div>
-        );
-      })}
-    </Accordion>
-    <p className="text-center text-xs text-muted-foreground mt-6 max-w-[900px] mx-auto">
-      * Courses marked as "Coming Soon" will be taught in live classes
-    </p>
+                      <span className="hidden font-sans text-xs uppercase tracking-[0.18em] text-ink-mute sm:block">
+                        {science.courses.length} {science.courses.length === 1 ? "course" : "courses"}
+                      </span>
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-teal transition-all duration-300 group-hover:border-teal/50 group-data-[state=open]:rotate-45 group-data-[state=open]:bg-teal group-data-[state=open]:text-paper">
+                        <Plus className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </AccordionTrigger>
+
+                  <AccordionContent className="px-5 pb-6 pt-0 md:px-7">
+                    <ol className="ml-7 space-y-0 border-l border-line/80 md:ml-11">
+                      {science.courses.map((course, idx) => {
+                        const [courseName, ...rest] = course.name.split(" - ");
+                        const description = rest.join(" - ");
+                        return (
+                          <li key={idx} className="relative pl-5 py-3 first:pt-1">
+                            <span className="absolute -left-[3px] top-[1.35rem] h-1.5 w-1.5 rounded-full bg-brass" />
+                            <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1.5">
+                              <p className="flex-1 font-sans text-[0.95rem] leading-relaxed text-ink-soft">
+                                <span className={course.comingSoon ? "font-semibold text-ink-soft/70" : "font-semibold text-ink"}>
+                                  {courseName}
+                                </span>
+                                {description && <span className="text-ink-mute"> — {description}</span>}
+                                {course.source && (
+                                  <span className="mt-1 block font-sans text-xs italic text-ink-mute">
+                                    Source · {course.source}
+                                  </span>
+                                )}
+                              </p>
+                              {course.comingSoon && (
+                                <span className="mt-0.5 inline-flex shrink-0 items-center rounded-full bg-brass/12 px-2.5 py-0.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-brass-deep">
+                                  Coming soon
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            );
+          })}
+        </div>
+      </Accordion>
+      <p className="mt-5 text-center font-sans text-xs text-ink-mute">
+        Courses marked “Coming soon” will be taught live, in class.
+      </p>
     </div>
   );
 };

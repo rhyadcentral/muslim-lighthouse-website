@@ -2,65 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Refactoring UI-compliant design system
-All colors MUST be HSL and follow proper contrast ratios.
-*/
+/* ───────────────────────────────────────────────────────────────
+   Muslim Lighthouse — "Sacred Editorial" design system
+   Warm ivory paper · deep teal ink · brass accent · 8-point geometry
+   Colours authored in OKLCH (perceptually uniform). Tokens are bare
+   "L C H" triplets so Tailwind alpha modifiers (/10, /60…) keep working.
+   ─────────────────────────────────────────────────────────────── */
 
 @layer base {
   :root {
-    /* Muslim Lighthouse Brand Colors */
-    --light-cyan: 188 100% 35%;
-    --dark-teal: 187 100% 28%;
-    --deep-navy: 186 100% 7%;
-    --charcoal: 0 0% 10%; /* Dark black for better readability */
-    --light-gray: 188 40% 96%;
-    --border-gray: 220 13% 91%;
+    /* Ink / text */
+    --ink: 0.255 0.022 220;
+    --ink-soft: 0.42 0.022 222;
+    --ink-mute: 0.54 0.018 224;
 
-    /* Semantic tokens mapped to brand */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%; /* Match charcoal */
+    /* Brand — teal lineage */
+    --teal: 0.475 0.082 205;
+    --teal-deep: 0.37 0.066 208;
+    --teal-bright: 0.585 0.105 200;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    /* Deep canvas — navy/ink for the dark closing band */
+    --navy: 0.255 0.045 218;
+    --navy-deep: 0.205 0.04 220;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    /* Brass / gold — the premium 10% accent */
+    --brass: 0.715 0.105 74;
+    --brass-deep: 0.56 0.095 66;
 
-    --primary: 188 100% 35%;
-    --primary-foreground: 0 0% 100%;
+    /* Warm paper neutrals */
+    --paper: 0.965 0.011 86;
+    --paper-2: 0.935 0.015 84;
+    --line: 0.885 0.013 88;
+    --line-strong: 0.83 0.016 86;
 
-    --secondary: 210 17% 98%;
-    --secondary-foreground: 187 100% 28%;
+    /* shadcn semantic tokens */
+    --background: 0.965 0.011 86;
+    --foreground: 0.255 0.022 220;
+    --card: 0.992 0.006 86;
+    --card-foreground: 0.255 0.022 220;
+    --popover: 0.992 0.006 86;
+    --popover-foreground: 0.255 0.022 220;
+    --primary: 0.475 0.082 205;
+    --primary-foreground: 0.98 0.006 86;
+    --secondary: 0.935 0.015 84;
+    --secondary-foreground: 0.37 0.066 208;
+    --muted: 0.935 0.015 84;
+    --muted-foreground: 0.5 0.018 224;
+    --accent: 0.715 0.105 74;
+    --accent-foreground: 0.255 0.03 70;
+    --destructive: 0.55 0.17 27;
+    --destructive-foreground: 0.98 0.006 86;
+    --border: 0.885 0.013 88;
+    --input: 0.885 0.013 88;
+    --ring: 0.475 0.082 205;
 
-    --muted: 210 17% 98%;
-    --muted-foreground: 0 0% 40%; /* Dark gray for secondary text */
-
-    --accent: 188 100% 35%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 188 100% 35%;
-
-    --radius: 0.75rem; /* Increased base radius for more rounded feel */
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 210 17% 95%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 188 100% 35%;
+    --radius: 0.625rem;
   }
 
   .dark {
-    /* Keep same colors for dark mode - no dark mode toggle needed */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    /* No dark-mode toggle in this product — keep tokens stable */
+    --background: 0.965 0.011 86;
+    --foreground: 0.255 0.022 220;
   }
 }
 
@@ -69,145 +71,158 @@ All colors MUST be HSL and follow proper contrast ratios.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
     position: relative;
-  }
-
-  html {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
+    /* Whisper-fine paper grain + two soft brand glows for depth */
+    background-image:
+      radial-gradient(120% 90% at 88% -10%, oklch(var(--brass) / 0.07), transparent 55%),
+      radial-gradient(120% 90% at -10% 5%, oklch(var(--teal) / 0.06), transparent 50%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    line-height: 1.2;
-    font-weight: 700;
+    font-family: "Marcellus", Georgia, serif;
+    line-height: 1.06;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    color: oklch(var(--ink));
+    text-wrap: balance;
   }
 
-  html {
-    scroll-behavior: smooth;
+  ::selection {
+    background: oklch(var(--brass) / 0.28);
+    color: oklch(var(--ink));
+  }
+}
+
+@layer components {
+  /* Section kicker — small-caps label in brass */
+  .kicker {
+    @apply inline-flex items-center gap-2.5 font-sans text-[0.72rem] font-semibold uppercase;
+    letter-spacing: 0.22em;
+    color: oklch(var(--brass-deep));
+  }
+
+  /* Fluid display sizes — minimums kept small enough to never overflow ~360px */
+  .display-1 {
+    font-size: clamp(2.15rem, 8.5vw, 5.4rem);
+    line-height: 1.03;
+  }
+  .display-2 {
+    font-size: clamp(1.7rem, 6vw, 3.4rem);
+    line-height: 1.07;
+  }
+
+  /* Hairline rule with a centred star node */
+  .rule {
+    height: 1px;
+    background: oklch(var(--line-strong));
+  }
+
+  /* Primary action — solid teal, brass focus ring */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full
+           font-sans font-semibold text-paper bg-teal
+           px-7 py-3.5 text-base transition-[transform,background-color,box-shadow] duration-300;
+    box-shadow: 0 1px 2px oklch(var(--ink) / 0.06), 0 14px 30px -14px oklch(var(--teal) / 0.7);
+  }
+  .btn-primary:hover {
+    @apply bg-teal-deep -translate-y-0.5;
+    box-shadow: 0 2px 4px oklch(var(--ink) / 0.08), 0 22px 44px -16px oklch(var(--teal) / 0.85);
+  }
+  .btn-primary:active {
+    @apply translate-y-0;
+  }
+
+  /* Secondary action — outlined ink */
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold
+           text-ink px-6 py-3.5 text-base transition-colors duration-300;
+    box-shadow: inset 0 0 0 1px oklch(var(--line-strong));
+  }
+  .btn-ghost:hover {
+    box-shadow: inset 0 0 0 1px oklch(var(--teal) / 0.55);
+    color: oklch(var(--teal-deep));
+  }
+
+  /* Editorial surface card */
+  .surface {
+    @apply rounded-2xl bg-card;
+    box-shadow: inset 0 0 0 1px oklch(var(--line) / 1), 0 18px 40px -28px oklch(var(--ink) / 0.4);
   }
 }
 
 @layer utilities {
-  /* Consistent spacing scale - Following 4px base unit */
-  .space-section {
-    @apply py-16 md:py-24;
+  .font-feature-numeric {
+    font-variant-numeric: tabular-nums;
   }
 
-  .space-section-sm {
-    @apply py-12 md:py-16;
+  /* Underline-on-hover for inline links (opt out with .no-rule) */
+  .link-rule {
+    background-image: linear-gradient(oklch(var(--teal) / 0.45), oklch(var(--teal) / 0.45));
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    padding-bottom: 1px;
+  }
+  .link-rule:hover {
+    background-size: 0% 1px;
+    background-image: linear-gradient(oklch(var(--teal) / 1), oklch(var(--teal) / 1));
+    color: oklch(var(--teal-deep));
   }
 
-  /* Simplified, neutral shadows - No color tints */
-  .shadow-card {
-    box-shadow:
-      0 1px 3px 0 rgb(0 0 0 / 0.1),
-      0 1px 2px -1px rgb(0 0 0 / 0.1);
+  /* Tessellated 8-point star field for atmospheric backgrounds */
+  .star-field {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l6.8 12.4L52 14l-4.4 13.2L60 34l-13.2 4.4L52 52l-13.2-4.4L32 60l-6.8-12.4L12 52l4.4-13.2L4 34l13.2-4.4L12 14l13.2 4.4z' fill='none' stroke='%23115e63' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 64px 64px;
   }
 
-  .shadow-card-hover {
-    box-shadow:
-      0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-
-  .shadow-card-lg {
-    box-shadow:
-      0 20px 25px -5px rgb(0 0 0 / 0.1),
-      0 8px 10px -6px rgb(0 0 0 / 0.1);
-  }
-
-  /* Smooth transitions */
-  .transition-smooth {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Typography utilities */
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* Bubble highlight effect for key words */
-  .text-bubble {
-    background: hsl(var(--light-cyan));
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.75rem;
-    display: inline-block;
-    font-weight: 700;
-    white-space: normal;
-    transform: rotate(0.5deg);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    word-break: keep-all;
-  }
-
-  @media (min-width: 640px) {
-    .text-bubble {
-      padding: 0.25rem 0.875rem;
-      white-space: nowrap;
-    }
-  }
-
-  /* Enhanced link hover effects */
-  a {
-    position: relative;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  a:not(.no-underline)::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: currentColor;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  a:not(.no-underline):hover::after {
-    width: 100%;
-  }
-
-  /* Better focus states for accessibility */
+  /* Focus visibility */
   *:focus-visible {
-    outline: 2px solid hsl(var(--light-cyan));
-    outline-offset: 4px;
-    border-radius: 0.25rem;
-    transition: outline-offset 0.2s ease;
+    outline: 2px solid oklch(var(--brass));
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
-  /* Smooth scrollbar */
+  /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 12px;
+    width: 11px;
   }
-
   ::-webkit-scrollbar-track {
-    background: hsl(var(--light-gray));
+    background: oklch(var(--paper-2));
   }
-
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--light-cyan) / 0.3);
-    border-radius: 6px;
-    transition: background 0.3s ease;
+    background: oklch(var(--teal) / 0.35);
+    border-radius: 999px;
+    border: 3px solid oklch(var(--paper-2));
   }
-
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--light-cyan) / 0.5);
+    background: oklch(var(--teal) / 0.55);
   }
+}
 
-  /* Selection styling */
-  ::selection {
-    background: hsl(var(--light-cyan) / 0.2);
-    color: hsl(var(--charcoal));
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
