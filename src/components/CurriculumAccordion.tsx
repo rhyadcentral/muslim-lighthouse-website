@@ -148,13 +148,11 @@ const CurriculumAccordion = () => {
                 >
                   <AccordionTrigger className="group px-5 py-5 hover:no-underline md:px-7 [&>svg]:hidden">
                     <div className="flex w-full items-center gap-4 md:gap-6">
-                      <span className="font-display text-base text-teal font-feature-numeric tabular-nums w-7 shrink-0"
-                            style={{ fontVariationSettings: "'opsz' 24" }}>
+                      <span className="font-display text-base text-teal font-feature-numeric tabular-nums w-7 shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="flex-1 text-left">
-                        <span className="font-display text-xl text-ink md:text-2xl"
-                              style={{ fontVariationSettings: "'opsz' 24" }}>
+                        <span className="font-display text-xl text-ink md:text-2xl">
                           {science.title}
                         </span>
                         <span className="ml-2.5 font-sans text-sm italic text-ink-mute">{science.arabic}</span>

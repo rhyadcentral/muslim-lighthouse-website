@@ -149,7 +149,6 @@ const TestimonialCarousel = () => {
               <figure className="flex h-full flex-col rounded-2xl border border-line bg-[oklch(0.165_0.025_220)] p-7 transition-all duration-300 hover:border-teal/30 hover:shadow-[0_12px_40px_-16px_oklch(0_0_0/0.50)]">
                 <span
                   className="mb-4 font-display text-5xl leading-[0.6] text-teal/40"
-                  style={{ fontVariationSettings: "'opsz' 48" }}
                   aria-hidden="true"
                 >
                   &ldquo;
@@ -171,8 +170,7 @@ const TestimonialCarousel = () => {
                 </blockquote>
 
                 <figcaption className="flex items-center gap-3 border-t border-line pt-5">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal/12 font-display text-lg text-teal-deep ring-1 ring-teal/25"
-                        style={{ fontVariationSettings: "'opsz' 24" }}>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal/12 font-display text-lg text-teal-deep ring-1 ring-teal/25">
                     {testimonial.name.charAt(0)}
                   </span>
                   <span>

@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Bodoni Moda"', 'Georgia', 'serif'],
+        display: ['Raleway', 'system-ui', 'sans-serif'],
         sans: ['Mulish', 'system-ui', 'sans-serif'],
       },
       colors: {

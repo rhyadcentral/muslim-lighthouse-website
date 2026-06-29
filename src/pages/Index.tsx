@@ -188,7 +188,7 @@ const Index = () => {
                 />
               </div>
               <div className="mt-7 text-center">
-                <p className="font-display text-2xl text-ink" style={{ fontVariationSettings: "'opsz' 24" }}>Ustadh Rhyad</p>
+                <p className="font-display text-2xl text-ink">Ustadh Rhyad</p>
                 <p className="mt-1.5 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-ink-mute">Founder & Instructor</p>
               </div>
             </motion.div>
@@ -267,7 +267,7 @@ const Index = () => {
               className="overflow-hidden rounded-2xl border border-line bg-navy shadow-lift"
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-line">
-                <span className="font-display text-xl text-ink" style={{ fontVariationSettings: "'opsz' 24" }}>
+                <span className="font-display text-xl text-ink">
                   Weekly rhythms
                 </span>
                 <span className="kicker text-[0.60rem]">Every week</span>
@@ -278,7 +278,7 @@ const Index = () => {
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-teal/12 font-sans text-xs font-bold uppercase tracking-wider text-teal ring-1 ring-teal/20">
                       {r.day}
                     </span>
-                    <span className="font-display text-lg text-ink" style={{ fontVariationSettings: "'opsz' 18" }}>
+                    <span className="font-display text-lg text-ink">
                       {r.name}
                     </span>
                   </div>
@@ -417,7 +417,7 @@ const Index = () => {
             <div className="max-w-sm">
               <a href="#top" className="no-rule flex items-center gap-2.5">
                 <Star className="h-4 w-4 text-teal/70" />
-                <span className="font-display text-xl text-ink" style={{ fontVariationSettings: "'opsz' 24" }}>
+                <span className="font-display text-xl text-ink">
                   Muslim Lighthouse
                 </span>
               </a>
