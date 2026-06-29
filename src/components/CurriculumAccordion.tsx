@@ -206,7 +206,7 @@ const CurriculumAccordion = () => {
         </div>
       </Accordion>
       <p className="mt-5 text-center font-sans text-xs text-ink-mute">
-        Courses marked "Coming soon" will be taught live, in class.
+        Courses marked "Coming soon" will be taught in our live weekly classes.
       </p>
     </div>
   );
