@@ -56,7 +56,6 @@ const curriculumData: Science[] = [
       { name: "Fiqh of Oaths", source: "As-halul Masalik", comingSoon: false },
       { name: "Fiqh of Marriage", source: "As-halul Masalik", comingSoon: true },
       { name: "Fiqh of Business", source: "As-halul Masalik", comingSoon: true },
-      { name: "More chapters to be covered", source: "As-halul Masalik", comingSoon: true },
     ],
   },
   {
