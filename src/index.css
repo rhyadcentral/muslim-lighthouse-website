@@ -3,66 +3,62 @@
 @tailwind utilities;
 
 /* ───────────────────────────────────────────────────────────────
-   Muslim Lighthouse — "Sacred Editorial" design system
-   Warm ivory paper · deep teal ink · brass accent · 8-point geometry
-   Colours authored in OKLCH (perceptually uniform). Tokens are bare
+   Muslim Lighthouse — "Illuminated Academy" dark design system
+   Deep dark canvas · teal-to-cyan beacon · gold accent
+   Colours in OKLCH (perceptually uniform). Tokens are bare
    "L C H" triplets so Tailwind alpha modifiers (/10, /60…) keep working.
+   Logo gradient: deep teal oklch(0.42 0.085 220) → bright cyan oklch(0.78 0.140 203)
    ─────────────────────────────────────────────────────────────── */
 
 @layer base {
   :root {
-    /* Ink / text */
-    --ink: 0.255 0.022 220;
-    --ink-soft: 0.42 0.022 222;
-    --ink-mute: 0.54 0.018 224;
+    /* ── Text (on dark backgrounds) ── */
+    --ink:        0.958  0.006  218;   /* near-white primary text */
+    --ink-soft:   0.780  0.012  220;   /* secondary body text */
+    --ink-mute:   0.510  0.010  222;   /* captions, placeholders */
 
-    /* Brand — teal lineage */
-    --teal: 0.475 0.082 205;
-    --teal-deep: 0.37 0.066 208;
-    --teal-bright: 0.585 0.105 200;
+    /* ── Brand — teal/cyan from logo gradient ── */
+    --teal:       0.650  0.120  208;   /* medium-vivid teal, primary accent */
+    --teal-deep:  0.740  0.138  204;   /* bright cyan — labels, highlights */
+    --teal-bright: 0.830 0.148  200;   /* very bright cyan — special accents */
 
-    /* Deep canvas — navy/ink for the dark closing band */
-    --navy: 0.255 0.045 218;
-    --navy-deep: 0.205 0.04 220;
+    /* ── Dark canvas surfaces ── */
+    --navy:       0.170  0.026  220;   /* card / panel background */
+    --navy-deep:  0.108  0.018  222;   /* base page background */
 
-    /* Brass / gold — the premium 10% accent */
-    --brass: 0.715 0.105 74;
-    --brass-deep: 0.56 0.095 66;
+    /* ── Gold accent (premium 10%) ── */
+    --brass:      0.740  0.100   74;
+    --brass-deep: 0.600  0.090   68;
 
-    /* Warm paper neutrals */
-    --paper: 0.965 0.011 86;
-    --paper-2: 0.935 0.015 84;
-    --line: 0.885 0.013 88;
-    --line-strong: 0.83 0.016 86;
+    /* ── "Light" value — used for text on coloured/dark buttons ── */
+    --paper:      0.960  0.006  218;   /* near-white, used as text on teal/gradient bgs */
+    --paper-2:    0.170  0.026  220;   /* alternating section bg (= navy) */
 
-    /* shadcn semantic tokens */
-    --background: 0.965 0.011 86;
-    --foreground: 0.255 0.022 220;
-    --card: 0.992 0.006 86;
-    --card-foreground: 0.255 0.022 220;
-    --popover: 0.992 0.006 86;
-    --popover-foreground: 0.255 0.022 220;
-    --primary: 0.475 0.082 205;
-    --primary-foreground: 0.98 0.006 86;
-    --secondary: 0.935 0.015 84;
-    --secondary-foreground: 0.37 0.066 208;
-    --muted: 0.935 0.015 84;
-    --muted-foreground: 0.5 0.018 224;
-    --accent: 0.715 0.105 74;
-    --accent-foreground: 0.255 0.03 70;
-    --destructive: 0.55 0.17 27;
-    --destructive-foreground: 0.98 0.006 86;
-    --border: 0.885 0.013 88;
-    --input: 0.885 0.013 88;
-    --ring: 0.475 0.082 205;
+    /* ── Borders on dark ── */
+    --line:       0.240  0.038  214;   /* subtle border */
+    --line-strong: 0.330 0.056  212;   /* visible border */
 
-    --radius: 0.625rem;
-  }
-
-  .dark {
-    /* No dark-mode toggle in this product — keep tokens stable */
-    --background: 0.965 0.011 86;
-    --foreground: 0.255 0.022 220;
+    /* ── shadcn semantic tokens ── */
+    --background: 0.108  0.018  222;
+    --foreground: 0.958  0.006  218;
+    --card:       0.170  0.026  220;
+    --card-foreground: 0.958 0.006 218;
+    --popover:    0.170  0.026  220;
+    --popover-foreground: 0.958 0.006 218;
+    --primary:    0.650  0.120  208;
+    --primary-foreground: 0.108 0.018 222;
+    --secondary:  0.220  0.032  218;
+    --secondary-foreground: 0.780 0.012 220;
+    --muted:      0.220  0.032  218;
+    --muted-foreground: 0.510 0.010 222;
+    --accent:     0.740  0.100   74;
+    --accent-foreground: 0.108 0.018 222;
+    --destructive: 0.550 0.170   27;
+    --destructive-foreground: 0.958 0.006 218;
+    --border:     0.240  0.038  214;
+    --input:      0.240  0.038  214;
+    --ring:       0.650  0.120  208;
+    --radius:     0.625rem;
   }
 }
 
@@ -80,89 +76,101 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-family: 'Mulish', system-ui, sans-serif;
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.7;
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
     position: relative;
-    /* Whisper-fine paper grain + two soft brand glows for depth */
+    /* Atmospheric teal beacon from top, subtle glow at bottom right */
     background-image:
-      radial-gradient(120% 90% at 88% -10%, oklch(var(--brass) / 0.07), transparent 55%),
-      radial-gradient(120% 90% at -10% 5%, oklch(var(--teal) / 0.06), transparent 50%);
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(var(--teal) / 0.13), transparent 65%),
+      radial-gradient(ellipse 50% 30% at 90% 110%, oklch(var(--teal-deep) / 0.07), transparent 60%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Marcellus", Georgia, serif;
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-optical-sizing: auto;
     line-height: 1.06;
     font-weight: 400;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
     color: oklch(var(--ink));
     text-wrap: balance;
   }
 
   ::selection {
-    background: oklch(var(--brass) / 0.28);
-    color: oklch(var(--ink));
+    background: oklch(var(--teal) / 0.30);
+    color: oklch(var(--paper));
   }
 }
 
 @layer components {
-  /* Section kicker — small-caps label in brass */
+  /* Section kicker — small-caps label */
   .kicker {
-    @apply inline-flex items-center gap-2.5 font-sans text-[0.72rem] font-semibold uppercase;
-    letter-spacing: 0.22em;
-    color: oklch(var(--brass-deep));
+    @apply inline-flex items-center gap-2.5 font-sans text-[0.70rem] font-semibold uppercase;
+    letter-spacing: 0.24em;
+    color: oklch(var(--teal-deep));
   }
 
-  /* Fluid display sizes — minimums kept small enough to never overflow ~360px */
+  /* Fluid display sizes */
   .display-1 {
-    font-size: clamp(2.15rem, 8.5vw, 5.4rem);
-    line-height: 1.03;
+    font-size: clamp(2.4rem, 9vw, 5.6rem);
+    line-height: 1.02;
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 72;
   }
   .display-2 {
-    font-size: clamp(1.7rem, 6vw, 3.4rem);
-    line-height: 1.07;
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    line-height: 1.05;
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 48;
   }
 
-  /* Hairline rule with a centred star node */
+  /* Hairline rule */
   .rule {
     height: 1px;
     background: oklch(var(--line-strong));
   }
 
-  /* Primary action — solid teal, brass focus ring */
+  /* Primary CTA — vivid teal pill with glow */
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full
            font-sans font-semibold text-paper bg-teal
-           px-7 py-3.5 text-base transition-[transform,background-color,box-shadow] duration-300;
-    box-shadow: 0 1px 2px oklch(var(--ink) / 0.06), 0 14px 30px -14px oklch(var(--teal) / 0.7);
+           px-8 py-4 text-base transition-[transform,background-color,box-shadow] duration-300;
+    box-shadow:
+      0 1px 2px oklch(0 0 0 / 0.30),
+      0 14px 36px -12px oklch(var(--teal) / 0.65);
   }
   .btn-primary:hover {
-    @apply bg-teal-deep -translate-y-0.5;
-    box-shadow: 0 2px 4px oklch(var(--ink) / 0.08), 0 22px 44px -16px oklch(var(--teal) / 0.85);
+    background: oklch(0.72 0.135 206);
+    transform: translateY(-2px);
+    box-shadow:
+      0 2px 4px oklch(0 0 0 / 0.35),
+      0 22px 48px -14px oklch(var(--teal) / 0.80);
   }
   .btn-primary:active {
-    @apply translate-y-0;
+    transform: translateY(0);
   }
 
-  /* Secondary action — outlined ink */
+  /* Ghost / secondary */
   .btn-ghost {
     @apply relative inline-flex items-center justify-center gap-2 rounded-full font-sans font-semibold
-           text-ink px-6 py-3.5 text-base transition-colors duration-300;
+           text-ink-soft px-6 py-4 text-base transition-all duration-300;
     box-shadow: inset 0 0 0 1px oklch(var(--line-strong));
   }
   .btn-ghost:hover {
-    box-shadow: inset 0 0 0 1px oklch(var(--teal) / 0.55);
+    box-shadow: inset 0 0 0 1px oklch(var(--teal) / 0.60);
     color: oklch(var(--teal-deep));
   }
 
-  /* Editorial surface card */
+  /* Card / panel surface */
   .surface {
     @apply rounded-2xl bg-card;
-    box-shadow: inset 0 0 0 1px oklch(var(--line) / 1), 0 18px 40px -28px oklch(var(--ink) / 0.4);
+    box-shadow:
+      inset 0 0 0 1px oklch(var(--line) / 1),
+      0 20px 48px -28px oklch(0 0 0 / 0.55);
   }
 }
 
@@ -171,9 +179,9 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* Underline-on-hover for inline links (opt out with .no-rule) */
+  /* Underline hover for inline links */
   .link-rule {
-    background-image: linear-gradient(oklch(var(--teal) / 0.45), oklch(var(--teal) / 0.45));
+    background-image: linear-gradient(oklch(var(--teal) / 0.50), oklch(var(--teal) / 0.50));
     background-size: 100% 1px;
     background-position: 0 100%;
     background-repeat: no-repeat;
@@ -186,40 +194,32 @@
     color: oklch(var(--teal-deep));
   }
 
-  /* Tessellated 8-point star field for atmospheric backgrounds */
+  /* Tessellated 8-point star field */
   .star-field {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l6.8 12.4L52 14l-4.4 13.2L60 34l-13.2 4.4L52 52l-13.2-4.4L32 60l-6.8-12.4L12 52l4.4-13.2L4 34l13.2-4.4L12 14l13.2 4.4z' fill='none' stroke='%23115e63' stroke-width='1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l6.8 12.4L52 14l-4.4 13.2L60 34l-13.2 4.4L52 52l-13.2-4.4L32 60l-6.8-12.4L12 52l4.4-13.2L4 34l13.2-4.4L12 14l13.2 4.4z' fill='none' stroke='%2300c8e0' stroke-width='1'/%3E%3C/svg%3E");
     background-size: 64px 64px;
   }
 
   /* Focus visibility */
   *:focus-visible {
-    outline: 2px solid oklch(var(--brass));
+    outline: 2px solid oklch(var(--teal));
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 11px;
-  }
-  ::-webkit-scrollbar-track {
-    background: oklch(var(--paper-2));
-  }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: oklch(var(--navy-deep)); }
   ::-webkit-scrollbar-thumb {
-    background: oklch(var(--teal) / 0.35);
+    background: oklch(var(--teal) / 0.30);
     border-radius: 999px;
-    border: 3px solid oklch(var(--paper-2));
+    border: 3px solid oklch(var(--navy-deep));
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: oklch(var(--teal) / 0.55);
-  }
+  ::-webkit-scrollbar-thumb:hover { background: oklch(var(--teal) / 0.50); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

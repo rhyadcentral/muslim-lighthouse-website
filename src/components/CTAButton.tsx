@@ -26,13 +26,13 @@ const CTAButton = ({
         whileHover={{ y: -2 }}
         whileTap={{ y: 0, scale: 0.99 }}
         className={cn(
-          "btn-primary no-rule group px-8 py-4 text-base sm:text-[1.05rem]",
+          "btn-primary no-rule group px-9 py-4 text-[1.02rem] sm:text-[1.08rem]",
           fullWidth && "w-full"
         )}
       >
         {/* sheen sweep */}
         <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
-          <span className="absolute inset-y-0 -left-1/3 w-1/3 -skew-x-12 bg-paper/25 blur-md transition-transform duration-700 ease-out group-hover:translate-x-[420%]" />
+          <span className="absolute inset-y-0 -left-1/3 w-1/3 -skew-x-12 bg-paper/20 blur-md transition-transform duration-700 ease-out group-hover:translate-x-[420%]" />
         </span>
         <span className="relative z-10 flex items-center gap-2.5">
           {label}

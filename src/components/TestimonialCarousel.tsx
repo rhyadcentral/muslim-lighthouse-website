@@ -67,7 +67,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Split a quote into plain + highlighted spans based on its keywords.
 const highlightKeywords = (quote: string, keywords: string[]) => {
   const parts: { text: string; isHighlight: boolean }[] = [];
   const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
@@ -116,7 +115,7 @@ const TestimonialCarousel = () => {
         "(min-width: 1024px)": { slidesToScroll: 3 },
       },
     },
-    [Autoplay({ delay: 4500, stopOnInteraction: true })]
+    [Autoplay({ delay: 4800, stopOnInteraction: true })]
   );
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -147,8 +146,12 @@ const TestimonialCarousel = () => {
               key={index}
               className="flex-[0_0_calc(100%-1rem)] md:flex-[0_0_calc(50%-0.75rem)] lg:flex-[0_0_calc(33.333%-1rem)] min-w-0"
             >
-              <figure className="flex h-full flex-col rounded-2xl border border-line bg-card p-7 transition-shadow duration-300 hover:shadow-soft">
-                <span className="mb-4 font-display text-5xl leading-[0.6] text-brass/55" aria-hidden="true">
+              <figure className="flex h-full flex-col rounded-2xl border border-line bg-[oklch(0.165_0.025_220)] p-7 transition-all duration-300 hover:border-teal/30 hover:shadow-[0_12px_40px_-16px_oklch(0_0_0/0.50)]">
+                <span
+                  className="mb-4 font-display text-5xl leading-[0.6] text-teal/40"
+                  style={{ fontVariationSettings: "'opsz' 48" }}
+                  aria-hidden="true"
+                >
                   &ldquo;
                 </span>
 
@@ -157,7 +160,7 @@ const TestimonialCarousel = () => {
                     part.isHighlight ? (
                       <span
                         key={i}
-                        className="font-medium text-ink decoration-brass/55 decoration-2 underline-offset-[3px] [text-decoration-line:underline]"
+                        className="font-semibold text-teal-deep"
                       >
                         {part.text}
                       </span>
@@ -168,7 +171,8 @@ const TestimonialCarousel = () => {
                 </blockquote>
 
                 <figcaption className="flex items-center gap-3 border-t border-line pt-5">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal/10 font-display text-lg text-teal-deep ring-1 ring-teal/20">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal/12 font-display text-lg text-teal-deep ring-1 ring-teal/25"
+                        style={{ fontVariationSettings: "'opsz' 24" }}>
                     {testimonial.name.charAt(0)}
                   </span>
                   <span>
@@ -186,7 +190,7 @@ const TestimonialCarousel = () => {
         <button
           onClick={scrollPrev}
           disabled={!canScrollPrev}
-          className="grid h-11 w-11 place-items-center rounded-full border border-line bg-card text-ink transition-all duration-300 hover:border-teal/50 hover:text-teal-deep disabled:opacity-40"
+          className="grid h-11 w-11 place-items-center rounded-full border border-line bg-navy text-ink-soft transition-all duration-300 hover:border-teal/40 hover:text-teal-deep disabled:opacity-30"
           aria-label="Previous testimonials"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -194,7 +198,7 @@ const TestimonialCarousel = () => {
         <button
           onClick={scrollNext}
           disabled={!canScrollNext}
-          className="grid h-11 w-11 place-items-center rounded-full border border-line bg-card text-ink transition-all duration-300 hover:border-teal/50 hover:text-teal-deep disabled:opacity-40"
+          className="grid h-11 w-11 place-items-center rounded-full border border-line bg-navy text-ink-soft transition-all duration-300 hover:border-teal/40 hover:text-teal-deep disabled:opacity-30"
           aria-label="Next testimonials"
         >
           <ChevronRight className="h-5 w-5" />

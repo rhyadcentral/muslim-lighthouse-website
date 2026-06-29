@@ -14,14 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Display: classical Roman inscriptional serif — calm, architectural, premium
-        display: ['Marcellus', 'Georgia', 'serif'],
-        'display-sc': ['"Marcellus SC"', 'Georgia', 'serif'],
-        // Body / UI: warm humanist grotesque
-        sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        display: ['"Bodoni Moda"', 'Georgia', 'serif'],
+        sans: ['Mulish', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // ── Brand palette (OKLCH; tokens are bare "L C H" so alpha modifiers work) ──
         ink: "oklch(var(--ink) / <alpha-value>)",
         "ink-soft": "oklch(var(--ink-soft) / <alpha-value>)",
         "ink-mute": "oklch(var(--ink-mute) / <alpha-value>)",
@@ -36,8 +32,6 @@ export default {
         "paper-2": "oklch(var(--paper-2) / <alpha-value>)",
         line: "oklch(var(--line) / <alpha-value>)",
         "line-strong": "oklch(var(--line-strong) / <alpha-value>)",
-
-        // ── shadcn semantic tokens ──
         border: "oklch(var(--border) / <alpha-value>)",
         input: "oklch(var(--input) / <alpha-value>)",
         ring: "oklch(var(--ring) / <alpha-value>)",
@@ -81,9 +75,10 @@ export default {
         kicker: "0.22em",
       },
       boxShadow: {
-        soft: "0 1px 2px oklch(var(--ink) / 0.04), 0 8px 24px -12px oklch(var(--ink) / 0.10)",
-        lift: "0 2px 4px oklch(var(--ink) / 0.04), 0 24px 48px -20px oklch(var(--ink) / 0.18)",
+        soft: "0 1px 2px oklch(0 0 0 / 0.20), 0 8px 24px -12px oklch(0 0 0 / 0.40)",
+        lift: "0 2px 4px oklch(0 0 0 / 0.25), 0 24px 48px -20px oklch(0 0 0 / 0.55)",
         ring: "0 0 0 1px oklch(var(--line) / 1)",
+        "teal-glow": "0 0 40px -8px oklch(var(--teal) / 0.55)",
       },
       keyframes: {
         "accordion-down": {
@@ -103,20 +98,25 @@ export default {
           to: { transform: "rotate(360deg)" },
         },
         "beam": {
-          "0%, 100%": { opacity: "0.35", transform: "translateX(-50%) scaleY(1)" },
-          "50%": { opacity: "0.6", transform: "translateX(-50%) scaleY(1.06)" },
+          "0%, 100%": { opacity: "0.25", transform: "translateX(-50%) scaleY(1)" },
+          "50%": { opacity: "0.45", transform: "translateX(-50%) scaleY(1.06)" },
         },
         "shimmer": {
           "0%": { transform: "translateX(-120%)" },
           "100%": { transform: "translateX(220%)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.24s ease-out",
         "accordion-up": "accordion-up 0.24s ease-out",
         "rise": "rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
-        "spin-slow": "spin-slow 60s linear infinite",
-        "beam": "beam 7s ease-in-out infinite",
+        "spin-slow": "spin-slow 90s linear infinite",
+        "beam": "beam 8s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
       },
     },
   },

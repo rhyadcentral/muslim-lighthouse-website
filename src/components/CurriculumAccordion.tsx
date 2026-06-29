@@ -129,9 +129,8 @@ const CurriculumAccordion = () => {
   return (
     <div className="mx-auto w-full max-w-4xl">
       <Accordion type="single" collapsible className="w-full">
-        <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-soft">
+        <div className="overflow-hidden rounded-2xl border border-line bg-navy shadow-lift">
           {curriculumData.map((science, index) => {
-            const liveCount = science.courses.filter((c) => !c.comingSoon).length;
             return (
               <motion.div
                 key={science.id}
@@ -142,37 +141,41 @@ const CurriculumAccordion = () => {
               >
                 <AccordionItem
                   value={science.id}
-                  className="border-b border-line last:border-b-0 data-[state=open]:bg-paper-2/50"
+                  className="border-b border-line last:border-b-0 data-[state=open]:bg-[oklch(0.22_0.032_218)]"
                 >
                   <AccordionTrigger className="group px-5 py-5 hover:no-underline md:px-7 [&>svg]:hidden">
                     <div className="flex w-full items-center gap-4 md:gap-6">
-                      <span className="font-display text-base text-brass-deep font-feature-numeric tabular-nums w-7 shrink-0">
+                      <span className="font-display text-base text-teal font-feature-numeric tabular-nums w-7 shrink-0"
+                            style={{ fontVariationSettings: "'opsz' 24" }}>
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="flex-1 text-left">
-                        <span className="font-display text-xl text-ink md:text-2xl">{science.title}</span>
+                        <span className="font-display text-xl text-ink md:text-2xl"
+                              style={{ fontVariationSettings: "'opsz' 24" }}>
+                          {science.title}
+                        </span>
                         <span className="ml-2.5 font-sans text-sm italic text-ink-mute">{science.arabic}</span>
                       </div>
                       <span className="hidden font-sans text-xs uppercase tracking-[0.18em] text-ink-mute sm:block">
                         {science.courses.length} {science.courses.length === 1 ? "course" : "courses"}
                       </span>
-                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-teal transition-all duration-300 group-hover:border-teal/50 group-data-[state=open]:rotate-45 group-data-[state=open]:bg-teal group-data-[state=open]:text-paper">
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-teal transition-all duration-300 group-hover:border-teal/50 group-data-[state=open]:rotate-45 group-data-[state=open]:bg-teal group-data-[state=open]:text-navy-deep">
                         <Plus className="h-4 w-4" />
                       </span>
                     </div>
                   </AccordionTrigger>
 
                   <AccordionContent className="px-5 pb-6 pt-0 md:px-7">
-                    <ol className="ml-7 space-y-0 border-l border-line/80 md:ml-11">
+                    <ol className="ml-7 space-y-0 border-l border-line/60 md:ml-11">
                       {science.courses.map((course, idx) => {
                         const [courseName, ...rest] = course.name.split(" - ");
                         const description = rest.join(" - ");
                         return (
                           <li key={idx} className="relative pl-5 py-3 first:pt-1">
-                            <span className="absolute -left-[3px] top-[1.35rem] h-1.5 w-1.5 rounded-full bg-brass" />
+                            <span className="absolute -left-[3px] top-[1.35rem] h-1.5 w-1.5 rounded-full bg-teal/50" />
                             <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1.5">
                               <p className="flex-1 font-sans text-[0.95rem] leading-relaxed text-ink-soft">
-                                <span className={course.comingSoon ? "font-semibold text-ink-soft/70" : "font-semibold text-ink"}>
+                                <span className={course.comingSoon ? "font-semibold text-ink-mute" : "font-semibold text-ink"}>
                                   {courseName}
                                 </span>
                                 {description && <span className="text-ink-mute"> — {description}</span>}
@@ -183,7 +186,7 @@ const CurriculumAccordion = () => {
                                 )}
                               </p>
                               {course.comingSoon && (
-                                <span className="mt-0.5 inline-flex shrink-0 items-center rounded-full bg-brass/12 px-2.5 py-0.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-brass-deep">
+                                <span className="mt-0.5 inline-flex shrink-0 items-center rounded-full bg-teal/10 px-2.5 py-0.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-teal ring-1 ring-teal/20">
                                   Coming soon
                                 </span>
                               )}
@@ -200,7 +203,7 @@ const CurriculumAccordion = () => {
         </div>
       </Accordion>
       <p className="mt-5 text-center font-sans text-xs text-ink-mute">
-        Courses marked “Coming soon” will be taught live, in class.
+        Courses marked "Coming soon" will be taught live, in class.
       </p>
     </div>
   );
