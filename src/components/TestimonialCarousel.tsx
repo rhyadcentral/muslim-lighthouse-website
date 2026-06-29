@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     keywords: ["real teacher", "supportive community", "great friendships"],
   },
   {
-    quote: "I found more than what I was expecting—not just knowledge but life lessons and practical guidance which has transformed the way I live my life. The interactive nature really makes a difference and can become part of your life.",
+    quote: "I found more than what I was expecting, not just knowledge but life lessons and practical guidance which has transformed the way I live my life. The interactive nature really makes a difference and can become part of your life.",
     name: "Samah",
     keywords: ["knowledge", "life lessons", "practical guidance", "transformed", "interactive"],
   },
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     keywords: ["relevant", "catered for everyone", "beginner to advanced"],
   },
   {
-    quote: "I can seek personal advice directly from the teacher, ask questions at any time, and get guidance specific to my situation. The community was something I never expected—everyone is kind, respectful, and genuinely supportive.",
+    quote: "I can seek personal advice directly from the teacher, ask questions at any time, and get guidance specific to my situation. The community was something I never expected, everyone is kind, respectful, and genuinely supportive.",
     name: "Lima",
     keywords: ["personal advice", "directly from the teacher", "ask questions", "kind, respectful, and genuinely supportive"],
   },

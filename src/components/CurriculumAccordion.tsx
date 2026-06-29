@@ -179,7 +179,7 @@ const CurriculumAccordion = () => {
                                 <span className={course.comingSoon ? "font-semibold text-ink-mute" : "font-semibold text-ink"}>
                                   {courseName}
                                 </span>
-                                {description && <span className="text-ink-mute"> — {description}</span>}
+                                {description && <span className="text-ink-mute">, {description}</span>}
                                 {course.source && (
                                   <span className="mt-1 block font-sans text-xs italic text-ink-mute">
                                     Source · {course.source}

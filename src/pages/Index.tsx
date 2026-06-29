@@ -27,7 +27,7 @@ const reveal = {
 
 const credentials: { label: string; value: React.ReactNode }[] = [
   { label: "Teacher", value: <>Shaykh Baha Al-Majlisi, a well-respected Mauritanian scholar</> },
-  { label: "Credentials", value: <>Holds Ijaza — formal authorisation — to teach the major Islamic sciences</> },
+  { label: "Credentials", value: <>Holds Ijaza, formal authorisation to teach the major Islamic sciences</> },
   { label: "Background", value: <>Studied in Mauritania, known for rigorous traditional scholarship</> },
   { label: "Current", value: <>Continuing advanced Islamic studies</> },
   { label: "Experience", value: <>5+ years teaching, to over 700 students</> },
@@ -226,7 +226,7 @@ const Index = () => {
               <span className="text-teal-deep">Islamic sciences</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-sans text-lg text-ink-soft">
-              A complete, structured syllabus — eleven disciplines, taught from the classical texts.
+              A complete, structured syllabus. Eleven disciplines, taught from the classical texts.
             </p>
           </motion.div>
 
@@ -346,9 +346,9 @@ const Index = () => {
               price={1044}
               period="/year"
               features={[
-                "Everything in Quarterly — plus:",
+                "Everything in Quarterly, plus:",
                 "3 months free compared to quarterly billing",
-                "Best value — only £87 per month equivalent",
+                "Best value, only £87 per month equivalent",
                 "Lock in your price for a full year",
               ]}
               bottomNote="Best value. Commit for the year and get 3 months on us."
@@ -422,7 +422,7 @@ const Index = () => {
                 </span>
               </a>
               <p className="mt-4 font-sans text-sm leading-relaxed text-ink-mute">
-                An advanced Islamic studies programme — the full sciences, a qualified teacher, and a community
+                An advanced Islamic studies programme. The full sciences, a qualified teacher, and a community
                 built on real initiatives.
               </p>
             </div>
