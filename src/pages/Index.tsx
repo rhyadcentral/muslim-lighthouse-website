@@ -272,14 +272,9 @@ const Index = () => {
                 </span>
                 <span className="kicker text-[0.60rem]">Every week</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                {rhythms.map((r, i) => (
-                  <div
-                    key={r.name}
-                    className={`flex items-center gap-4 px-6 py-6 ${i % 2 === 0 ? "sm:border-r" : ""} ${
-                      i < 2 ? "border-b" : ""
-                    } border-line`}
-                  >
+              <div className="grid grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+                {rhythms.map((r) => (
+                  <div key={r.name} className="flex flex-col items-center gap-3 px-6 py-8 text-center">
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-teal/12 font-sans text-xs font-bold uppercase tracking-wider text-teal ring-1 ring-teal/20">
                       {r.day}
                     </span>
@@ -288,12 +283,6 @@ const Index = () => {
                     </span>
                   </div>
                 ))}
-              </div>
-              <div className="flex items-center gap-3 bg-navy-deep/50 px-6 py-4">
-                <Star className="h-3 w-3 shrink-0 text-teal/60" />
-                <span className="font-sans text-sm text-ink-mute">
-                  Plus Tadabbur circles, Qiyam nights and in-person gatherings.
-                </span>
               </div>
             </motion.div>
           </div>
