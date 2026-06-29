@@ -100,7 +100,7 @@ const Index = () => {
             transition={{ duration: 0.7, ease, delay: 0.16 }}
             className="mx-auto mt-8 max-w-lg font-sans text-lg leading-relaxed text-ink-soft sm:text-[1.12rem]"
           >
-            Study the full Islamic sciences alongside a strong community built on real initiatives.
+            Study the Islamic sciences alongside a strong community built on real initiatives.
           </motion.p>
 
           <motion.div
