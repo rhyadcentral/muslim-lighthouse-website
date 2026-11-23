@@ -89,7 +89,7 @@ button { font: inherit; }
 @media (prefers-reduced-transparency: reduce) { .nav { background: var(--night); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 
 /* ---------- hero + signature beam ---------- */
-.hero { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(120% 80% at 50% 0%, #0f2a3a 0%, var(--night) 60%); color: var(--on-night); padding: clamp(150px, 17vw, 200px) 0 clamp(40px, 6vw, 72px); text-align: center; }
+.hero { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(120% 80% at 50% 0%, #0f2a3a 0%, var(--night) 60%); color: var(--on-night); padding: clamp(150px, 17vw, 200px) 0 clamp(64px, 8vw, 104px); text-align: center; }
 .hero__beam { position: absolute; z-index: -1; left: 50%; top: 104px; width: 1600px; height: 1600px; margin-left: -800px; margin-top: -800px; background: conic-gradient(from 0deg, transparent 0deg, rgba(44, 203, 240, .20) 14deg, rgba(44, 203, 240, .05) 30deg, transparent 44deg, transparent 360deg); -webkit-mask: radial-gradient(circle, #000 0%, #000 30%, transparent 62%); mask: radial-gradient(circle, #000 0%, #000 30%, transparent 62%); animation: sweep 14s linear infinite; }
 @keyframes sweep { from { transform: rotate(100deg); } to { transform: rotate(460deg); } }
 .hero__star { position: absolute; left: 50%; top: 104px; transform: translate(-50%, -50%); z-index: -1; }
@@ -203,9 +203,12 @@ button { font: inherit; }
 .mosaic figure:hover img { transform: scale(1.03); }
 .mosaic .m1 { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
 .mosaic--umrah .m2, .mosaic--umrah .m3, .mosaic--umrah .m4, .mosaic--umrah .m5 { aspect-ratio: 1 / 1; }
+.mosaic--umrah .m6 { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.mosaic--umrah .m6 img { object-position: 45% 40%; }
 .mosaic--uk .m2, .mosaic--uk .m3 { aspect-ratio: 1 / 1; }
 @media (min-width: 900px) {
-  .mosaic--umrah { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; }
+  .mosaic--umrah { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px 420px; }
+  .mosaic--umrah .m6 { grid-column: 1 / -1; grid-row: 3; aspect-ratio: auto; }
   .mosaic--umrah .m1 { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
   .mosaic--umrah .m2, .mosaic--umrah .m3, .mosaic--umrah .m4, .mosaic--umrah .m5 { aspect-ratio: auto; }
   .mosaic--uk { grid-template-columns: 2fr 1fr; grid-template-rows: 260px 260px; }
