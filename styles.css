@@ -133,7 +133,8 @@ button { font: inherit; }
 .notice__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 20px; padding-top: 18px; padding-bottom: 18px; text-align: center; font-size: 16px; }
 .notice p { color: var(--on-night-2); }
 .notice strong { color: var(--on-night); }
-.notice .link-arrow { color: var(--beam); }
+.notice a { color: var(--beam); font-weight: 600; text-underline-offset: 3px; }
+.notice a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- sections ---------- */
 .section { padding: clamp(84px, 11vw, 140px) 0; }
