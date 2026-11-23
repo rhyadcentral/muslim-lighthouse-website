@@ -46,15 +46,10 @@ document.documentElement.classList.add("js");
    Website quotes come from the previous muslimlighthouse.com.
    Trustpilot quotes are short exact excerpts from trustpilot.com/review/muslimlighthouse.com */
 const QUOTES = [
-  { q: "I found more than what I was expecting. I thought it would just be uploaded videos, but it turned out to be much more interactive, personal, and engaging. The well-structured courses, active community, in-person meetups, weekly habits, and direct connection with a teacher exceeded my expectations.", n: "Fatima", hl: ["much more interactive, personal, and engaging"], feature: true },
-  { q: "After completing the Illuminate programme I felt like it was necessary for me to retake my Shahada", n: "Sahar", c: "United Kingdom", tp: true, hl: ["retake my Shahada"] },
-  { q: "Before I joined ML his answer was, 'if you join and study you will be more knowledgeable than 90% of Muslims if you learn and apply the teachings.' I can't argue with that statement being part of ML for over a year now.", n: "Shahel", hl: ["more knowledgeable than 90% of Muslims"] },
+  { feature: true, q: "After completing the Illuminate programme I felt like it was necessary for me to retake my Shahada", n: "Sahar", c: "United Kingdom", tp: true, hl: ["retake my Shahada"] },
   { q: "Muslim Lighthouse gave me direction, helped me make constant progress and make friends along the way.", n: "Omar", c: "France", tp: true, hl: ["gave me direction"] },
-  { q: "I can seek personal advice directly from the teacher, ask questions at any time, and get guidance specific to my situation. The community was something I never expected, everyone is kind, respectful, and genuinely supportive.", n: "Lima", hl: ["personal advice directly from the teacher"] },
-  { q: "Ever since joining Muslim lighthouse in 2023, it has been the turning point in my life.", n: "Belkiss", c: "Algeria", tp: true, hl: ["turning point in my life"] },
   { q: "Learning Fiqh has helped me improve my prayer, and lighthouse habits is honestly life-changing. The weekly classes and the variety of lessons which Ustadh teaches really clearly and in depth Allahumma barik.", n: "Jumainah", hl: ["improve my prayer"] },
   { q: "They take complex, scholarly-level knowledge and make it accessible to everyone", n: "Abrar", c: "United Arab Emirates", tp: true, hl: ["accessible to everyone"] },
-  { q: "Alhamdulillah for having a real teacher that you can interact with and a supportive community. Sometimes the absence of a teacher can cause chaos especially if you are a fresh student. Because of MLH I've met amazing sisters and have made great friendships!", n: "Islam", hl: ["real teacher", "great friendships"] },
   { q: "The learning structure, the guidance on how to go about actually learning, not just the information itself. You address many misconceptions and take Islam back to its core.", n: "Nicolai", hl: ["how to go about actually learning"], feature: true },
   { q: "The teaching style by Ustadh Rhyad is very clear and effective, Allahumma Barik.", n: "Samah", c: "United Kingdom", tp: true, hl: ["very clear and effective"] },
   { q: "In this program the knowledge is organised in areas and you are given a guide map", n: "Rahal", c: "Spain", tp: true, hl: ["guide map"] },
@@ -105,7 +100,7 @@ const QUOTES = [
 (() => {
   const bar = document.getElementById("sticky");
   const hero = document.querySelector(".hero");
-  const hideZones = [document.getElementById("pricing"), document.getElementById("join")].filter(Boolean);
+  const hideZones = [document.getElementById("pricing")].filter(Boolean);
   if (!bar || !hero || !("IntersectionObserver" in window)) return;
   let pastHero = false; const inZone = new Set();
   const update = () => {
