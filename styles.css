@@ -63,7 +63,7 @@ button { font: inherit; }
 .btn--sm { --h: 36px; padding: 0 16px; font-size: 15px; }
 .btn--lg { --h: 56px; padding: 0 30px; font-size: 18px; }
 .btn--block { width: 100%; }
-.btn--primary { background: var(--btn); color: #fff; box-shadow: 0 8px 24px -10px rgba(8, 120, 147, .7); }
+.btn--primary { background: var(--btn); color: #fff; }
 .btn--primary:hover { background: var(--btn-hover); }
 .btn--ghost { color: var(--on-night); background: rgba(255, 255, 255, .08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22); }
 .btn--ghost:hover { background: rgba(255, 255, 255, .14); }
@@ -89,16 +89,11 @@ button { font: inherit; }
 @media (prefers-reduced-transparency: reduce) { .nav { background: var(--night); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 
 /* ---------- hero ----------
-   Thesis: the page's one signature, a lighthouse beam, sweeping across the three
-   things people actually get. Real photos carry the proof; copy stays left-aligned
-   for reading, and the composition stays quiet apart from the beam. */
+   Thesis: the three things people actually get, shown with real photos.
+   Copy stays left-aligned for reading; the background stays quiet. */
 .hero { position: relative; overflow: hidden; isolation: isolate; color: var(--on-night);
-  background:
-    radial-gradient(60% 70% at 78% 40%, rgba(15, 159, 196, .20) 0%, transparent 60%),
-    radial-gradient(90% 80% at 20% 0%, #0f2a3a 0%, transparent 55%),
-    var(--night);
-  padding: clamp(160px, 14vw, 190px) 0 clamp(64px, 8vw, 104px); }
-.hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(44, 203, 240, .35), transparent); }
+  background: linear-gradient(180deg, #0c1d29 0%, var(--night) 70%);
+  padding: clamp(112px, 12vw, 150px) 0 clamp(64px, 8vw, 104px); }
 .hero__grid { position: relative; z-index: 1; display: grid; gap: 56px; align-items: center; }
 @media (min-width: 1000px) { .hero__grid { grid-template-columns: 1.02fr 1fr; gap: 48px; } }
 .hero__copy { text-align: center; }
@@ -119,17 +114,8 @@ button { font: inherit; }
 .rating__item + .rating__item { padding-left: 24px; border-left: 1px solid var(--night-line); }
 .stars { color: var(--gold); letter-spacing: 1px; }
 
-/* visual: beam + three photo cards */
+/* visual: three photo cards */
 .hero__visual { position: relative; }
-.hero__beam { position: absolute; z-index: -1; left: 50%; top: 96px; width: 2400px; height: 2400px; margin: -1200px 0 0 -1200px;
-  background: conic-gradient(from 0deg, transparent 0deg, rgba(44, 203, 240, .34) 10deg, rgba(44, 203, 240, .09) 26deg, transparent 40deg, transparent 360deg);
-  -webkit-mask: radial-gradient(circle, #000 0%, #000 18%, transparent 52%); mask: radial-gradient(circle, #000 0%, #000 18%, transparent 52%);
-  animation: sweep 16s linear infinite; }
-@keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.hero__star { position: absolute; z-index: 0; left: 50%; top: 96px; transform: translate(-50%, -50%); width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center;
-  background: radial-gradient(circle, rgba(44, 203, 240, .38), transparent 68%); pointer-events: none; }
-.hero__star img { width: 44px; height: 44px; filter: drop-shadow(0 0 20px rgba(44, 203, 240, .95)); }
-
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .pillar { position: relative; }
 .pillar__media { overflow: hidden; border-radius: 18px; aspect-ratio: 1 / 1; box-shadow: 0 0 0 1px rgba(255, 255, 255, .10), 0 24px 50px -24px rgba(0, 0, 0, .9); background: var(--night-2); }
@@ -139,7 +125,7 @@ button { font: inherit; }
 .pillar__media { position: relative; }
 .pillar--community .pillar__media img { object-position: 8% 45%; }
 .pillar__label { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: -22px; position: relative; text-align: center; }
-.pillar__icon { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: var(--grad); box-shadow: 0 0 0 3px var(--night), 0 10px 24px -8px rgba(6, 193, 239, .7); }
+.pillar__icon { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: var(--grad); box-shadow: 0 0 0 3px var(--night); }
 .pillar__icon svg { width: 22px; height: 22px; fill: #fff; }
 .pillar__text b { display: block; font-size: 14px; font-weight: 600; line-height: 1.25; color: var(--on-night); }
 .pillar__text small { display: none; }
@@ -440,7 +426,7 @@ button { font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero__beam, .pillar { animation: none; }
+  .pillar { animation: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .tier:not([hidden]) { animation: none; }
   .sticky, .offers__icon, .mosaic img { transition: none; }
