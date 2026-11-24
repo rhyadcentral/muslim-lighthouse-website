@@ -448,15 +448,20 @@ button { font: inherit; }
 .ai__points h4 { font-size: 18px; letter-spacing: -0.012em; margin-top: 2px; }
 .ai__points p { margin-top: 3px; font-size: 15px; color: var(--on-night-2); max-width: 42ch; }
 
-/* The real product: the main part of the app in a framed window on the right. */
-.ai__shot { margin: 0; }
-.ai__window { border-radius: 18px; overflow: hidden; background: #0a0b0b;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 50px 100px -40px rgba(0, 0, 0, .9), 0 0 120px -30px rgba(44, 203, 240, .35); }
-.ai__chrome { display: flex; gap: 7px; padding: 12px 14px; background: #161818; border-bottom: 1px solid rgba(255, 255, 255, .06); }
-.ai__chrome { align-items: center; }
-.ai__chrome span { margin-left: auto; margin-right: auto; padding-right: 47px; font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, .6); }
-.ai__chrome i { width: 11px; height: 11px; border-radius: 50%; background: rgba(255, 255, 255, .18); }
-.ai__window img { display: block; width: 100%; height: auto; }
+.ai__demo { margin: 0; }
+.chat { border-radius: 24px; background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 40px 80px -40px rgba(0, 0, 0, .8); overflow: hidden; }
+.chat__bar { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-size: 15px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.chat__dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; background: var(--grad); color: #fff; }
+.chat__status { margin-left: auto; font-size: 13px; color: #5fe0a0; }
+.chat__status::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5fe0a0; margin-right: 6px; vertical-align: 1px; }
+.chat__body { display: flex; flex-direction: column; gap: 12px; padding: 20px 18px 22px; }
+.msg { max-width: 88%; padding: 12px 16px; border-radius: 20px; font-size: 15px; line-height: 1.45; }
+.msg--me { align-self: flex-end; background: var(--btn); color: #fff; border-bottom-right-radius: 6px; }
+.msg--ai { align-self: flex-start; background: rgba(255, 255, 255, .08); color: var(--on-night); border-bottom-left-radius: 6px; }
+.msg--ai ol { margin: 10px 0 0; padding-left: 20px; list-style: decimal; display: grid; gap: 6px; color: var(--on-night-2); }
+.msg__src { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 12px; font-weight: 600; color: var(--beam); padding: 4px 10px; border-radius: 999px; background: rgba(44, 203, 240, .12); }
+.msg__src::before { content: "✓"; }
+.ai__demo figcaption { margin-top: 12px; font-size: 13px; color: var(--on-night-2); text-align: center; }
 
 .ai__quote { max-width: 760px; margin: clamp(36px, 5vw, 56px) auto 0; text-align: center; }
 .ai__quote blockquote { font-size: clamp(19px, 2vw, 23px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.4; }
