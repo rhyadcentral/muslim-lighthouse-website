@@ -663,12 +663,6 @@ button { font: inherit; }
 .footer nav a { color: var(--on-night-2); text-decoration: none; padding: 6px 0; }
 .footer nav a:hover { color: var(--on-night); }
 
-/* ---------- mobile sticky CTA ---------- */
-.sticky { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 40; transform: translateY(140%); transition: transform .35s var(--ease); }
-.sticky.is-on { transform: none; }
-.sticky__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 20px; border-radius: 999px; background: rgba(7, 19, 28, .88); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); color: var(--on-night); font-size: 15px; font-weight: 600; box-shadow: 0 10px 40px -10px rgba(0, 0, 0, .5); border: 1px solid var(--night-line); }
-.sticky .btn { --h: 44px; }
-@media (min-width: 1020px) { .sticky { display: none; } }
 
 /* ---------- reveal ---------- */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
@@ -679,7 +673,7 @@ button { font: inherit; }
   .pillar { animation: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .tier:not([hidden]) { animation: none; }
-  .sticky, .offers__icon, .mosaic img { transition: none; }
+  .offers__icon, .mosaic img { transition: none; }
 }
 
 @media (min-width: 1000px) and (max-width: 1199px) { .pillar__text small { display: none; } }

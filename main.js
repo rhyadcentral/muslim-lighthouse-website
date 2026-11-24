@@ -98,24 +98,6 @@ const QUOTES = [
   });
 })();
 
-/* ---- Mobile sticky CTA: shows after the hero, hides near pricing and the final CTA ---- */
-(() => {
-  const bar = document.getElementById("sticky");
-  const hero = document.querySelector(".hero");
-  const hideZones = [document.getElementById("pricing")].filter(Boolean);
-  if (!bar || !hero || !("IntersectionObserver" in window)) return;
-  let pastHero = false; const inZone = new Set();
-  const update = () => {
-    const on = pastHero && inZone.size === 0;
-    bar.classList.toggle("is-on", on);
-    bar.setAttribute("aria-hidden", String(!on));
-    bar.querySelector("a").tabIndex = on ? 0 : -1;
-  };
-  new IntersectionObserver(([en]) => { pastHero = !en.isIntersecting; update(); }).observe(hero);
-  const zio = new IntersectionObserver((ens) => { ens.forEach((en) => en.isIntersecting ? inZone.add(en.target) : inZone.delete(en.target)); update(); });
-  hideZones.forEach((z) => zio.observe(z));
-})();
-
 /* ---- Analytics hooks (Microsoft Clarity custom events) ---- */
 document.addEventListener("click", (e) => {
   const a = e.target.closest("[data-cta]");
