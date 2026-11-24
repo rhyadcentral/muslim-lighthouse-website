@@ -197,6 +197,17 @@ button { font: inherit; }
 .voice--light figcaption, .voice--light figcaption b { color: var(--on-night-2); }
 .voice--light figcaption b { color: var(--on-night); }
 
+/* Heading highlights: one phrase per section heading carries colour, like the hero's "Busy Muslims" and the community's warm "A family."
+   On light sections the blue starts at #0a9fc6 (3.1:1 on white, above the 3:1 needed for large text) and deepens to #0a5f78. */
+.hl { background: linear-gradient(100deg, #0a9fc6 0%, #087893 55%, #0a5f78 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hl--night { background-image: linear-gradient(100deg, #9becfc 0%, #2ccbf0 50%, #0fa3c9 100%); }
+@media (forced-colors: active) { .hl, .warm { background: none; color: CanvasText; } }
+
+/* Studying section: a light touch of colour. A faint aqua glow behind the heading and soft sky-tinted cards, so the photos stay the focus. */
+#studying { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #f4fafc 100%); }
+#studying::before { content: ""; position: absolute; z-index: -1; width: 900px; height: 600px; left: 50%; top: -220px; transform: translateX(-50%); border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(44, 203, 240, .16), rgba(44, 203, 240, 0)); }
+
 /* ---------- 2. overview: a look inside ----------
    Thesis: show the real thing. Four real moments, text above each photo, photos run to the card edge. */
 .glimpse { display: grid; gap: 16px; grid-template-columns: 1fr; }
@@ -207,7 +218,7 @@ button { font: inherit; }
   .glimpse__card--live { grid-column: span 5; }
   .glimpse__card--questions, .glimpse__card--ijaza { grid-column: span 6; }
 }
-.glimpse__card { margin: 0; display: flex; flex-direction: column; background: var(--mist); border-radius: var(--radius-lg); overflow: hidden; }
+.glimpse__card { margin: 0; display: flex; flex-direction: column; background: linear-gradient(170deg, #f0f8fb 0%, #e3f2f7 100%); border-radius: var(--radius-lg); overflow: hidden; box-shadow: inset 0 0 0 1px rgba(10, 111, 138, .06); }
 .glimpse__card figcaption { padding: 32px 32px 24px; }
 .glimpse__card h3 { font-size: clamp(21px, 2vw, 24px); letter-spacing: -0.018em; line-height: 1.2; }
 .glimpse__card p { margin-top: 8px; color: var(--ink-2); font-size: 16px; line-height: 1.5; max-width: 46ch; }
