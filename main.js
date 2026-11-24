@@ -206,5 +206,23 @@ document.addEventListener("click", (e) => {
   viewer.addEventListener("click", (e) => { if (e.target === viewer) viewer.close(); });
 })();
 
+/* ---- Any image marked data-zoom opens full size in the shared viewer ---- */
+(() => {
+  const viewer = document.getElementById("viewer");
+  if (!viewer || typeof viewer.showModal !== "function") return;
+  const big = viewer.querySelector("img");
+  document.querySelectorAll("img[data-zoom]").forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    const open = () => { big.src = img.currentSrc || img.src; big.alt = img.alt; viewer.showModal(); };
+    img.addEventListener("click", open);
+    img.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+  });
+  // Buttons that reveal a screenshot only when asked.
+  document.querySelectorAll("button[data-full]").forEach((btn) => {
+    btn.addEventListener("click", () => { big.src = btn.dataset.full; big.alt = btn.dataset.alt || ""; viewer.showModal(); });
+  });
+})();
+
 /* ---- Footer year ---- */
 (() => { const y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear(); })();
